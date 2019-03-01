@@ -1,4 +1,4 @@
-# Introduction to bioinformatics
+# Introduction to Bioinformatics
 
 In this training course you will find theory and practice material for introducing yourself to the basics of high throughput sequencing data analysis.
 
