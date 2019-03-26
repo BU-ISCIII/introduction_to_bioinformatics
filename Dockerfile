@@ -36,6 +36,16 @@ RUN echo "Installing FastQC app" && \
     scif install /opt/gatk_v3.8_centos7.scif
     echo "Installing vcftools app" && \
     scif install /opt/vcftools_v0.1.12b_centos7.scif && \
+    echo "Installing NGSQCToolkit app" && \
+    scif install /opt/NGSQCToolkit_v2.3.3_centos7.scif && \
+    echo "Installing seq_crumbs app" && \
+    scif install /opt/seqcrumbs_v0.1.9_centos7.scif && \
+    echo "Installing spades app" && \
+    scif install /opt/spades_v3.8.0_centos7.scif && \
+    echo "Installing quast app" && \
+    scif install /opt/quast_v5.0.0_centos7.scif && \
+    echo "Installing srst2 app" && \
+    scif install /opt/srst2_v0.1.8_centos7.scif && \
     echo "Installing multiqc app" && \
     scif install /opt/multiqc_v1.4_centos7.scif
 
