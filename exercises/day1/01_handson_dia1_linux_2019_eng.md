@@ -8,8 +8,8 @@
 |**Objectives**:|<ul><li>Remember how to use the command line.</li><li>Learn how to execute the Nextflow pipeline over our Singularity image for the following exercises.</li></ul>|
 |**Time estimation**:| 30 min |
 |**Key points**:|<ul><li>Remeber the shell basics</li><li>Learn how to call the pipeline for future exercises.</li></ul>|
-
 <div class="tables-end"></div>
+
 #### How do I use the command line?
 
 Open a terminal and type into it. Please, remember to:
