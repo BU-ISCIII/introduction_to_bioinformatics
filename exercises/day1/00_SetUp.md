@@ -23,13 +23,13 @@ pwd
 Create the project folder for the practises of the course:
 
 ```
-mkdir -p Documents/practises
+mkdir -p Documents
 ```
 
 Navigate to the directory:
 
 ```
-cd Documents/practises
+cd Documents
 ```
 
 Download git repository:
@@ -37,8 +37,11 @@ Download git repository:
 ```
 git clone https://github.com/BU-ISCIII/introduction_to_bioinformatics.git
 ```
-
-## PENDING TO EDIT FROM HERE TO THE END OF FILE
+#####################################
+<br>
+## THIS IS NOT FINISHED
+<br>
+#####################################
 
 Download training dataset:
 
