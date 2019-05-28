@@ -1,5 +1,11 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 ## Curso de Iniciación a la Secuenciación Masiva
 BU-ISCIII
+
 ### Práctica 2 día 1: Software, Nextflow y Singularity
 
 17-21 Junio 2019, 7a Edición, Programa Formación Continua, ISCIII
