@@ -1,8 +1,3 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
 ## Curso de Iniciación a la Secuenciación Masiva
 BU-ISCIII
 
