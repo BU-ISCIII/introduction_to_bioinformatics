@@ -24,7 +24,7 @@ Lo primero que podemos hacer con un fichero de texto es abrirlo para ver sus con
 
 Otra forma de acceder a los contenidos del fichero es visualizarlo en la terminal utilizando el comando cat:
 
-```
+```bash
 cat microarray_adenoma_hk69.csv
 ```
 
@@ -34,7 +34,7 @@ Pero si intentáis hacerlo la terminal quedará bloqueada durante bastante tiemp
 
 Para hacerse una idea del contenido del fichero sin bloquear la terminal se puede mostrar en pantalla tan solo una parte utilizando los comandos head o tail. Tanto a head como a tail se le puede añadir el parámetro –n para ver el número de líneas que desees.
 
-```
+```bash
 head microarray_adenoma_hk69.csv
 tail - n 2 microarray_adenoma_hk69.csv
 head - n 4 microarray_adenoma_hk69.csv
@@ -42,7 +42,7 @@ head - n 4 microarray_adenoma_hk69.csv
 
 Para abrir ficheros de texto inmensos sin problemas se usan los comandos more o less. No se puede editar el fichero, pero sí navegar por su contenido. Son programas interactivos por lo que cuando se ejecute se abrirá ocupando el terminal y haciendo desaparecer el prompt. En cualquier momento se puede salir pulsando la tecla “q”.
 
-```
+```bash
 less microarray_adenoma_hk69.csv
 more microarray_adenoma_hk69.csv
 ```
@@ -55,7 +55,7 @@ En archivos de texto a veces necesitamos localizar rápidamente las líneas que 
 
 Grep también posee cantidad de opciones que modifican su funcionamiento de diversas maneras. Caben destacar las opciones –v, que devuelve las líneas que no contienen el patrón de búsqueda; -r se usa en lugar de indicar un archivo en el que buscar y sirve para buscar en todos los archivos del directorio de trabajo; -i ignora las mayúsculas o minúsculas; -w busca solo palabras enteras; y –n que devuelve el número de la línea donde encuentra el resultado de la búsqueda.
 
-```
+```bash
 grep -w Experiment microarray_adenoma_hk69.csv
 ```
 
@@ -63,7 +63,7 @@ grep -w Experiment microarray_adenoma_hk69.csv
 
 Saber cuántas líneas tiene un archivo es indispensable para saber las dimensiones d datos con las que trabajas. wc puede hacer esto con su opción -l, además de contar caracteres (-m), palabras (-w) o bytes (-c).
 
-```
+```bash
 wc -l microarray_adenoma_hk69.csv
 ```
 
@@ -71,7 +71,7 @@ wc -l microarray_adenoma_hk69.csv
 
 Las tablas con las que se suele trabajar en bioinformática son demasiado grandes para que Excel pueda abrirlas, por lo que hay que utilizar otras herramientas para trabajar con ellas. Una de las más comunes para su exploración es cut, que nos permite escoger determinadas columnas. En combinación con grep (u otras herramientas que seleccionan filas rápidamente) podemos extraer información útil de grandes tablas de datos. El comando cut requiere siempre de las opciones -f, que es el número de columna a extraer (pueden ser rangos o listas separadas por comas) y -d para especificar el separador de campos en el archivo de texto (el tabulador es el separado por defecto y no hace falta especificarlo).
 
-```
+```bash
 grep -w Experiment microarray_adenoma_hk69.csv | cut -f 2 -d’=’
 ```
 
@@ -79,7 +79,7 @@ grep -w Experiment microarray_adenoma_hk69.csv | cut -f 2 -d’=’
 
 Con sort podemos finalmente ordenar los una tabla de texto por una de sus columnas, ya sea alfabéticamente en caso de campos de caracteres o en orden ascendente o descendente en caso de numéricos. Para ello, se vale de las opciones -k (número de columna por la que ordenar), -n (especifica que la columna contiene números y no caracteres), -r (ordenar en orden inverso) y -u (eliminar duplicados y mostrar solo elementos únicos).
 
-```
+```bash
 head microarray_adenoma_hk69.csv | sort -k1 -r
 ```
 
@@ -103,7 +103,7 @@ head microarray_adenoma_hk69.csv | sort -k1 -r
 <i>Nota: Recordad usar los comandos pwd, cd y ls para conocer vuestra localización, moveros entre directorios y listar el contenido de los directorios respectivamente. Necesitaréis ir al directorio donde se encuentra el archivo ‘microarray_adenoma_hk69.csv’ para poder trabajar con él más fácilmente (/home/alumno/curso_NGS/dia2).</i>
 
 #### Soluciones
-```
+```bash
 #1
 grep -i leukemia microarray_adenoma_hk69.csv | less
 ----------------------------------------------------
