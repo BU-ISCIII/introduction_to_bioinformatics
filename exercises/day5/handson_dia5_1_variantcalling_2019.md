@@ -141,7 +141,7 @@ ls -lh
 getmlst.py --species "Escherichia coli#1"
 
 #MLST
-srst2.py --input_pe SRR292770_1.fastq.gz SRR292770_2.fastq.gz \
+srst2 --input_pe SRR292770_1.fastq.gz SRR292770_2.fastq.gz \
 --output ecoli_mlst --log --mlst_db Escherichia_coli#1.fasta \
 --mlst_definitions ecoli.txt
 
@@ -166,7 +166,7 @@ ln -s ../SRR292770_1.fastq.gz
 ln -s ../SRR292770_2.fastq.gz
 
 #Identificacion de genes de resistencia
-srst2.py --input_pe SRR292770_1.fastq.gz SRR292770_2.fastq.gz \
+srst2 --input_pe SRR292770_1.fastq.gz SRR292770_2.fastq.gz \
 --output ecoli_resis --log --gene_db ../reference/resist/ARGannot.r1.fasta
 
 #Visualizamos los resultados

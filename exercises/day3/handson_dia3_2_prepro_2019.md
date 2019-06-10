@@ -16,7 +16,7 @@ pwd
 
 # Nos movemos a la carpeta que contiene la segunda parte de la practica
 # Recordatorio: - con .. accedemos a la carpeta inmediatamente superior a la que nos encontramos.
-                - con ../.. subiríamos dos niveles en el árbol de directorios.
+#               - con ../.. subiríamos dos niveles en el árbol de directorios.
 cd ../../02_qc_preproc
 
 # Comprobamos que estamos donde debemos estar

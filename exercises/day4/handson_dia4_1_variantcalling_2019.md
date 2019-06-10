@@ -17,19 +17,19 @@ El objetivo de esta práctica es, por tanto, que asimiléis todo lo que hemos id
 
 #### Control de Calidad y Pre-procesamiento
 
-Lo primero como la práctica del día 3 vamos a realizar el primer control de calidad. Nos situamos en la carpeta dia4/handson_dia4/AMP_EXP en una terminal, bien por línea de comandos o bien yendo por el entorno gráfico y abriendo una terminal en esa localización.
+Lo primero como la práctica del día 3 vamos a realizar el primer control de calidad. Nos situamos en la carpeta dia4/handson_dia4 en una terminal, bien por línea de comandos o bien yendo por el entorno gráfico y abriendo una terminal en esa localización.
 
 En la carpeta RAW, donde se encuentran los datos crudos fastq, id investigad esos ficheros fastq.
 
 ```bash
-# Comprobamos que estamos localizados en el directorio con los datos para esta práctica: /home/usuario/cursoNGS/dia4/handson_dia4/AMP_EXP
+# Comprobamos que estamos localizados en el directorio con los datos para esta práctica: /home/usuario/cursoNGS/dia4/handson_dia4
 pwd
 # Nos movemos a la carpeta RAW
 cd RAW
 # Visualizamos el fichero fastq
 zcat AJA18_S162_L001_R1_PE.fastq.gz | less
 # Para salir pulsamos la tecla q
-q
+
 # Volvemos a la carpeta superior
 cd ..
 ```
@@ -81,7 +81,7 @@ Revisamos la salida de fastqc en RESULTS/QC/TRIMMING_FILTERED en la carpeta que 
 
 Ahora que tenemos nuestras secuencias con filtros de calidad pasamos al análisis de mapeo.
 
-Primero, como en la práctica del día 3, vamos a indexar nuestra referencia que se encuentra en AMP_EXP/REFERENCE. Se trata de un fichero fasta con la secuencia del gen que contiene el exón secuenciado.
+Primero, como en la práctica del día 3, vamos a indexar nuestra referencia que se encuentra en REFERENCE. Se trata de un fichero fasta con la secuencia del gen que contiene el exón secuenciado.
 
 ```bash
 # Indexamos la referencia para el mapping
@@ -139,7 +139,7 @@ En cuanto a los parámetros –mvO v indican que el output esté en vcf (-O v), 
 
 El formato .vcf se puede leer, y lo estamos redirigiendo a un fichero con extensión vcf que podremos abrir con excell para su exploración en detalle.
 
-Vamos a hacer eso, abrid el explorador de archivos y navegad por las carpetas hasta /home/alumno/cursoNGS/dia4/handson_dia4/AMP_EXP/RESULTS/variants. Ahí pulsad con el botón derecho del ratón sobre el fichero var.raw.vcf  y pulsad en abrir con LibreOffice Calc. Cuando se abra saldrá una pantalla para preguntaros que carácter de separación de columnas queréis, dejáis sólo con un tick tabulador, y dais a aceptar.
+Vamos a hacer eso, abrid el explorador de archivos y navegad por las carpetas hasta /home/alumno/cursoNGS/dia4/handson_dia4/RESULTS/variants. Ahí pulsad con el botón derecho del ratón sobre el fichero var.raw.vcf  y pulsad en abrir con LibreOffice Calc. Cuando se abra saldrá una pantalla para preguntaros que carácter de separación de columnas queréis, dejáis sólo con un tick tabulador, y dais a aceptar.
 
 Una vez abierto, explorad el formato, como se dio en teoría la cabecera empieza por “#” y ahí se explica de manera resumida qué significan cada uno de los campos de información del fichero. Se dividen en dos tipos de campos INFO y FORMAT que aparecerán en sendas columnas del fichero.
 
@@ -149,11 +149,15 @@ Después de la cabecera aparece una línea por variante.
 
 ** Fijémonos en la columna de INFO en el campo que nos da información sobre la profundidad (DP) ¿Cuál es la profundidad de lectura en esta posición donde se encuentra la variante? **
 
-Vamos a abrir IGV para ir visualizando los campos del vcf a la vez que comprobamos la información directamente sobre el bam. Abrimos IGV (botón de inicio de Ubuntu arriba a la izquierda, buscar IGV y click).
+Vamos a abrir IGV para ir visualizando los campos del vcf a la vez que comprobamos la información directamente sobre el bam. Abrimos IGV:
 
-En el desplegable del genoma de referencia hay que seleccionar la referencia del gen RB1. Si en la práctica del día 3 lo cargasteis debería aparecer ya en el desplegable. Si no lo llegasteis a hacer hay que ir a Genomes > Load Genome from file… e ir a la carpeta /home/alumno/cursoNGS/dia4/handson_dia4/AMP_EXP/REFERENCE y seleccionar el fichero 20140318_L11910.1_RB.fasta.
+```bash
+/opt/igv/IGV-2.3.97/igv
+```
 
-Una vez tenemos el genoma de referencia cargamos el fichero bam, recordad en File > Load From File… y seleccionamos en /home/alumno/cursoNGS/dia4/handson_dia4/AMP_EXP/RESULTS/Alignment/ el fichero AJA18_S162_L001_sorted.bam.
+En el desplegable del genoma de referencia hay que seleccionar la referencia del gen RB1. Si en la práctica del día 3 lo cargasteis debería aparecer ya en el desplegable. Si no lo llegasteis a hacer hay que ir a Genomes > Load Genome from file... e ir a la carpeta /home/alumno/cursoNGS/dia4/handson_dia4/REFERENCE y seleccionar el fichero 20140318_L11910.1_RB.fasta.
+
+Una vez tenemos el genoma de referencia cargamos el fichero bam, recordad en File > Load From File… y seleccionamos en /home/alumno/cursoNGS/dia4/handson_dia4/RESULTS/Alignment/ el fichero AJA18_S162_L001_sorted.bam.
 
 Bien, ya tenemos cargado el bam en IGV, volvemos al excell donde tenemos abierto el vcf y copiamos la posición de la variante en la columna POS. Vamos a IGV y en el recuadro de las posiciones escribimos: L11910.1: 162237
 

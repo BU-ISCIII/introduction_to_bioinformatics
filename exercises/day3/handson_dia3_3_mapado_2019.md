@@ -178,12 +178,12 @@ Para eliminar duplicados se utiliza el programa picard que consta de una suite d
 java -jar /opt/picard-tools/picard-tools-1.140/picard.jar MarkDuplicates REMOVE_DUPLICATES=TRUE \
 ASSUME_SORTED=TRUE VALIDATION_STRINGENCY=LENIENT \
 INPUT=CFSAN00283-01_S1_L001_sorted.bam \
-OUTPUT=CFSAN00283-01_S1_L001_woduplicates.bam \
+OUTPUT=CFSAN00283-01_S1_L001_noduplicates.bam \
 METRICS_FILE=picard.metrics_file \
 TMP_DIR=TMP
 
 # Obtenemos estadísticas del fichero sin duplicados
-bam stats --in CFSAN00283-01_S1_L001_woduplicates.bam --basic --baseSum 2> CFSAN00283-01_S1_L001_woduplicates.stats
+bam stats --in CFSAN00283-01_S1_L001_noduplicates.bam --basic --baseSum 2> CFSAN00283-01_S1_L001_noduplicates.stats
 ```
 
 ** ¿Cuántos duplicados había en el fichero bam? **
@@ -204,7 +204,11 @@ Realizaremos:
 * Cómo cargar un genoma ya preindexado en la aplicación.
 * Visualización de datos de exoma, amplicones y RNASeq, investigando algunas de las funcionalidades de IGV.
 
-Lo primero abrimos IGV, pulsamos el botón de inicio en Ubuntu arriba a la izquierda. En el buscador ponemos IGV y ya debería aparecer el icono del programa, click y se abrirá (puede tardar un poquito, no os preocupéis).
+Lo primero abrimos IGV. Para ello, si no tenemos icono desde el escritorio ni aparece como programa detectado, tenemos que saber dónde se ha instalado IGV y ejecutarlo desde la terminal. Los programas con interfaz gráfica se pueden lanzar y usar desde línea de comando, ofreciendo a veces mayores funcionalidades que quedan ocultas en el modo gráfico:
+
+```bash
+/opt/igv/IGV-2.3.97/igv
+```
 
 ** Visión general de la aplicación **
 
@@ -233,7 +237,8 @@ Si recordáis cuando generamos el primer bam lo ordenamos y generamos su índice
 
 ```bash
 # Muevete hasta la carpeta donde está el archivo bam_file o incluye la path antes de su nombre
-samtools index bam_file
+cd handson_dia3/RESULTS/Alignment/
+samtools index CFSAN00283-01_S1_L001_noduplicates.bam
 ```
 
 Volvemos a IGV y volvemos a cargar el fichero bam noduplicates. Ahora debería cargarse sin problemas aunque no visualicemos nada en el centro de la pantalla es porque necesitamos hacer zoom.

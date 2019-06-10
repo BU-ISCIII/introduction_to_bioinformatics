@@ -185,3 +185,5 @@ En nuestro caso vamos a aprender cómo pasarlo a fastq, formato que aceptan la m
 Se generarán dos ficheros, uno con extensión fastq que serán las secuencias en este formato, y otro en formato xml que será la información extraída del sff.
 
 NOTA: Al ejecutar el script se obtendrá un warning de que muchas secuencias en el fichero comienzan con los mismos nucleótidos. Se debe a que son datos de amplicones y por ello se secuencia muchas veces el mismo fragmento de ADN que siempre empieza con los mismos nucleótidos.
+
+NOTA: El formato sff está anticuado y hoy en día todos los archivos estarán en formato fastq. Sin embargo, si os encontráis con otro formato, debéis de saber que podéis convertir entre tipos de formatos usando los programas creados específicamente para ello.
