@@ -9,6 +9,8 @@ BU-ISCIII
 #### Descripción
 Para esta parte de la práctica vamos a utilizar los datos que se encuentran en la carpeta 02_qc_preproc.
 
+Cambiamos al directorio RAW y visualizamos uno de los ficheros. Se trata de datos provenientes de una secuenciación por MiSeq de 2x251, es decir, datos paired-end de 251 nt de longitud.
+
 ```bash
 # Comprobamos donde estamos situados.
 pwd
@@ -35,11 +37,12 @@ less CFSAN002083-01_S1_L001_R1_001_fixed.fastq
 # Recordatorio: para salir del comando less preseinando q
 ```
 
-Cambiamos al directorio RAW y visualizamos uno de los ficheros. Se trata de datos provenientes de una secuenciación por MiSeq de 2x251, es decir, datos paired-end de 251 nt de longitud.
-
-Lo primero que vamos a hacer es utilizar el programa FastQC, que nos permite hacer un control de calidad de los ficheros tal y como se ha explicado en teoría.
+Volvemos a la carpeta del análisis. Lo primero que vamos a hacer es utilizar el programa FastQC, que nos permite hacer un control de calidad de los ficheros tal y como se ha explicado en teoría.
 
 ```bash
+# Volvemos al directorio de análisis
+cd ..
+
 # Comprobamos donde estamos situados
 pwd
 
@@ -49,9 +52,9 @@ fastqc -t 4 RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq RAW/CFSAN002083-01_S1_
 
 Aquí estamos ejecutando el programa y diciéndole los ficheros que tiene que analizar y con el parámetro “-o” el directorio donde queremos que se guarden los resultados. El parámetro “-t” indica cuántos núcleos del procesador puede utilizar.
 
-En el explorador de ventanas vamos a visualizar los resultados. Recordad que se encuentran en donde habéis dicho al programa que los guarde es decir /home/alumno/cursoNGS/dia3/II_qc_preproc/RESULTS/QC/RAW.
+En el explorador de ventanas vamos a visualizar los resultados. Recordad que se encuentran en donde habéis dicho al programa que los guarde es decir /home/alumno/cursoNGS/dia3/02_qc_preproc/RESULTS/QC/RAW.
 
-Ahí hay dos carpetas que contienen un fichero fastqc_report.html, uno por cada fichero fastq analizado. Hacemos doble click sobre uno de los ficheros html y se abrirá el explorador Firefox.
+Ahí hay dos ficheros fastqc_report.html, uno por cada fichero fastq analizado. Hacemos doble click sobre uno de los ficheros html y se abrirá el explorador Firefox.
 
 Estaremos visualizando ahora el resultado del fastQC con todas las gráficas que se han visto en teoría. Estas estadísticas nos permitirán tomar una decisión en cuanto al preprocesamiento de los datos, si tienen buena calidad, si necesitan filtrado, si necesitan trimming en los extremos, ...
 
