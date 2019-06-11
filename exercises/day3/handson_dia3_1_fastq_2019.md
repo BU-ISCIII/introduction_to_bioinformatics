@@ -20,7 +20,7 @@ Objetivos:
 Los datos para esta parte se encuentran en la carpeta con nombre 01_fastq_format.
 
 #### Formato fastq obtenido de HiSeq y MiSeq
-Abrimos una terminal en la carpeta donde se encuentra este manual, y cambiamos el directorio al que contiene los datos de esta primera parte de la práctica: 01_fastq_format
+Abrimos una terminal en la carpeta donde se encuentran los datos de las prácticas, y cambiamos el directorio al que contiene los datos de esta primera parte de la práctica: 01_fastq_format
 
 Listamos el contenido de este directorio y vamos a ver una serie de carpetas con distintos ejemplos de ficheros crudos obtenidos de experimentos de secuenciación masiva. Concretamente encontramos tres directorios con datos de HiSeq, MiSeq y 454.
 
@@ -29,7 +29,7 @@ Listamos el contenido de este directorio y vamos a ver una serie de carpetas con
 pwd
 
 # Nos movemos a la carpeta de la práctica
-cd /home/alumno/curso_NGS/dia3/handson_dia3
+cd /home/alumno/cursoNGS/dia3/handson_dia3
 cd 01_fastq_format
 
 # Listamos su contenido
@@ -98,17 +98,17 @@ zcat prueba_miseq_R1.fastq.gz | more
 
 Vemos que ahora el nombre de la máquina es diferente y que la cabecera también varía ligeramente, aunque la información que contiene es muy similar.
 
-* InstrumentID - unique identifier of the sequencer (M00329)
-* RunNumber - Run number on instrument (2).
-* Flowcell_ID - ID of flowcell (000000000-A0HGR).
+* InstrumentID - unique identifier of the sequencer (M02255)
+* RunNumber - Run number on instrument (10).
+* Flowcell_ID - ID of flowcell (000000000-A7B5V).
 * LaneNumber - positive integer, currently 1-8 (1)
-* TileNumber - positive integer (1)
-* X - x coordinate of the spot. Integer which can be negative (16318)
-* Y - y coordinate of the spot. Integer which can be negative (1464)
+* TileNumber - positive integer (1101)
+* X - x coordinate of the spot. Integer which can be negative (10907)
+* Y - y coordinate of the spot. Integer which can be negative (1818)
 * ReadNumber - 1 for single reads; 1 or 2 for paired ends (1)
 * whether it is filtered - NB: Y if the read is filtered out, not in the delivered fastq file, N otherwise (N)
 * Controlnumber - 0 when none of the control bits are on, otherwise it is an even number (0)
-* SampleNumber: Order in which sample appears in the run.
+* SampleNumber: Order in which sample appears in the run. (152)
 
 #### Contando el número de reads en un fastq
 
