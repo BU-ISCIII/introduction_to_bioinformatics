@@ -101,9 +101,9 @@ Parámetros:
 -s umbral de calidad phred
 ```
 
-Abrimos en el explorador de ventanas como en el caso anterior en RESULTS/QC/FILTERED/CFSAN002083-01_S1_L001_R1_001_fixed.fastq_filtered_fastqc
+Abrimos en el explorador de ventanas como en el caso anterior en RESULTS/QC/FILTERED
 
-Doble click sobre fastqc_report.html y observamos los resultados.
+Doble click sobre CFSAN002083-01_S1_L001_R1_001_fixed.fastq_filtered_fastqc.html y observamos los resultados.
 * ¿Hemos mejorado notablemente la calidad?
 * ¿Cuántas lecturas hemos perdido?
 
@@ -153,9 +153,9 @@ PE: indica que la librería es paired-end
 SLIDINGWINDOW: número de bases:calidad de la base → Ej (4:20)
 ```
 
-Abrimos en el explorador de ventanas como en el caso anterior en  RESULTS/QC/TRIMMING_FILTERED/CFSAN002083-01_S1_L001_R1_001_fixed.fastq_trimmed_filtered
+Abrimos en el explorador de ventanas como en el caso anterior en  RESULTS/QC/TRIMMING_FILTERED
 
-Doble click sobre fastqc_report.html y observamos los resultados.
+Doble click sobre CFSAN002083-01_S1_L001_R1_001_fixed.fastq_trimmed_filtered_fastqc.html y observamos los resultados.
 * ¿Hemos mejorado notablemente la calidad?
 * ¿Cuántas lecturas hemos perdido con esta aproximación?
 

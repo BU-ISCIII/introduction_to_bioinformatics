@@ -40,7 +40,7 @@ cd ..
 
 ```bash
 # Realizamos el análisis de calidad
-fastqc -t 4 RAW/AJA18_S162_L001_R1_PE.fastq.gz RAW/AJA18_S162_L001_R2_PE.fastq.gz -o RESULTS/QC
+fastqc -t 4 RAW/AJA18_S162_L001_R1_PE.fastq.gz RAW/AJA18_S162_L001_R2_PE.fastq.gz -o RESULTS/QC/RAW
 ```
 
 Cuando haya terminado vamos a ver los resultados, id a RESULTS/QC y dentro de la carpeta que se ha generado doble click en fastqc_report.html. Lo que vamos a ver es que fastQC nos avisa que en casi todos los apartados hay un error, hay que tener en cuenta que este programa está pensado para secuenciación de exoma o genoma completo, de manera que se espera una distribución homogénea de los reads en un espacio genómico más o menos grande. En este caso estamos analizando un único amplicón de 250 pb, de forma que la distribución de A,G,T,C por posición de la read va a ser siempre la misma y no homogénea ya que todas las reads caen en las mismas 250 pb. La misma explicación sirve para las secuencias sobrerrepresentadas o los Kmer (se secuencia un único amplicón) o incluso los porcentajes en GC.
@@ -51,7 +51,7 @@ En este caso la gráfica que nos interesa es la primera donde nos dice la calida
 
 ** ¿De cuántas reads partimos? **
 
-** ¿Si el amplicón es de 250 pb y los reads son de 250 pb? ¿Sabríais estimar la profundidad que vamos a tener por posición? ** (partimos de a número de reads (número de forward + número de reverse) multiplicado por tamaño en nucleótidos del read y dividido por el tamaño de la región secuenciada)
+** ¿Si el amplicón es de 250 pb y los reads son de 250 pb? ¿Sabríais estimar la profundidad que vamos a tener por posición? ** (partimos del número de reads (número de forward + número de reverse) multiplicado por tamaño en nucleótidos del read y dividido por el tamaño de la región secuenciada)
 
 Vamos a realizar por tanto paso de trimming, paso de filtrado y otro paso de control de calidad para ver si todo ha ido correctamente y ver cuántas reads hemos perdido. Observad que en este caso vamos a poner de umbral phred 30 en vez de 20, vamos a ser más estrictos.
 
@@ -59,19 +59,26 @@ Vamos a realizar por tanto paso de trimming, paso de filtrado y otro paso de con
 # Realizamos el trimming de las lecturas
 trimmomatic PE \
 RAW/AJA18_S162_L001_R1_PE.fastq.gz RAW/AJA18_S162_L001_R2_PE.fastq.gz \
-RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R1_PE.fastq_trimmed \ RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R1_PE.fastq_se_trimmed \
-RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R2_PE.fastq_trimmed \ RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R2_PE.fastq_se_trimmed \
+RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R1_PE.fastq_trimmed \
+RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R1_PE.fastq_se_trimmed \
+RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R2_PE.fastq_trimmed \
+RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R2_PE.fastq_se_trimmed \
 SLIDINGWINDOW:4:30
 
 # Realizamos el filtrado de calidad
-IlluQC_PRLL.pl -c 4 –pe \ RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R1_PE.fastq_trimmed \ RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R2_PE.fastq_trimmed N A \
+IlluQC_PRLL.pl -c 4 -pe \
+RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R1_PE.fastq_trimmed \
+RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R2_PE.fastq_trimmed N A \
 -l 70 -s 30 -o RESULTS/QC/TRIMMING_FILTERED/
 
 # Y analizamos su calidad después del filtrado
-fastqc -t 4 \ RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R1_PE.fastq_trimmed_filtered \ RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R2_PE.fastq_trimmed_filtered \ -o RESULTS/QC/TRIMMING_FILTERED/
+fastqc -t 4 \
+RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R1_PE.fastq_trimmed_filtered \
+RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R2_PE.fastq_trimmed_filtered \
+-o RESULTS/QC/TRIMMING_FILTERED/
 ```
 
-Revisamos la salida de fastqc en RESULTS/QC/TRIMMING_FILTERED en la carpeta que se genera con el nombre del fichero R1 por ejemplo.
+Revisamos la salida de fastqc en RESULTS/QC/TRIMMING_FILTERED con el fichero R1 por ejemplo.
 
 ** ¿Cuántas reads hemos perdido? **
 
@@ -107,6 +114,14 @@ samtools index RESULTS/Alignment/AJA18_S162_L001_sorted.bam
 
 A continuación, vamos a sacar alguna estadística de nuestro mapeo a ver cómo ha ido, vamos a utilizar samtools y bamUtil como anteriormente.
 
+```bash
+# Utilizamos flagstat para ver estadísticas del fichero bam
+samtools flagstat AJA18_S162_L001_sorted.bam
+
+# Utilizamos bamUtil para ver estadísticas del fichero bam
+bam stats --in AJA18_S162_L001_sorted.bam --basic --baseSum 2> AJA18_S162_L001_sorted.stats
+```
+
 ** ¿Cuál ha sido el porcentaje mapado? **
 
 ** ¿Cuántas reads tenemos en total? **
@@ -129,7 +144,8 @@ Para realizar la llamada a variantes vamos a utilizar una de las funcionalidades
 
 ```bash
 # Llamada a variantes con samtools
-samtools mpileup -d 200000 -ugf REFERENCE/20140318_L11910.1_RB.fasta \ RESULTS/Alignment/AJA18_S162_L001_sorted.bam | bcftools call -mv - \
+samtools mpileup -d 200000 -ugf REFERENCE/20140318_L11910.1_RB.fasta \
+RESULTS/Alignment/AJA18_S162_L001_sorted.bam | bcftools call -mv - \
 > RESULTS/variants/var.raw.vcf
 ```
 
@@ -152,14 +168,14 @@ Después de la cabecera aparece una línea por variante.
 Vamos a abrir IGV para ir visualizando los campos del vcf a la vez que comprobamos la información directamente sobre el bam. Abrimos IGV:
 
 ```bash
-/opt/igv/IGV-2.3.97/igv
+igv
 ```
 
 En el desplegable del genoma de referencia hay que seleccionar la referencia del gen RB1. Si en la práctica del día 3 lo cargasteis debería aparecer ya en el desplegable. Si no lo llegasteis a hacer hay que ir a Genomes > Load Genome from file... e ir a la carpeta /home/alumno/cursoNGS/dia4/handson_dia4/REFERENCE y seleccionar el fichero 20140318_L11910.1_RB.fasta.
 
 Una vez tenemos el genoma de referencia cargamos el fichero bam, recordad en File > Load From File… y seleccionamos en /home/alumno/cursoNGS/dia4/handson_dia4/RESULTS/Alignment/ el fichero AJA18_S162_L001_sorted.bam.
 
-Bien, ya tenemos cargado el bam en IGV, volvemos al excell donde tenemos abierto el vcf y copiamos la posición de la variante en la columna POS. Vamos a IGV y en el recuadro de las posiciones escribimos: L11910.1: 162237
+Bien, ya tenemos cargado el bam en IGV, volvemos al excell donde tenemos abierto el vcf y copiamos la posición de la variante en la columna POS. Vamos a IGV y en el recuadro de las posiciones escribimos: L11910.1:162237
 
 ** ¿Cuántas lecturas hay en forward y en reverse para el alelo referencia? **
 
@@ -197,9 +213,11 @@ Para que practiquéis la anotación y cómo nosotros sabemos la coordenada de la
 
 Vamos a abrir el fichero var.raw.vcf (RESULTS/variants) con el editor de textos y vamos a sustituir el cromosoma L11910.1 por chr13 y la posición por 49039374. Guardamos, cerramos el editor y volvemos a la terminal.
 
+NOTA: Si estás ejecutando este curso desde una máquina distinta a la máquina virtual del curso, o estás ejecutando desde el container suministrado, necesitarás [descargar la cache](https://www.ensembl.org/info/docs/tools/vep/script/vep_cache.html) de tu versión de VEP en ~/.vep para poder ejecutar la anotación.
+
 ```bash
 # Anotamos las variantes que hemos obtenido
-vep -i RESULTS/variants/var.raw.vcf --format vcf --output_file RESULTS/variants/var.raw.vcf_effect.txt --everything  -cache  -dir ~/.vep --offline –-fasta REFERENCE/20140318_L11910_RB.fasta --force –use_given_ref
+vep -i RESULTS/variants/var.raw.vcf --format vcf --output_file RESULTS/variants/var.raw.vcf_effect.txt --everything  -cache  -dir ~/.vep --offline --fasta REFERENCE/20140318_L11910_RB.fasta --force --use_given_ref
 ```
 
 A este programa le pasamos:

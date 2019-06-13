@@ -13,13 +13,18 @@ Se utilizarán los datos de secuenciación de Escherichia coli O104:H4, responsa
 
 #### Ejercicio 1
 
+```bash
+# Nos movemos a la carpeta de los datos
+cd cursoNGS/dia5/handson_dia5_bact
+```
+
 El objetivo de este ejercicio es poner en práctica los conocimientos adquiridos en este curso sobre el preprocesamiento de datos NGS para comprobar la calidad de las lecturas sobre las que vamos a trabajar. Para ello vamos a utilizar la herramienta FastQC. Puedes obtener más información sobre la aplicación en http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 
 Desde la línea de comandos ejecutamos:
 
 ```bash
 # Realizamos el análisis de calidad
-fastqc -t 4 data/ SRR292770_*
+fastqc -t 4 data/SRR292770_*
 ```
 
 Vemos todos los reports abriendo los archivos .html (SRR292770_1.fastqc.html y SRR292770_2.fastqc.html)
@@ -32,7 +37,7 @@ El objetivo de este ejercicio es realizar un ensamblaje de las lecturas mediante
 
 ```bash
 #Ejecutamos spades
-spades.py -k 21 –t 2 --pe1-1 SRR292770_1.fastq.gz --pe1-2 SRR292770_2.fastq.gz –o spades_output
+spades.py -k 21 -t 2 --pe1-1 data/SRR292770_1.fastq.gz --pe1-2 data/SRR292770_2.fastq.gz -o spades_output
 
 #Copiamos el fichero de contigs a nuestro directorio de trabajo
 cp spades_output/contigs.fasta SRR292770_unordered.fasta
@@ -102,8 +107,8 @@ El objetivo de este ejercicio es analizar la calidad de un ensamblado. Para ello
 
 ```bash
 #Ejecutamos QUAST
-quast.py SRR292770_unordered.fasta -o quast \
--R reference/NC_011748.fna -G reference/NC_011748.gff \
+quast.py data/SRR292770_unordered.fasta -o quast \
+-R data/help/NC_011748.fna -G data/help/NC_011748.gff \
 -m 200 -t 2
 ```
 
@@ -131,8 +136,8 @@ mkdir ecoli_mlst
 cd ecoli_mlst
 
 #Creamos un enlace (shortcut) a las lectuas
-ln -s ../SRR292770_1.fastq
-ln -s ../SRR292770_2.fastq
+ln -s ../data/SRR292770_1.fastq
+ln -s ../data/SRR292770_2.fastq
 
 #Listamos el directorio (vemos los shortcuts)
 ls -lh
@@ -142,8 +147,8 @@ getmlst.py --species "Escherichia coli#1"
 
 #MLST
 srst2 --input_pe SRR292770_1.fastq.gz SRR292770_2.fastq.gz \
---output ecoli_mlst --log --mlst_db Escherichia_coli#1.fasta \
---mlst_definitions ecoli.txt
+--output ecoli_mlst --log --mlst_db ../data/help/MLST/Escherichia_coli#1.fasta \
+--mlst_definitions ../data/help/MLST/ecoli.txt
 
 #Visualizamos los resultados
 less ecoli_mlst__mlst__Escherichia_coli#1__results.txt
@@ -162,12 +167,12 @@ mkdir ecoli_resist
 cd ecoli_resist
 
 #Creamos un shortcut a las lectuas
-ln -s ../SRR292770_1.fastq.gz
-ln -s ../SRR292770_2.fastq.gz
+ln -s ../data/SRR292770_1.fastq.gz
+ln -s ../data/SRR292770_2.fastq.gz
 
 #Identificacion de genes de resistencia
 srst2 --input_pe SRR292770_1.fastq.gz SRR292770_2.fastq.gz \
---output ecoli_resis --log --gene_db ../reference/resist/ARGannot.r1.fasta
+--output ecoli_resis --log --gene_db ../data/help/quast/ARGannot.r1.fasta
 
 #Visualizamos los resultados
 less ecoli_resis__genes__ARGannot.r1__results.txt

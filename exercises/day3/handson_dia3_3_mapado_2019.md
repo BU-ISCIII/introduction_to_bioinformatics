@@ -7,7 +7,7 @@ BU-ISCIII
 
 
 #### Descripción
-Nos vamos a mover a un nuevo directorio que contiene los datos que vamos a utilizar en esta parte de la práctica. Hacemos como siempre, accedemos con la interfaz gráfica a la carpeta 03_mapping_qc. Y comprobamos como sigue la estructura de directorios, vemos que hay una carpeta RAW, una carpeta de RESULTS donde vais a ir guardando vuestros resultados, una carpeta RESULTS_CORRECTED donde están los resultados ya pre-computados y, por último, una carpeta REFERENCES con el genoma de referencia una cepa de E. coli que es la que vamos a utilizar para este ejercicio.
+Nos vamos a mover a un nuevo directorio que contiene los datos que vamos a utilizar en esta parte de la práctica. Hacemos como siempre, accedemos con la interfaz gráfica a la carpeta 03_mapping_qc. Y comprobamos como sigue la estructura de directorios, vemos que hay una carpeta RAW, una carpeta de RESULTS donde vais a ir guardando vuestros resultados, una carpeta RESULTS_CORRECTED donde están los resultados ya pre-computados y, por último, una carpeta REFERENCES con el genoma de referencia una cepa de E. coli que es la que vamos a utilizar para este ejercicio. También veréis una carpte TMP, cuya finalidad es almacenar archivos temporales durante la ejecución de los programas.
 
 ```bash
 # Comprobamos donde estamos situados
@@ -39,7 +39,7 @@ Para saber qué modo de bwa tenemos que utilizar tenemos que saber de qué longi
 
 ** ¿Qué módulo de bwa tenemos que usar bwa aln/sampe o bwa mem? **
 
-Lo primero que hay que hacer cuando vamos a realizar un proceso de mapeo típico cd experimentos de resecuenciación es ver qué referencia vamos a utilizar. En el caso de microorganismos es un proceso importante ya que hay referencias disponibles de muchas cepas y debemos seleccionar el genoma de referencia de la misma cepa si es posible o de la más cercana a la que hemos secuenciado. La eficiencia del mapeo es muy dependiente de seleccionar la referencia de manera adecuada.
+Lo primero que hay que hacer cuando vamos a realizar un proceso de mapeo típico de experimentos de resecuenciación es ver qué referencia vamos a utilizar. En el caso de microorganismos es un proceso importante ya que hay referencias disponibles de muchas cepas y debemos seleccionar el genoma de referencia de la misma cepa si es posible o de la más cercana a la que hemos secuenciado. La eficiencia del mapeo es muy dependiente de seleccionar la referencia de manera adecuada.
 
 El primer paso que hay que realizar, por tanto, es descargar nuestro genoma de referencia, que se trata de un fichero en formato fasta con la secuencia completa del genoma del organismo. Nosotros ya lo tenemos descargado en REFERENCES.
 
@@ -47,7 +47,7 @@ El segundo paso es indexarlo, es decir generar un formato modo índice que el pr
 
 ```bash
 # Nos movemos a la carpeta REFERENCE
-cd REFERENCE
+cd ../REFERENCE
 
 # Indexamos la referencia
 bwa index EC_K12_ST10.fasta
@@ -91,12 +91,12 @@ Con este comando visualizamos el fichero bam como si fuera un sam.
 # Visualizamos el fichero bam
 samtools view RESULTS/Alignment/CFSAN00283-01_S1_L001.bam | more
 
-#Recordatorio: para salir del comando more se utiliza CTRL+C
+#Recordatorio: para salir del comando more se utiliza q o CTRL+C
 ```
 
 A continuación prepararemos nuestro fichero BAM para poder trabajar con él en los siguientes pasos del análisis, incluido el control de calidad.
 
-Para que estos programas que realizan cálculos sobre la información contenida en el bam puedan acelerar el tiempo con el que realizan los análisis el fichero bam tiene que estar ordenado por cromosoma y por posición, es decir los reads al principio del fichero son los que se corresponde al del cromosoma 1, lo que va a permitir que si un programa tiene que realizar una búsqueda en un fichero pueda ir por orden y lo encuentre más rápido. Además muchos programas necesitan un índice del fichero bam que suele tener extensión .bai, este fichero funciona como el índice de un libro, y permite a los programas que si por ejemplo lo que van a buscar está en el cromosoma 12, pues que sepan en qué parte del fichero tienen que empezar a leer para encontrarlo más rápidamente, además de saber cuántos cromosomas, etc. tiene el fichero de antemano, sin tener que leer el bam entero.
+Para que estos programas que realizan cálculos sobre la información contenida en el bam puedan acelerar el tiempo con el que realizan los análisis, el fichero bam tiene que estar ordenado por cromosoma y por posición, es decir los reads al principio del fichero son los que se corresponden al del cromosoma 1. Esto va a permitir que si un programa tiene que realizar una búsqueda en un fichero pueda ir por orden y lo encuentre más rápido. Además muchos programas necesitan un índice del fichero bam que suele tener extensión .bai, este fichero funciona como el índice de un libro, y permite a los programas que si por ejemplo lo que van a buscar está en el cromosoma 12, pues que sepan en qué parte del fichero tienen que empezar a leer para encontrarlo más rápidamente, además de saber cuántos cromosomas, etc. tiene el fichero de antemano, sin tener que leer el bam entero.
 
 Para ordenar, generar un índice del fichero bam:
 
@@ -161,7 +161,7 @@ bam stats --in CFSAN00283-01_S1_L001_sorted.bam --basic --baseSum 2> CFSAN00283-
 # Recordatorio: con "2>" redirigimos la salida de error que es por donde saca el resultado este programa a un fichero.
 ```
 
-Se genera un archivo en RESULTS/Alignment que se puede abrir con el excell para visualizarlo más cómodamente. Si pregunta le diremos que nos separe las columnas por tabulador.
+Se genera un archivo en RESULTS/Alignment que se puede abrir con el excel para visualizarlo más cómodamente. Si pregunta le diremos que nos separe las columnas por tabulador. Solo redordaros que excel es parte de la suite Microsoft Office que no está disponible nativamente en sistemas linux, por lo que en las máquinas virtuales normalmente utilizaréis una de sus alternativas opensource como Libre Office calc.
 
 En este fichero encontramos mucha de la información que ya habíamos obtenido con samtools, pero además también nos calculan el número de bases que tenemos, y uno de los parámetros que más utilizamos para saber si podemos realizar nuestro siguiente análisis con fiabilidad: la cobertura. (En el fichero la columna que pone Depth)
 
@@ -207,7 +207,7 @@ Realizaremos:
 Lo primero abrimos IGV. Para ello, si no tenemos icono desde el escritorio ni aparece como programa detectado, tenemos que saber dónde se ha instalado IGV y ejecutarlo desde la terminal. Los programas con interfaz gráfica se pueden lanzar y usar desde línea de comando, ofreciendo a veces mayores funcionalidades que quedan ocultas en el modo gráfico:
 
 ```bash
-/opt/igv/IGV-2.3.97/igv
+igv
 ```
 
 ** Visión general de la aplicación **
@@ -237,7 +237,7 @@ Si recordáis cuando generamos el primer bam lo ordenamos y generamos su índice
 
 ```bash
 # Muevete hasta la carpeta donde está el archivo bam_file o incluye la path antes de su nombre
-cd handson_dia3/RESULTS/Alignment/
+cd handson_dia3/03_mapping_qc/RESULTS/Alignment/
 samtools index CFSAN00283-01_S1_L001_noduplicates.bam
 ```
 
@@ -261,7 +261,7 @@ A tener en cuenta:
 
 ** Visualización de bam de exoma **
 
-Los datos de prueba para esta parte de la práctica se encuentran en /home/alumno/cursoNGS/TEST.
+Los datos de prueba para esta parte de la práctica se encuentran en /home/alumno/cursoNGS/dia3/04_genome_visualization.
 
 Seleccionamos el genoma de referencia human(b37) y cargamos el bam que se llama exome_test.bam.
 
