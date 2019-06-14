@@ -25,6 +25,7 @@ The material includes slides with theory concepts and a bunch of practical exerc
 - **Exercise 2:** [Manejo de permisos.](exercises/day2/handson_dia2_linux2_2019.md) -- [Download pdf](exercises/day2/handson_dia2_linux2_2019.pdf)
 
 ### Day 3
+- **Talk X:** [Control de calidad y preprocesado](slides/day3/curso_ngs_dia3_2019_preprocesamiento.pdf)
 - **Talk X:** [X](slides/day3/X.pdf)
 - **Exercise 1:** [Formato fastq](exercises/day3/handson_dia3_1_fastq_2019.md) -- [Download pdf](exercises/day3/handson_dia3_1_fastq_2019.pdf)
 - **Exercise 2:** [Control de Calidad y preprocesamiento de ficheros fastq](exercises/day3/handson_dia3_2_prepro_2019.md) -- [Download pdf](exercises/day3/handson_dia3_2_prepro_2019.pdf)
