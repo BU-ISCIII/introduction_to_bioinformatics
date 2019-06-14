@@ -37,7 +37,7 @@ Para saber qué modo de bwa tenemos que utilizar tenemos que saber de qué longi
 
 ¿Recordáis de qué longitud eran las reads del experimento analizado en 02_qc_preproc? Si no os acordáis podéis revisar los datos de QC/TRIMMED_FILTERED, y ver en el report en html la longitud de los reads.
 
-** ¿Qué módulo de bwa tenemos que usar bwa aln/sampe o bwa mem? **
+**¿Qué módulo de bwa tenemos que usar bwa aln/sampe o bwa mem? **
 
 Lo primero que hay que hacer cuando vamos a realizar un proceso de mapeo típico de experimentos de resecuenciación es ver qué referencia vamos a utilizar. En el caso de microorganismos es un proceso importante ya que hay referencias disponibles de muchas cepas y debemos seleccionar el genoma de referencia de la misma cepa si es posible o de la más cercana a la que hemos secuenciado. La eficiencia del mapeo es muy dependiente de seleccionar la referencia de manera adecuada.
 
@@ -68,7 +68,7 @@ RAW/CFSAN002083-01_S1_L001_R2_001.fastq \
 > RESULTS/Alignment/CFSAN00283-01_S1_L001.sam
 ```
 
-** ¿Cuánto ocupa el fichero que acabamos de generar? (du –sh RESULTS/Alignment/CFSAN00283-01_S1_L001.sam) **
+**¿Cuánto ocupa el fichero que acabamos de generar? (du –sh RESULTS/Alignment/CFSAN00283-01_S1_L001.sam)**
 
 Como se ha explicado en teoría el formato sam permite almacenar información de alineamiento, pero suele ocupar mucho espacio por lo que se suele utilizar su formato binario. Para realizar esta conversión:
 
@@ -77,9 +77,9 @@ Como se ha explicado en teoría el formato sam permite almacenar información de
 samtools view -Sb RESULTS/Alignment/CFSAN00283-01_S1_L001.sam > RESULTS/Alignment/CFSAN00283-01_S1_L001.bam
 ```
 
-** ¿Cuánto ocupa el fichero BAM que acabamos de generar? (du –sh RESULTS/Alignment/CFSAN00283-01_S1_L001.bam) **
+**¿Cuánto ocupa el fichero BAM que acabamos de generar? (du –sh RESULTS/Alignment/CFSAN00283-01_S1_L001.bam)**
 
-** ¿Cuánto hemos disminuido el tamaño? **
+**¿Cuánto hemos disminuido el tamaño?**
 
 El problema, ahora no podemos visualizar el fichero con un simple more, podéis probar si queréis y veréis como lo que se visualiza son un montón de símbolos sin ningún significado para un humano.
 
@@ -148,7 +148,7 @@ Este comando nos da un resumen de lo que contiene el bam.
 
 Sin liarnos mucho, lo que nos dice cómo de bien ha ido el mapeo es el número de reads que han mapeado.
 
-** ¿Cuál es el porcentaje de reads mapados? **
+**¿Cuál es el porcentaje de reads mapados?**
 
 Para el cálculo de la cobertura y otras estadísticas de cómo se distribuyen las lecturas por el genoma hay que utilizar otra serie de programas que realizan estos cálculos.
 
@@ -165,7 +165,7 @@ Se genera un archivo en RESULTS/Alignment que se puede abrir con el excel para v
 
 En este fichero encontramos mucha de la información que ya habíamos obtenido con samtools, pero además también nos calculan el número de bases que tenemos, y uno de los parámetros que más utilizamos para saber si podemos realizar nuestro siguiente análisis con fiabilidad: la cobertura. (En el fichero la columna que pone Depth)
 
-** ¿Qué cobertura tenemos en este experimento? **
+**¿Qué cobertura tenemos en este experimento?**
 
 #### Eliminar duplicados
 
@@ -186,9 +186,9 @@ TMP_DIR=TMP
 bam stats --in CFSAN00283-01_S1_L001_noduplicates.bam --basic --baseSum 2> CFSAN00283-01_S1_L001_noduplicates.stats
 ```
 
-** ¿Cuántos duplicados había en el fichero bam? **
+**¿Cuántos duplicados había en el fichero bam?**
 
-** ¿Ha variado mucho la cobertura? **
+**¿Ha variado mucho la cobertura?**
 
 En este caso el número de reads con los que nos quedamos no varía demasiado ya que el número de duplicados es muy bajo.
 
@@ -210,11 +210,11 @@ Lo primero abrimos IGV. Para ello, si no tenemos icono desde el escritorio ni ap
 igv
 ```
 
-** Visión general de la aplicación **
+**Visión general de la aplicación**
 
 ![IGV_overview](img/IGV_overview.png)
 
-** Cargar un genoma personalizado **
+**Cargar un genoma personalizado**
 
 Esto es muy útil sobre todo cuando se trabaja con microorganismos ya que por defecto la aplicación sólo permite los más comunes.
 
@@ -231,7 +231,7 @@ Una vez cargado veremos que este genoma nos aparece en la barra de herramientas 
 
 Para visualizar el mapeo que realizamos en el paso anterior y ver que todo funciona bien, vamos a cargar el bam que generamos. Pinchamos en el Menú en File > Load from file… y buscamos nuestro fichero bam, el último el de noduplicates.bam y le damos a Abrir.
 
-** ¿Obtenéis algún error? ¿Qué falta? **
+**¿Obtenéis algún error? ¿Qué falta?**
 
 Si recordáis cuando generamos el primer bam lo ordenamos y generamos su índice que es un fichero en .bai que permite acelerar la computación sobre este tipo de ficheros. Pero cuando quitamos los duplicados no lo volvimos a generar para este fichero. Hagámoslo ahora. Id desde el apartado gráfico (o por terminal si os veis capaces) y buscad donde tenemos guardado este fichero bam en RESULTS/Alignment/ en el handson_dia3. Abrimos una terminal en esa ubicación y hacemos como antes.
 
@@ -259,7 +259,7 @@ A tener en cuenta:
 
 ![IGV_indels](img/IGV_indels.png)
 
-** Visualización de bam de exoma **
+**Visualización de bam de exoma**
 
 Los datos de prueba para esta parte de la práctica se encuentran en /home/alumno/cursoNGS/dia3/04_genome_visualization.
 
@@ -271,7 +271,7 @@ Por ejemplo en la imagen se ve la zona del gen CRELD2 en el cromosoma 22.
 
 ![IGV_CRELD2](img/IGV_CRELD2.png)
 
-** Visualización de bam de RNASeq **
+**Visualización de bam de RNASeq**
 
 Ahora vamos a cargar el fichero que se llama rnaseq_test.bam, y vamos a ver las diferencias. Este fichero se ha generado no mapeando con bwa sino con otro software de mapeo especializado para RNASeq  (tophat). Este software lo que hace es mapear cDNA proveniente del RNA de un organismo contra ADN genómico, de forma que tiene que buscar las zonas de ruptura de los intrones  (splicing sites) y marcarlo en el CIGAR como que la lectura continúa en el siguiente exón que estará a x distancia.
 
@@ -279,7 +279,7 @@ Por ejemplo vemos en la figura con el nuevo bam también el gen CRELD2. Observam
 
 ![IGV_RNAseq](img/IGV_RNAseq.png)
 
-** Visualización de amplicones **
+**Visualización de amplicones**
 
 Vamos a visualizar un experimento de secuenciación de amplicones donde se secuencia un exón del gen RB1. La secuenciación se ha hecho de tal manera que el tamaño del fragmento sea de 250 pb y el tamaño de la lectura también sea de 250 pb. De esta manera los paired-end se solaparán completamente y tendremos cada fragmento secuenciado dos veces, en forward y en reverse.
 
@@ -289,6 +289,6 @@ A continuación seleccionáis la nueva referencia y cargáis el bam que se llama
 
 ![IGV_amplicones](img/IGV_amplicones.png)
 
-** ¿Qué cobertura aproximada tenemos en este experimento? **
+**¿Qué cobertura aproximada tenemos en este experimento?**
 
-** ¿Encontráis algún polimorfismo? **
+**¿Encontráis algún polimorfismo?**

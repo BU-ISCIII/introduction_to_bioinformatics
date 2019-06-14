@@ -34,9 +34,9 @@ zcat AJA18_S162_L001_R1_PE.fastq.gz | less
 cd ..
 ```
 
-** ¿Es un experimento paired-end o single-end? **
+**¿Es un experimento paired-end o single-end?**
 
-** ¿Es Illumina? ¿HiSeq o MiSeq? **
+**¿Es Illumina? ¿HiSeq o MiSeq?**
 
 ```bash
 # Realizamos el análisis de calidad
@@ -49,9 +49,9 @@ Es muy importante por tanto saber de qué partimos y de qué nos está avisando 
 
 En este caso la gráfica que nos interesa es la primera donde nos dice la calidad por posición, vemos que es una calidad bastante buena exceptuando las últimas poquitas bases donde cae bastante la calidad. Vamos a realizar por tanto la aproximación que seguimos en el día 3 de prácticas y vamos a utilizar trimmomatic para cortar por extremo y luego filtraremos por calidad. Vamos a ser muy estrictos en este caso ya que tenemos muy pocas bases a muchísima cobertura por lo que no nos preocupa perder reads que nos puedan dar lugar a error más tarde.
 
-** ¿De cuántas reads partimos? **
+**¿De cuántas reads partimos?**
 
-** ¿Si el amplicón es de 250 pb y los reads son de 250 pb? ¿Sabríais estimar la profundidad que vamos a tener por posición? ** (partimos del número de reads (número de forward + número de reverse) multiplicado por tamaño en nucleótidos del read y dividido por el tamaño de la región secuenciada)
+**¿Si el amplicón es de 250 pb y los reads son de 250 pb? ¿Sabríais estimar la profundidad que vamos a tener por posición?** (partimos del número de reads (número de forward + número de reverse) multiplicado por tamaño en nucleótidos del read y dividido por el tamaño de la región secuenciada)
 
 Vamos a realizar por tanto paso de trimming, paso de filtrado y otro paso de control de calidad para ver si todo ha ido correctamente y ver cuántas reads hemos perdido. Observad que en este caso vamos a poner de umbral phred 30 en vez de 20, vamos a ser más estrictos.
 
@@ -80,9 +80,9 @@ RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R2_PE.fastq_trimmed_filtered \
 
 Revisamos la salida de fastqc en RESULTS/QC/TRIMMING_FILTERED con el fichero R1 por ejemplo.
 
-** ¿Cuántas reads hemos perdido? **
+**¿Cuántas reads hemos perdido?**
 
-** ¿Hemos conseguido mejorar la calidad? **
+**¿Hemos conseguido mejorar la calidad?**
 
 #### Mapado y control de calidad
 
@@ -122,13 +122,13 @@ samtools flagstat AJA18_S162_L001_sorted.bam
 bam stats --in AJA18_S162_L001_sorted.bam --basic --baseSum 2> AJA18_S162_L001_sorted.stats
 ```
 
-** ¿Cuál ha sido el porcentaje mapado? **
+**¿Cuál ha sido el porcentaje mapado?**
 
-** ¿Cuántas reads tenemos en total? **
+**¿Cuántas reads tenemos en total?**
 
-** ¿Cuál es la profundidad que nos indica bamUtil que tenemos? **
+**¿Cuál es la profundidad que nos indica bamUtil que tenemos?**
 
-** ¿Por qué es distinta a la estimada anteriormente? **
+**¿Por qué es distinta a la estimada anteriormente?**
 
 Fijaos que antes hemos calculado la profundidad según el tamaño del amplicón, al programa no le estamos diciendo ese tamaño, sino que estamos mapeando contra el gen entero por lo que el programa nos calcula la cobertura del gen, no sólo del amplicón y esto hace que la cobertura media disminuya considerablemente.
 
@@ -161,9 +161,9 @@ Una vez abierto, explorad el formato, como se dio en teoría la cabecera empieza
 
 Después de la cabecera aparece una línea por variante.
 
-** ¿Cuántas variantes detecta samtools en nuestro amplicón? **
+**¿Cuántas variantes detecta samtools en nuestro amplicón?**
 
-** Fijémonos en la columna de INFO en el campo que nos da información sobre la profundidad (DP) ¿Cuál es la profundidad de lectura en esta posición donde se encuentra la variante? **
+**Fijémonos en la columna de INFO en el campo que nos da información sobre la profundidad (DP) ¿Cuál es la profundidad de lectura en esta posición donde se encuentra la variante?**
 
 Vamos a abrir IGV para ir visualizando los campos del vcf a la vez que comprobamos la información directamente sobre el bam. Abrimos IGV:
 
@@ -177,9 +177,9 @@ Una vez tenemos el genoma de referencia cargamos el fichero bam, recordad en Fil
 
 Bien, ya tenemos cargado el bam en IGV, volvemos al excell donde tenemos abierto el vcf y copiamos la posición de la variante en la columna POS. Vamos a IGV y en el recuadro de las posiciones escribimos: L11910.1:162237
 
-** ¿Cuántas lecturas hay en forward y en reverse para el alelo referencia? **
+**¿Cuántas lecturas hay en forward y en reverse para el alelo referencia?**
 
-** ¿Cuántas lecturas hay en forward y en reverse para el alelo alternativo? **
+**¿Cuántas lecturas hay en forward y en reverse para el alelo alternativo?**
 
 Acordaos que esta información se observa al pasar el ratón por encima del histograma de cobertura, en la posición donde se encuentra la variante.
 
@@ -187,17 +187,17 @@ Acordaos que esta información se observa al pasar el ratón por encima del hist
 
 Ahora volvemos al vcf, fijaos en la columna de INFO en el campo DP4, y leer la descripción de este campo en la cabecera.
 
-** ¿Cuáles son los cuatro números que aparecen en ese campo? **
+**¿Cuáles son los cuatro números que aparecen en ese campo?**
 
-** ¿Qué dice la descripción que son? **
+**¿Qué dice la descripción que son?**
 
-** ¿Se parecen a los números del número de lecturas para alelo referencia y alelo alternativo que apuntamos en IGV? **
+**¿Se parecen a los números del número de lecturas para alelo referencia y alelo alternativo que apuntamos en IGV?**
 
 Efectivamente, los números son parecidos, pero no exactamente iguales, ya que samtools realiza unos filtros de calidad de los reads y sólo tiene en cuenta aquellos de alta calidad.
 
-** ¿En qué frecuencia del alelo alternativo se encuentra la mutación? **
+**¿En qué frecuencia del alelo alternativo se encuentra la mutación?**
 
-Pero…dijisteis que samtools sólo detectaba frecuencias al 50%...(ver la parte opcional)
+Pero... dijisteis que samtools sólo detectaba frecuencias al 50%...(ver la parte opcional)
 
 #### Variant Annotation
 
@@ -205,7 +205,7 @@ Hasta ahora hemos realizado preprocesamiento, mapeado y llamada a variantes (var
 
 En el caso de tener una secuenciación de una región mayor tendríamos una lista más grande de mutaciones que tendríamos que priorizar de alguna manera para saber cuál tiene efecto y por tanto puede tener importancia biológica.
 
-Para realizar anotaciones descriptivas y funcionales vamos a utilizar el software variant_effect_predictor, un software de ENSEMBL que utiliza su base de datos para anotar mutaciones. ** Sólo se puede utilizar este software si ENSEMBL tiene base de datos para el organismo que se está estudiando. **
+Para realizar anotaciones descriptivas y funcionales vamos a utilizar el software variant_effect_predictor, un software de ENSEMBL que utiliza su base de datos para anotar mutaciones. **Sólo se puede utilizar este software si ENSEMBL tiene base de datos para el organismo que se está estudiando.**
 
 En este caso, como se ha realizado directamente contra un solo gen para que el alineamiento, indexación del genoma etcétera fuese rápido tenemos un problema. Las coordenadas de la mutación están respecto al gen y no frente al genoma de referencia por lo que la búsqueda en ENSEMBL no nos dará resultado.
 
@@ -235,7 +235,7 @@ Y ya por último podemos revisar los resultados abrimos con Libre Office Calc el
 
 NOTA: si la mutación fuese missense, por ejemplo, también se calcularía el efecto del cambio de aminoácido en la proteína.
 
-** Comentarios resolución: **
+**Comentarios resolución:**
 
 Como ya he comentado este experimento es un ejemplo muy pequeño para que podáis ver los distintos pasos de cómo sería el análisis de un amplicón, aunque este sería el caso más sencillo ya que sólo hay una mutación en el pequeño fragmento y es muy clara.
 
