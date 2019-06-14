@@ -6,10 +6,10 @@ The material includes slides with theory concepts and a bunch of practical exerc
 
 ## Slides
 ### Programm
-- **Course Programm** [Download pdf](programa_NGS-ISCIII2019.pdf)
+- **Course Programm** [Download pdf](slides/programa_NGS-ISCIII2019.pdf)
 
 ### Set up
-- **VM Access** [Download pdf](Manual_Acceso_Maquina_Virtual_CursoNGS_2019_V2.pdf)
+- **VM Access** [Download pdf](slides/Manual_Acceso_Maquina_Virtual_CursoNGS_2019_V2.pdf)
 - **Install software and download dataset** [First steps](exercises/day1/00_SetUp.md)
 
 ### Day 1
