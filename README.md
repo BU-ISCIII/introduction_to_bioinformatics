@@ -26,14 +26,14 @@ The material includes slides with theory concepts and a bunch of practical exerc
 
 ### Day 3
 - **Talk X:** [X](slides/day3/X.pdf)
-- **Exercise 1** [Formato fastq](exercises/day3/handson_dia3_1_fastq_2019.md) -- [Download pdf](exercises/day3/handson_dia3_1_fastq_2019.pdf)
-- **Exercise 2** [Control de Calidad y preprocesamiento de ficheros fastq](exercises/day3/handson_dia3_2_prepro_2019.md) -- [Download pdf](exercises/day3/handson_dia3_2_prepro_2019.pdf)
-- **Exercise 3** [Mapado y control de calidad](exercises/day3/handson_dia3_3_mapado_2019.md) -- [Download pdf](exercises/day3/handson_dia3_3_mapado_2019.pdf)
+- **Exercise 1:** [Formato fastq](exercises/day3/handson_dia3_1_fastq_2019.md) -- [Download pdf](exercises/day3/handson_dia3_1_fastq_2019.pdf)
+- **Exercise 2:** [Control de Calidad y preprocesamiento de ficheros fastq](exercises/day3/handson_dia3_2_prepro_2019.md) -- [Download pdf](exercises/day3/handson_dia3_2_prepro_2019.pdf)
+- **Exercise 3:** [Mapado y control de calidad](exercises/day3/handson_dia3_3_mapado_2019.md) -- [Download pdf](exercises/day3/handson_dia3_3_mapado_2019.pdf)
 
 ### Day 4
 - **Talk X:** [X](slides/day4/X.pdf)
-- **Exercise 1** [Variant Calling](exercises/day4/handson_dia4_1_variantcalling_2019.md) -- [Download pdf](exercises/day4/handson_dia4_1_variantcalling_2019.pdf)
+- **Exercise 1:** [Variant Calling](exercises/day4/handson_dia4_1_variantcalling_2019.md) -- [Download pdf](exercises/day4/handson_dia4_1_variantcalling_2019.pdf)
 
 ### Day 5
 - **Talk X:** [X](slides/day5/X.pdf)
-- **Exercise 1** [Whole genome analysis](exercises/day5/handson_dia5_1_variantcalling_2019.md) -- [Download pdf](exercises/day5/handson_dia5_1_variantcalling_2019.pdf)
+- **Exercise 1:** [Whole genome analysis](exercises/day5/handson_dia5_1_variantcalling_2019.md) -- [Download pdf](exercises/day5/handson_dia5_1_variantcalling_2019.pdf)
