@@ -16,7 +16,7 @@ En este documento vamos a cubrir lo necesario para poder ejecutar las prácticas
 Todos los materiales del curso están subidos a [nuestro repositorio de github](README.md), y puedes accederlos libremente desde cualquier ordenador. Puedes ojearlos online o descargarlos en formato pdf, html o md.
 
 #### Descarga de datos
-Hemos creado un comprimido con los datos necesarios para ejecutar las prácticas [aquí](). Si tu usuario se llama de forma distinta a "alumno" o si descargas los datos en un lugar diferente a /home, tendrás que editar los comandos de las prácticas para asegurarte que las PATHs son correctas. En caso de tener un usuario alumno, puedes replicar las rutas de los datos tal y como las tenermos nosotros ejecutando las siguientes líneas:
+Hemos creado un comprimido con los datos necesarios para ejecutar las prácticas [aquí](https://mega.nz/#!fjgCgYbA!NQhluOZcXydYVJ75ayhADEf25ehJAqClCNPYL3L48t4). Si tu usuario se llama de forma distinta a "alumno" o si descargas los datos en un lugar diferente a /home, tendrás que editar los comandos de las prácticas para asegurarte que las PATHs son correctas. En caso de tener un usuario alumno, puedes replicar las rutas de los datos tal y como las tenermos nosotros ejecutando las siguientes líneas:
 
 ```bash
 cd
