@@ -22,7 +22,7 @@ cd practica_permisos
 mkdir copia_etc
 cd copia_etc
 cp -v /etc/ho* ./ # (El punto “.” Indica que se copie en el directorio en el que te encuentras ubicado.)
-cp - v /etc/au* /home/alumno/Documents/practica_permisos/copia_etc
+cp -v /etc/au* /home/alumno/Documents/practica_permisos/copia_etc
 ```
 
 2) Listar el contenido y visualizar los permisos del directorio ‘copia_etc’.
