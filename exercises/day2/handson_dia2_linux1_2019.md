@@ -16,7 +16,7 @@ Los ficheros de texto pueden ser abiertos e inspeccionados sin necesidad de hace
 
 Estas herramientas de manejo de ficheros de texto permiten realizar complejas manipulaciones de un modo muy sencillo y son uno de los principales atractivos de los sistemas Linux para el manejo de grandes cantidades de información.
 
-Para esta práctica se va a usar el fichero microarray_adenoma_hk69.csv (/home/alumno/curso_NGS/dia2). En este fichero están almacenados los resultados de un experimento de expresión diferencial en el que se han analizado distintos adenomas.
+Para esta práctica se va a usar el fichero microarray_adenoma_hk69.csv (/home/alumno/cursoNGS/dia2). En este fichero están almacenados los resultados de un experimento de expresión diferencial en el que se han analizado distintos adenomas.
 
 Este es un fichero tabular en el que la información se representa dividiendo los campos mediante tabuladores (formato tabla). En este caso cada fila del fichero corresponde a una sonda de microarray y cada columna a una propiedad sobre la sonda o sobre el resultado de la hibridación sobre ella.
 
