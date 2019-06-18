@@ -36,8 +36,8 @@ Para hacerse una idea del contenido del fichero sin bloquear la terminal se pued
 
 ```bash
 head microarray_adenoma_hk69.csv
-tail - n 2 microarray_adenoma_hk69.csv
-head - n 4 microarray_adenoma_hk69.csv
+tail -n 2 microarray_adenoma_hk69.csv
+head -n 4 microarray_adenoma_hk69.csv
 ```
 
 Para abrir ficheros de texto inmensos sin problemas se usan los comandos more o less. No se puede editar el fichero, pero sí navegar por su contenido. Son programas interactivos por lo que cuando se ejecute se abrirá ocupando el terminal y haciendo desaparecer el prompt. En cualquier momento se puede salir pulsando la tecla “q”.
