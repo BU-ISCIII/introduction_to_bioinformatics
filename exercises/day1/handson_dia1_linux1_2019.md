@@ -75,7 +75,7 @@ ls
 cat concatenar.txt
 cat practica_cat.txt concatenar.txt #o cat *
 cat practica_cat.txt concatenar.txt > juntar_ficheros.txt
-$ cat -n juntar_ficheros.txt #(-n permite ver el número de líneas)
+cat -n juntar_ficheros.txt #(-n permite ver el número de líneas)
 clear
 ```
 
