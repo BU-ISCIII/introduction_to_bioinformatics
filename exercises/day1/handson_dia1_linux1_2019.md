@@ -101,12 +101,12 @@ cat /etc/passwd > archivo_importante.txt
 cat archivo_importante.txt
 ```
 
-11. Ahora copiar (cp) el fichero ‘passwd’ dentro de ‘dir2’ con el nombre ‘listado_usuarios.txt’. Listar el directorio para ver los permisos y propietario de los ficheros (ls -l). Mostrar el contenido de ambos ficheros.
+11. Ahora copiar (cp) el fichero ‘passwd’ dentro de ‘dir2’ con el nombre ‘listado_usuarios.txt’. Listar el directorio para ver los permisos y propietario de los ficheros (ls -l). Mostrar el contenido de ambos ficheros. Para salir de la visualización de more o less pulsa "q".
 ```bash
 cp /etc/passwd listado_usuarios.txt #o cp /etc/passwd ./; mv passwd listado_usuarios.txt
 ls -l #o ls -l /home/alumno/Documents/practica_comandos/dir2
-less archivo_importante.txt
-more listado_usuarios.txt
+less archivo_importante.txt # Pulsa q para salir
+more listado_usuarios.txt # Pulsa q para salir
 # Acuérdate que puedes limpiar la pantalla con el comando clear o pulsando ctrl + l
 ```
 
