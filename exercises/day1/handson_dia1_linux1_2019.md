@@ -47,7 +47,7 @@ pwd
 mkdir practica_comandos
 cd practica_comandos
 mkdir dir1 dir2
-cd dir1 #o cd /home/alumno/Documents/dir1
+cd dir1 #o cd /home/alumno/Documents/practica_comandos/dir1
 > archivo1.txt #o touch archivo1.txt
 cd
 ```
