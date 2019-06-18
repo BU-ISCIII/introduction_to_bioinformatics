@@ -120,7 +120,7 @@ head -n 100 microarray_adenoma_hk69.csv | grep leukemia
 head -n 100 microarray_adenoma_hk69.csv | grep leukemia > busqueda_leukemia_100.txt
 ----------------------------------------------------
 #6
-grep leukemia microarray_adenoma_hk69.csv | cut -f 3,4
+cat busqueda_leukemia_100.txt | cut -f 3,4
 ----------------------------------------------------
 #7
 grep leukemia microarray_adenoma_hk69.csv | cut -f 3,4 | sort
