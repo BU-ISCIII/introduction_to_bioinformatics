@@ -108,7 +108,7 @@ head microarray_adenoma_hk69.csv | sort -k1 -r
 grep -i leukemia microarray_adenoma_hk69.csv | less
 ----------------------------------------------------
 #2
-grep -r leukemia ~ #o grep –r leukemia
+grep -r leukemia ~/* #o grep –r leukemia
 ----------------------------------------------------
 #3
 grep -n leukemia microarray_adenoma_hk69.csv | cut -f 1 -d':'
