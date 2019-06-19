@@ -94,6 +94,7 @@ cd prueba_miseq
 
 # Visualizamos el fichero
 zcat prueba_miseq_R1.fastq.gz | more
+# Recordatorio para salir usamos q o Ctrl + c
 ```
 
 Vemos que ahora el nombre de la máquina es diferente y que la cabecera también varía ligeramente, aunque la información que contiene es muy similar.
