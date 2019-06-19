@@ -14,7 +14,7 @@ Cambiamos al directorio RAW y visualizamos uno de los ficheros. Se trata de dato
 ```bash
 # Comprobamos donde estamos situados.
 pwd
-# Output: /home/alumno/curso_NGS/dia3/handson_dia3/01_fastq_format/prueba_454
+# Output: /home/alumno/cursoNGS/dia3/handson_dia3/01_fastq_format/prueba_454
 
 # Nos movemos a la carpeta que contiene la segunda parte de la practica
 # Recordatorio: - con .. accedemos a la carpeta inmediatamente superior a la que nos encontramos.
