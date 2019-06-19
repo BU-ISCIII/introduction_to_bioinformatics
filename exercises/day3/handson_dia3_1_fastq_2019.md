@@ -38,6 +38,7 @@ ls
 
 Vamos a la carpeta de hiseq y vemos que contiene dos ficheros con extensión fastq. Se corresponden con un experimento de secuenciación paired-end de Illumina con HiSeq 2000. El fichero R1 va a contener los reads forward y el fichero R2 va a contener
 los reads en reverse.
+>**Nota**: El comando zcat tiene el funcionamiento igual que cat, pero se usa para archivos comprimidos (extensión ".gz"); zcat descomprime y  muestra el contenido descomprimido por pantalla.
 
 ```bash
 # Nos movemos a la carpeta prueba_hiseq
