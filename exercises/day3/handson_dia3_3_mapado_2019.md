@@ -37,7 +37,7 @@ Para saber qué modo de bwa tenemos que utilizar tenemos que saber de qué longi
 
 ¿Recordáis de qué longitud eran las reads del experimento analizado en 02_qc_preproc? Si no os acordáis podéis revisar los datos de QC/TRIMMED_FILTERED, y ver en el report en html la longitud de los reads.
 
-**¿Qué módulo de bwa tenemos que usar bwa aln/sampe o bwa mem? **
+**¿Qué módulo de bwa tenemos que usar bwa aln/sampe o bwa mem?**
 
 Lo primero que hay que hacer cuando vamos a realizar un proceso de mapeo típico de experimentos de resecuenciación es ver qué referencia vamos a utilizar. En el caso de microorganismos es un proceso importante ya que hay referencias disponibles de muchas cepas y debemos seleccionar el genoma de referencia de la misma cepa si es posible o de la más cercana a la que hemos secuenciado. La eficiencia del mapeo es muy dependiente de seleccionar la referencia de manera adecuada.
 
