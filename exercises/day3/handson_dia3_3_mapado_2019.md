@@ -68,7 +68,7 @@ RAW/CFSAN002083-01_S1_L001_R2_001.fastq \
 > RESULTS/Alignment/CFSAN00283-01_S1_L001.sam
 ```
 
-**¿Cuánto ocupa el fichero que acabamos de generar? (du –sh RESULTS/Alignment/CFSAN00283-01_S1_L001.sam)**
+**¿Cuánto ocupa el fichero que acabamos de generar? (du -sh RESULTS/Alignment/CFSAN00283-01_S1_L001.sam)**
 
 Como se ha explicado en teoría el formato sam permite almacenar información de alineamiento, pero suele ocupar mucho espacio por lo que se suele utilizar su formato binario. Para realizar esta conversión:
 
@@ -77,7 +77,7 @@ Como se ha explicado en teoría el formato sam permite almacenar información de
 samtools view -Sb RESULTS/Alignment/CFSAN00283-01_S1_L001.sam > RESULTS/Alignment/CFSAN00283-01_S1_L001.bam
 ```
 
-**¿Cuánto ocupa el fichero BAM que acabamos de generar? (du –sh RESULTS/Alignment/CFSAN00283-01_S1_L001.bam)**
+**¿Cuánto ocupa el fichero BAM que acabamos de generar? (du -sh RESULTS/Alignment/CFSAN00283-01_S1_L001.bam)**
 
 **¿Cuánto hemos disminuido el tamaño?**
 
