@@ -27,7 +27,7 @@ The material includes slides with theory concepts and a bunch of practical exerc
 
 ### Day 3
 - **Talk 1:** [Control de calidad y preprocesado](slides/day3/curso_ngs_dia3_2019_preprocesamiento.pdf)
-- **Talk 2:** [Mapping y filtrado de duplicados](slides/day3/curso_ngs_dia3_2019_mapping.pdf)
+- **Talk 2:** [Mapping y filtrado de duplicados](slides/day3/curso_ngs_dia3_2019_sesion6_mapping.pdf)
 - **Exercise 1:** [Formato fastq](exercises/day3/handson_dia3_1_fastq_2019.md) -- [Download pdf](exercises/day3/handson_dia3_1_fastq_2019.pdf)
 - **Exercise 2:** [Control de Calidad y preprocesamiento de ficheros fastq](exercises/day3/handson_dia3_2_prepro_2019.md) -- [Download pdf](exercises/day3/handson_dia3_2_prepro_2019.pdf)
 - **Exercise 3:** [Mapado y control de calidad](exercises/day3/handson_dia3_3_mapado_2019.md) -- [Download pdf](exercises/day3/handson_dia3_3_mapado_2019.pdf)
