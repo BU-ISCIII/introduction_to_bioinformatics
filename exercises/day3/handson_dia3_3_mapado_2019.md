@@ -286,6 +286,7 @@ Vamos a visualizar un experimento de secuenciación de amplicones donde se secue
 Lo primero que tenemos que hacer es cargar en igv la referencia en formato fasta del gen RB1 tal y como hemos visto anteriormente en este tutorial. La referencia se encuentra en la carpeta TEST de donde estamos sacando todos los bam de prueba.
 
 A continuación seleccionáis la nueva referencia y cargáis el bam que se llama amplicon_test.bam.
+>**Nota:** El amplicón está en la zona 70.000pb de la referencia.
 
 ![IGV_amplicones](img/IGV_amplicones.png)
 
