@@ -26,14 +26,14 @@ The material includes slides with theory concepts and a bunch of practical exerc
 - **Exercise 2:** [Manejo de permisos.](exercises/day2/handson_dia2_linux2_2019.md) -- [Download pdf](exercises/day2/handson_dia2_linux2_2019.pdf)
 
 ### Day 3
-- **Talk X:** [Control de calidad y preprocesado](slides/day3/curso_ngs_dia3_2019_preprocesamiento.pdf)
-- **Talk X:** [X](slides/day3/X.pdf)
+- **Talk 1:** [Control de calidad y preprocesado](slides/day3/curso_ngs_dia3_2019_preprocesamiento.pdf)
+- **Talk 2:** [Mapping y filtrado de duplicados](slides/day3/curso_ngs_dia3_2019_mapping.pdf)
 - **Exercise 1:** [Formato fastq](exercises/day3/handson_dia3_1_fastq_2019.md) -- [Download pdf](exercises/day3/handson_dia3_1_fastq_2019.pdf)
 - **Exercise 2:** [Control de Calidad y preprocesamiento de ficheros fastq](exercises/day3/handson_dia3_2_prepro_2019.md) -- [Download pdf](exercises/day3/handson_dia3_2_prepro_2019.pdf)
 - **Exercise 3:** [Mapado y control de calidad](exercises/day3/handson_dia3_3_mapado_2019.md) -- [Download pdf](exercises/day3/handson_dia3_3_mapado_2019.pdf)
 
 ### Day 4
-- **Talk X:** [X](slides/day4/X.pdf)
+- **Talk 1:** [Variant Calling](slides/day4/curso_ngs_dia4_variant_calling_2019.pdf)
 - **Exercise 1:** [Variant Calling](exercises/day4/handson_dia4_1_variantcalling_2019.md) -- [Download pdf](exercises/day4/handson_dia4_1_variantcalling_2019.pdf)
 
 ### Day 5
