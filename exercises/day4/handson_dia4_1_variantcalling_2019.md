@@ -151,7 +151,7 @@ RESULTS/Alignment/AJA18_S162_L001_sorted.bam | bcftools call -mv - \
 
 El parámetro -d es muy importante para el análisis de Deep sequencing ya que indica que se contabilicen posiciones con profundidad menor a 200000 lecturas. Por defecto está puesto en 250 porque está pensado para datos de exoma o genoma completo donde es raro que se supere esa profundidad. En este caso si dejásemos el valor por defecto el programa no tendría en cuenta ninguna de las posiciones del amplicón. Las opciones –gu son para que la salida esté en formato bcf, que es el formato binario del vcf.
 
-En cuanto a los parámetros –mvO v indican que el output esté en vcf (-O v), que se llamen SNPs (-m), que se llamen sólo sitios variantes y que se generen genotipos de cada posición variante (-m).
+En cuanto a los parámetros –mvO v indican que el output esté en vcf (-O v), que se llamen SNPs (-m), que se llamen sólo sitios variantes y que se generen genotipos de cada posición variante (-v).
 
 El formato .vcf se puede leer, y lo estamos redirigiendo a un fichero con extensión vcf que podremos abrir con excell para su exploración en detalle.
 
