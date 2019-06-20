@@ -95,7 +95,9 @@ Primero, como en la práctica del día 3, vamos a indexar nuestra referencia que
 bwa index REFERENCE/20140318_L11910.1_RB.fasta
 
 # Mapamos las lecturas contra la referencia
-bwa mem -t 4 REFERENCE/20140318_L11910.1_RB.fasta \ RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R1_PE.fastq_trimmed_filtered \ RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R2_PE.fastq_trimmed_filtered \
+bwa mem -t 4 REFERENCE/20140318_L11910.1_RB.fasta \
+RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R1_PE.fastq_trimmed_filtered \
+RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R2_PE.fastq_trimmed_filtered \
 > RESULTS/Alignment/AJA18_S162_L001.sam
 ```
 
