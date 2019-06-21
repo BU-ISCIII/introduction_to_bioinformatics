@@ -129,15 +129,21 @@ El objetivo de este ejercicio es realizar tipado (typing) MLST e identificación
 Para hacer el MLST debemos descargarnos la BD correspondiente y luego cotejar las lecturas frente a esa base de datos:
 
 ```bash
-#Creamos un directorio para MLST
+# Comprobamos que nos estamos en la carpeta handson_dia5_bact o nos movemos a ella
+pwd
+# /home/alumno/cursoNGS/dia5/handson_dia5_bact
+# sino estamos ahí ejecutar:
+cd /home/alumno/cursoNGS/dia5/handson_dia5_bact
+
+# Creamos un directorio para MLST
 mkdir ecoli_mlst
 
 #Nos movemos a ese directorio
 cd ecoli_mlst
 
 #Creamos un enlace (shortcut) a las lectuas
-ln -s ../data/SRR292770_1.fastq
-ln -s ../data/SRR292770_2.fastq
+ln -s ../data/SRR292770_1.fastq.gz
+ln -s ../data/SRR292770_2.fastq.gz
 
 #Listamos el directorio (vemos los shortcuts)
 ls -lh
