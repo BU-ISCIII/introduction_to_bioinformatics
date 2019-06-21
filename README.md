@@ -37,5 +37,5 @@ The material includes slides with theory concepts and a bunch of practical exerc
 - **Exercise 1:** [Variant Calling](exercises/day4/handson_dia4_1_variantcalling_2019.md) -- [Download pdf](exercises/day4/handson_dia4_1_variantcalling_2019.pdf)
 
 ### Day 5
-- **Talk X:** [X](slides/day5/X.pdf)
+- **Talk X:** [Ensamblado](slides/day5/curso_ngs_2019_ensamblado_dia5.pdf)
 - **Exercise 1:** [Whole genome analysis](exercises/day5/handson_dia5_1_variantcalling_2019.md) -- [Download pdf](exercises/day5/handson_dia5_1_variantcalling_2019.pdf)
