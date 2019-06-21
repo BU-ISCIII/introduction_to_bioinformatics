@@ -118,7 +118,7 @@ Una vez Quast haya finalizado la ejecución podemos visualizar los resultados ab
 
 Situándote encima de las etiquetas se muestra una breve descripción sobre la métrica correspondiente.
 
-Trata de comprender de comprender cada una de las métricas y gráficos generados; y como te ayudan a determinar la calidad del ensamblado.
+Trata de comprender cada una de las métricas y gráficos generados; y como te ayudan a determinar la calidad del ensamblado.
 
 ![quast_report](img/quast_report.png)
 
@@ -187,5 +187,3 @@ less ecoli_resis__genes__ARGannot.r1__results.txt
 [3] Bielaszewska M, Mellmann A, Zhang W, Kock R, Fruth A, Bauwens A, Peters G, Karch H: Charac-terisation of the Escherichia coli strain associated with an outbreak of haemolytic uraemic syndrome in Germany, 2011: a microbiological study. Lancet Infect Dis 2011, 11:671{676.
 
 [4] Frank C,Werber D, Cramer JP, Askar M, Faber M, an der Heiden M, Bernard H, Fruth A, Prager R, Spode A, et al: Epidemic pro le of Shiga-toxin-producing Escherichia coli O104:H4 outbreak in Germany. N Engl J Med 2011, 365:1771{1780.
-
-[5] Zerbino, D. R., Using the Velvet de novo assembler for short-read sequencing technologies. Current protocols in bioinformatics / editoral board, Andreas D. Baxevanis ... [et al.], 2010. 10.1002/0471250953.bi1105s31
