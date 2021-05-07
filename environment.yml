@@ -1,0 +1,21 @@
+name: ngs_course
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python>=3.6
+  - bioconda::fastqc
+  - bioconda::seqtk
+  - bioconda::fastp
+  - bioconda::cutadapt
+  - bioconda::samtools
+  - bioconda::picard
+  - bioconda::igv
+  - bioconda::vep
+  - bioconda::bwa
+  - bioconda::vcftools
+  - bioconda::quast
+  - bioconda::unicycler
+  - bioconda::srst2
+  - bioconda::multiqc
