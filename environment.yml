@@ -12,10 +12,9 @@ dependencies:
   - bioconda::samtools
   - bioconda::picard
   - bioconda::igv
-  - bioconda::vep
+  - bioconda::ensembl-vep
   - bioconda::bwa
   - bioconda::vcftools
   - bioconda::quast
   - bioconda::unicycler
-  - bioconda::srst2
   - bioconda::multiqc
