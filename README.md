@@ -6,13 +6,12 @@ The material includes slides with theory concepts and a bunch of practical exerc
 
 ## Slides
 ### Programm
-- **Course Programm** [Download pdf](slides/programa_NGS-ISCIII2019.pdf)
+- **Course Programm** [Download pdf](slides/programa_NGS-ISCIII.pdf)
 
 ### Set up
-- **VM Access** [Download pdf](slides/Manual_Acceso_Maquina_Virtual_CursoNGS_2019_V2.pdf)
+- **VM Access** [Download pdf](slides/Manual_Acceso_Maquina_Virtual_CursoNGS_V2.pdf)
 - **Install software and download dataset** [First steps](exercises/day1/00_SetUp.md)
-- **Data** [Download zip folder](https://mega.nz/#!fjgCgYbA!NQhluOZcXydYVJ75ayhADEf25ehJAqClCNPYL3L48t4)
-
+- **Data** [Download zip folder]() --> UPDATE
 ### Day 1
 - **Talk 1:** [Iniciación al análisis de datos procedentes de técnicas de secuenciación masiva (NGS)](slides/day1/NGS_ISCIII_2019_dia-1_V2.pdf)
 - **Talk 2:** [Iniciación al entorno Linux.](slides/day1/curso_ngs_2019_sesion2_sesion4_linux.pdf)
