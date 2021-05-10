@@ -103,7 +103,7 @@ Para ordenar, generar un índice del fichero bam:
 ```bash
 # Ordenamos las lecturas por orden cromosómico
 samtools sort RESULTS/Alignment/CFSAN00283-01_S1_L001.bam \
-RESULTS/Alignment/CFSAN00283-01_S1_L001_sorted
+-o RESULTS/Alignment/CFSAN00283-01_S1_L001_sorted.bam
 # Indexamos el fichero bam
 samtools index RESULTS/Alignment/CFSAN00283-01_S1_L001_sorted.bam
 ```
