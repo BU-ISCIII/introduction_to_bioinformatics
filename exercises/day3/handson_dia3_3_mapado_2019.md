@@ -176,7 +176,7 @@ En este fichero encontramos mucha de la información que ya habíamos obtenido c
 
 Como se ha visto en teoría, es recomendable eliminar duplicados previsiblemente debido a artefactos de PCR antes de realizar los siguientes pasos del análisis ya que pueden dar lugar a errores.
 
-Para eliminar duplicados se utiliza el programa picard que consta de una suite de varios software con distinta funcionalidad para tratar con ficheros bam.
+Para eliminar duplicados se utiliza el programa picard explicado anteriormente. En este caso utilizamos MarkDuplicates.
 
 ```bash
 # Eliminamos duplicados en el fichero bam
@@ -188,7 +188,14 @@ METRICS_FILE=picard.metrics_file \
 TMP_DIR=../../TMP
 
 # Obtenemos estadísticas del fichero sin duplicados
-bam stats --in CFSAN00283-01_S1_L001_noduplicates.bam --basic --baseSum 2> CFSAN00283-01_S1_L001_noduplicates.stats
+picard CollectWgsMetrics \
+    COVERAGE_CAP=1000000 \
+    INPUT=CFSAN00283-01_S1_L001_noduplicates.bam \
+    OUTPUT=CFSAN00283-01_S1_L001_noduplicates.CollectWgsMetrics.coverage_metrics \
+    REFERENCE_SEQUENCE=../../REFERENCE/EC_K12_ST10.fasta \
+    COUNT_UNPAIRED=true \
+    VALIDATION_STRINGENCY=LENIENT \
+    TMP_DIR=../../TMP
 ```
 
 **¿Cuántos duplicados había en el fichero bam?**
