@@ -27,7 +27,7 @@ Desde la línea de comandos ejecutamos:
 fastqc -t 4 data/SRR292770_*
 ```
 
-Vemos todos los reports abriendo los archivos .html (SRR292770_1.fastqc.html y SRR292770_2.fastqc.html)
+Vemos todos los reports abriendo los archivos .html que están dentro de la carpeta `data/` (SRR292770_1_fastqc.html y SRR292770_2_fastqc.html)
 
 Comprueba como las secuencias superan la mayoría de los test. El nivel de duplicación es ligeramente alto (en torno al 26 %).
 
