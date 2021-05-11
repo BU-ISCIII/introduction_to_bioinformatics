@@ -17,4 +17,6 @@ dependencies:
   - bioconda::vcftools
   - bioconda::quast
   - bioconda::unicycler
+  - bioconda::unicycler
+  - bioconda::mauve
   - bioconda::multiqc
