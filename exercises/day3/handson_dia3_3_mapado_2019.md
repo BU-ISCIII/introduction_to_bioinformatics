@@ -152,13 +152,18 @@ Sin liarnos mucho, lo que nos dice cómo de bien ha ido el mapeo es el número d
 
 Para el cálculo de la cobertura y otras estadísticas de cómo se distribuyen las lecturas por el genoma hay que utilizar otra serie de programas que realizan estos cálculos.
 
-Primero vamos a utilizar un programa llamado bamUtil:
+Primero vamos a utilizar un programa llamado picard que consta de una suite de varios software con distinta funcionalidad para tratar con ficheros bam. En este caso usamos CollectWgsMetrics.
 
 ```bash
-# Utilizamos bamUtil para ver estadísticas del fichero bam
-bam stats --in CFSAN00283-01_S1_L001_sorted.bam --basic --baseSum 2> CFSAN00283-01_S1_L001.stats
-
-# Recordatorio: con "2>" redirigimos la salida de error que es por donde saca el resultado este programa a un fichero.
+# Utilizamos Picard para ver estadísticas del fichero bam
+picard CollectWgsMetrics \
+    COVERAGE_CAP=1000000 \
+    INPUT=CFSAN00283-01_S1_L001_sorted.bam \
+    OUTPUT=CFSAN00283-01_S1_L001.CollectWgsMetrics.coverage_metrics \
+    REFERENCE_SEQUENCE=../../REFERENCE/EC_K12_ST10.fasta \
+    COUNT_UNPAIRED=true \
+    VALIDATION_STRINGENCY=LENIENT \
+    TMP_DIR=../../TMP
 ```
 
 Se genera un archivo en RESULTS/Alignment que se puede abrir con el excel para visualizarlo más cómodamente. Si pregunta le diremos que nos separe las columnas por tabulador. Solo redordaros que excel es parte de la suite Microsoft Office que no está disponible nativamente en sistemas linux, por lo que en las máquinas virtuales normalmente utilizaréis una de sus alternativas opensource como Libre Office calc.
