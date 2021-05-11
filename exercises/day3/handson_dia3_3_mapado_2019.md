@@ -175,12 +175,12 @@ Para eliminar duplicados se utiliza el programa picard que consta de una suite d
 
 ```bash
 # Eliminamos duplicados en el fichero bam
-java -jar /opt/picard-tools/picard-tools-1.140/picard.jar MarkDuplicates REMOVE_DUPLICATES=TRUE \
+picard MarkDuplicates REMOVE_DUPLICATES=TRUE \
 ASSUME_SORTED=TRUE VALIDATION_STRINGENCY=LENIENT \
 INPUT=CFSAN00283-01_S1_L001_sorted.bam \
 OUTPUT=CFSAN00283-01_S1_L001_noduplicates.bam \
 METRICS_FILE=picard.metrics_file \
-TMP_DIR=TMP
+TMP_DIR=../../TMP
 
 # Obtenemos estadísticas del fichero sin duplicados
 bam stats --in CFSAN00283-01_S1_L001_noduplicates.bam --basic --baseSum 2> CFSAN00283-01_S1_L001_noduplicates.stats
