@@ -1,10 +1,7 @@
 ## Curso de Iniciación a la Secuenciación Masiva
 BU-ISCIII
 
-### Práctica 1 día 3: Formato fastq
-
-17-21 Junio 2019, 7a Edición, Programa Formación Continua, ISCIII
-
+### Práctica : Formato fastq
 
 #### Descripción
 En esta parte de la práctica vamos a abrir ficheros fastq de prueba, uno obtenido con HiSeq, otro con MiSeq y un fichero de formato sff de 454.
