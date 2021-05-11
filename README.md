@@ -6,35 +6,43 @@ The material includes slides with theory concepts and a bunch of practical exerc
 
 ## Slides
 ### Programm
-- **Course Programm** [Download pdf](slides/programa_NGS-ISCIII.pdf)
+- **Course Programm** [Download pdf](slides/course_program.pdf)
 
 ### Set up
-- **VM Access** [Download pdf](slides/Manual_Acceso_Maquina_Virtual_CursoNGS_V2.pdf)
-- **Install software and download dataset** [First steps](exercises/day1/00_SetUp.md)
+- **VM Access** [Download pdf](slides/tutorial_access_VirtualMachine.pdf)
+- **Install software and download dataset** [First steps](exercises/00_setup/00_SetUp.md)
 - **Data** [Download zip folder]() --> UPDATE
 ### Day 1
-- **Talk 1:** [Iniciación al análisis de datos procedentes de técnicas de secuenciación masiva (NGS)](slides/day1/NGS_ISCIII_2019_dia-1_V2.pdf)
-- **Talk 2:** [Iniciación al entorno Linux.](slides/day1/curso_ngs_2019_sesion2_sesion4_linux.pdf)
-- **Exercise 1:** [Comandos básicos de linux.](exercises/day1/handson_dia1_linux1_2019.md) -- [Download pdf](exercises/day1/handson_dia1_linux1_2019.pdf)
-- **Exercise 2:** [Nextflow y Singularity.](exercises/day1/handson_dia1_linux2_2019.md) -- [Download pdf](exercises/day1/handson_dia1_linux2_2019.pdf)
+- **Talk 1:** [Iniciación al análisis de datos procedentes de técnicas de secuenciación masiva (NGS)](slides/00_intro00_platforms.pdf)
 
 ### Day 2
-- **Talk 1:** [Secuenciación Masiva: Aplicaciones.](slides/day2/NGS_ISCIII_2019_dia2.pdf)
-- **Talk 2:** [Iniciación al entorno Linux (continuacuón).](slides/day1/curso_ngs_2019_sesion2_sesion4_linux.pdf)
-- **Exercise 1:** [Manejo y gestión de ficheros.](exercises/day2/handson_dia2_linux1_2019.md) -- [Download pdf](exercises/day2/handson_dia2_linux1_2019.pdf)
-- **Exercise 2:** [Manejo de permisos.](exercises/day2/handson_dia2_linux2_2019.md) -- [Download pdf](exercises/day2/handson_dia2_linux2_2019.pdf)
+- **Talk 2:** [Iniciación al entorno Linux.](slides/01_intro03_linux.pdf)
 
 ### Day 3
-- **Talk 1:** [Control de calidad y preprocesado](slides/day3/curso_ngs_dia3_2019_preprocesamiento.pdf)
-- **Talk 2:** [Mapping y filtrado de duplicados](slides/day3/curso_ngs_dia3_2019_sesion6_mapping.pdf)
+- **Talk 1:** [Secuenciación Masiva: Aplicaciones.](slides/00_intro01_application.pdf)
+
+### Day 4
+- **Exercise 1:** [Comandos básicos de linux.](exercises/01_handson_linux/handson_dia2_linux1_2019.md) -- [Download pdf](exercises/day1/handson_dia1_linux1_2019.pdf)
+- **Exercise 2:** [Manejo y gestión de ficheros.](exercises/01_handson_linux/handson_dia2_linux2_2019.md) -- [Download pdf](exercises/day2/handson_dia2_linux1_2019.pdf)
+- **Exercise 3:** [Manejo de permisos.](exercises/day2/handson_dia2_linux2_2019.md) -- [Download pdf](exercises/01_handson_linux/handson_dia2_linux2_2019.md)
+
+### Day 5
+- **Talk 1:** [Control de calidad y preprocesado](slides/02_steps_preprocessing_qc.pdf)
+- **Talk 2:** [Mapping y filtrado de duplicados](slides/03_steps_mapping_qc.pdf)
+
+### Day 6
 - **Exercise 1:** [Formato fastq](exercises/day3/handson_dia3_1_fastq_2019.md) -- [Download pdf](exercises/day3/handson_dia3_1_fastq_2019.pdf)
 - **Exercise 2:** [Control de Calidad y preprocesamiento de ficheros fastq](exercises/day3/handson_dia3_2_prepro_2019.md) -- [Download pdf](exercises/day3/handson_dia3_2_prepro_2019.pdf)
 - **Exercise 3:** [Mapado y control de calidad](exercises/day3/handson_dia3_3_mapado_2019.md) -- [Download pdf](exercises/day3/handson_dia3_3_mapado_2019.pdf)
 
-### Day 4
-- **Talk 1:** [Variant Calling](slides/day4/curso_ngs_dia4_variant_calling_2019.pdf)
+### Day 7
+- **Talk 1:** [Variant Calling](slides/04_steps_variant_calling.pdf)
+
+### Day 8
 - **Exercise 1:** [Variant Calling](exercises/day4/handson_dia4_1_variantcalling_2019.md) -- [Download pdf](exercises/day4/handson_dia4_1_variantcalling_2019.pdf)
 
-### Day 5
-- **Talk 1:** [Ensamblado](slides/day5/curso_ngs_2019_ensamblado_dia5.pdf)
+### Day 9
+- **Talk 1:** [Ensamblado](slides/05_steps_assembly.pdf)
+
+### Day 10
 - **Exercise 1:** [Whole genome analysis](exercises/day5/handson_dia5_1_variantcalling_2019.md) -- [Download pdf](exercises/day5/handson_dia5_1_variantcalling_2019.pdf)
