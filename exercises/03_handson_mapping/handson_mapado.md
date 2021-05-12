@@ -62,7 +62,7 @@ Como habréis comprobado en este caso estamos tratando con datos de lecturas lar
 ```bash
 # Mapamos las lecturas contra la referencia
 cd ..
-bwa mem -t 4 REFERENCE/EC_K12_ST10.fasta \
+bwa mem -t 2 REFERENCE/EC_K12_ST10.fasta \
 RAW/CFSAN002083-01_S1_L001_R1_001.fastq \
 RAW/CFSAN002083-01_S1_L001_R2_001.fastq \
 > RESULTS/Alignment/CFSAN002083-01_S1_L001.sam
