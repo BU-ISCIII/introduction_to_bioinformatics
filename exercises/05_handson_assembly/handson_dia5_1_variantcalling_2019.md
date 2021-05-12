@@ -1,9 +1,9 @@
 ## Curso de Iniciación a la Secuenciación Masiva
 BU-ISCIII
 
-### Práctica 1 día 5: Whole genome analysis
+### Práctica 1 día 9: Ensamblado, anotación, tipificación e identificación de genes de resistencia
 
-17-21 Junio 2019, 7a Edición, Programa Formación Continua, ISCIII
+17-28 Mayo 2021, 8a Edición, Programa Formación Continua, ISCIII
 
 
 #### Descripción
