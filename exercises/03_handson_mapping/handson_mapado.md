@@ -12,10 +12,10 @@ Nos vamos a mover a un nuevo directorio que contiene los datos que vamos a utili
 ```bash
 # Comprobamos donde estamos situados
 pwd
-#Output: /home/alumno/curso_NGS/dia3/handson_dia3/02_qc_preproc
+#Output: /home/alumno/ngs_course/02_handson_preprocessing
 
 # Nos movemos a la carpeta que contiene la tercera parte de la practica
-cd ../03_mapping_qc
+cd ../03_handson_mapping/
 
 # Listamos el contenido del directorio
 ls
@@ -26,7 +26,7 @@ cd RAW
 
 # Listamos el contenido del directorio
 ls
-#Output:CFSAN002083-01_S1_L001_R1_001.fastq  CFSAN002083-01_S1_L001_R2_001.fastq
+#CFSAN002083-01_S1_L001_R1_001.fastq  CFSAN002083-01_S1_L001_R2_001.fastq  exome_test.bam
 ```
 
 Vamos a utilizar el programa bwa (burrows-wheeler aligner), que es uno de los más utilizados para datos obtenidos de Illumina. Tiene dos modos uno para reads “cortas” de menos de 100 pb (bwa aln y sampe) y otro para reads más “largas”(bwa mem) , al principio más pensado para reads de 454 pero ahora ya también para reads largas de MiSeq.
@@ -272,9 +272,9 @@ A tener en cuenta:
 
 **Visualización de bam de exoma**
 
-Los datos de prueba para esta parte de la práctica se encuentran en /home/alumno/cursoNGS/dia3/04_genome_visualization.
+Los datos de prueba para esta parte de la práctica se encuentran en `/home/alumno/ngs_course/03_handson_mapping/RAW/`.
 
-Seleccionamos el genoma de referencia human(b37) y cargamos el bam que se llama exome_test.bam.
+Seleccionamos el genoma de referencia human(b37) y cargamos el bam que se llama `exome_test.bam`.
 
 Podéis investigar un poco el fichero con todas las cosas que hemos ido viendo hasta el momento de IGV. La principal diferencia que vamos a ver es cómo sólo vamos a encontrar reads mapeados en exones ya que son las zonas que se han enriquecido en el proceso de preparación de la librería.
 
