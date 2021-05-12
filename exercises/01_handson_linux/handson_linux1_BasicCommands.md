@@ -1,9 +1,9 @@
 ## Curso de Iniciación a la Secuenciación Masiva
 BU-ISCIII
 
-### Práctica 1 día 1: Comandos básicos de linux
+### Práctica 1: Comandos básicos de linux
 
-17-21 Junio 2019, 7a Edición, Programa Formación Continua, ISCIII
+17-28 Mayo 2021, 8a Edición, Programa Formación Continua, ISCIII
 
 
 #### Descripción
@@ -18,14 +18,17 @@ El objetivo es realizar desde la línea de comandos, aquellas tareas cotidianas 
 
 * NO ES ACONSEJABLE USAR ESPACIOS, TILDES NI CARACTERES ESPECIALES, COMO LA "Ñ", AL PONER NOMBRES A FICHERO O DIRECTORIOS.
 
+* LOS COMANDOS BÁSICOS QUE SIEMPRE DEBES RECORDAR: *pwd cd ls mkdir mv rm rmdir less nano*
+
 #### Ejercicios
-1. Muestra el calendario actual, el calendario del mes de diciembre y la fecha y hora actual. Borra la pantalla con el comando clear o usando la combinación de teclas ctrl + l
+1. Input y output en la terminal. Muestra el calendario actual, el calendario del mes de diciembre y la fecha y hora actual. Borra la pantalla con el comando clear o usando la combinación de teclas ctrl + l.
 ```bash
 cal
-cal -m 6 2019
+cal -m 6 2021
 date
 clear
 ```
+¿Se te ocurre como mostrar tu fecha de nacimiento? ¿Qué utilidad puede tener imprimir una fecha?
 
 2. Prueba a usar los comandos who, whoami e id para ver la información que muestran.
 ```bash
@@ -34,13 +37,30 @@ whoami
 id
 uname -a
 ```
+¿Sabes decir qué información muestra cada uno?
 
 3. Abrir otro terminal y escribir sudo su para cambiar a usuario root (tendrás que poner la contraseña – OJO: La contraseña no se visualiza mientras la escribes) y vuelve a usar los comandos anteriores. Veras que la información ahora pertenece al usuario administrador. Salir del terminal en el que estés logueado como administrador (root). Para ello escribe exit (para volver al usuario alumno) y otra vez exit para cerrar la terminal.
+```bash
+sudo su
+who
+whoami
+id
+uname -a
+exit
+```
+ ¿Qué ha cambiado respeco al hacer esto mismo con tu usario?
 
-4. Abrir una nueva terminal y comprobar en que directorio estas ubicado con el comando pwd.
+4. Abrir una nueva terminal y comprobar en que directorio estas ubicado con el comando pwd. Mostrar los archivos en esa carpeta usando el comando ls, y más información con los parámetros -l, -a, y -la.
+```bash
+pwd
+ls
+ls -l
+ls -a
+ls -la
+```
+¿Dónde estás? ¿Qué ficheros ves? ¿Y qué carpetas? ¿Qué hace el -a?
 
-5. Desde tu home acceder (cd) al directorio ‘Documents’ y dentro crear (mkdir) un directorio que se llame ‘practica_comandos’. Acceder dentro del directorio ‘practica_comandos’ y crear 2 directorios, uno se llamara ‘dir1’ y el otro ‘dir2’. Acceder dentro del directorio ‘dir1’ y crear un fichero de ‘texto’ vacio (touch) llamado ‘archivo1.txt’. Volver al directorio de inicio
-(/home/alumno).
+5. Desde tu home acceder (cd) al directorio ‘Documents’ y dentro crear (mkdir) un directorio que se llame ‘practica_comandos’. Acceder dentro del directorio ‘practica_comandos’ y crear 2 directorios, uno se llamara ‘dir1’ y el otro ‘dir2’. Acceder dentro del directorio ‘dir1’ y crear un fichero de ‘texto’ vacio (touch o >) llamado ‘archivo1.txt’. Volver al directorio de inicio (/home/alumno).
 ```bash
 cd Documents
 pwd
@@ -49,8 +69,9 @@ cd practica_comandos
 mkdir dir1 dir2
 cd dir1 #o cd /home/alumno/Documents/practica_comandos/dir1
 > archivo1.txt #o touch archivo1.txt
-cd
+cd #o cd /home/alumno/
 ```
+¿Cuál sería el path relativo al archivo que acabas de crear? ¿Y el absoluto? ¿Cómo lo crearías desde tu home?
 
 6. Usos del comando cat:
 
@@ -78,8 +99,18 @@ cat practica_cat.txt concatenar.txt > juntar_ficheros.txt
 cat -n juntar_ficheros.txt #(-n permite ver el número de líneas)
 clear
 ```
+Antes usamos > para algo diferente, ¿qué hace exactamente el comando >? ¿Dónde hemos creado el archivo concatenado? ¿Cómo podemos volver a home?
 
 7. Comprobar que estas en el directorio ‘dir1’ con pwd y listar su contenido (ls). Listar el mismo directorio (´dir1´) pero esta vez para ver información detallada (permisos, propietario, grupo...) (ls -l).Prueba con otros parámetros del comando ls (-t, -S, -r).
+```bash
+pwd
+ls
+ls -l
+ls -t
+ls -S
+ls -r
+```
+¿Lo que nos muestra pwd es ruta absoluta o relativa?
 
 8. Desde ‘dir1’ listar el contenido del home del alumno (ls /home/alumno). Listar el mismo directorio pero esta vez para ver información de permisos (ls -l, o usar el alias ll que equivale a lo mismo) y por último vuelve a listarlo para ver permisos y archivos ocultos (ls -la). Recuerda que los archivos ocultos empiezan por un “.” y suelen ser archivos de configuración del sistema o preferencias de usuario. Prueba a usar rutas absolutas y rutas relativas.
 ```bash
@@ -87,10 +118,20 @@ pwd
 ls /home/alumno #o ls ../../../../alumno/
 ls -la /home/alumno #o ll -a ../../../../alumno
 ```
+¿Para qué es interesante crear o ver los archivos ocultos?
 
 9. Prueba a moverte (cd) y listar (ls) otros directorios del árbol de ficheros de Linux. Recuerda que para saber en qué directorio te encuentras se usa el comando pwd y que con el comando cd (sin parámetros) vuelves a tu directorio personal (/home/alumno).
+```bash
+cd /
+ls
+cd etc
+ls
+cd
+ls
+```
+¿Cómo puedes ver todas las opciones para cambiar de destino?
 
-10. Acceder al directorio ‘dir2’ (anteriormente creado) y mueve el contenido de ‘dir1’ a ‘dir2’ (mv). Listar ambos directorios por separado para comprobar que se han movido los ficheros. Cambiar el nombre al fichero ‘archivo1.txt’ por ‘archivo_importante.txt’ (mv). Visualiza con cat el fichero ‘passwd’ que se encuentra en la carpeta del sistema /etc y redireccionar la salida del fichero a otro fichero que se llame ‘archivo_importante.txt’ (cat /etc/passwd > archivo_importante.txt) (El fichero ‘passwd’ contiene información de los usuarios del sistema). Visualizar el contenido usando cat, more y less (recuerda que more y less paginan el contenido y que para salir se usa la tecla q [quit]).
+10. Acceder al directorio ‘dir2’ (anteriormente creado) y mueve el contenido de ‘dir1’ a ‘dir2’ (mv). Listar ambos directorios por separado para comprobar que se han movido los ficheros. Cambiar el nombre al fichero ‘archivo1.txt’ por ‘archivo_importante.txt’ (mv). Visualiza con cat el fichero ‘passwd’ que se encuentra en la carpeta del sistema /etc y redireccionar la salida del fichero a otro fichero que se llame ‘archivo_importante.txt’ (cat /etc/passwd > archivo_importante.txt) (El fichero ‘passwd’ contiene información de los usuarios del sistema). Visualizar el contenido usando cat y less (recuerda que less paginan el contenido y que para salir se usa la tecla q [quit]).
 ```bash
 cd /home/alumno/Documents/practica_comandos/dir2
 mv ../dir1/* ./ #o mv /home/alumno/Documents/practica_comandos/dir1/* /home/alumno/Documents/practica_comandos/dir2/
@@ -98,17 +139,19 @@ mv ../dir1/* ./ #o mv /home/alumno/Documents/practica_comandos/dir1/* /home/alum
 # OJO! si no pones el * o indicas el fichero, SE MOVERA EL DIRECTORIO ENTERO.
 mv archivo1.txt archivo_importante.txt
 cat /etc/passwd > archivo_importante.txt
-cat archivo_importante.txt
+less archivo_importante.txt
+# q para salir
 ```
+¿Por qué usar less cuando tenemos word?
 
-11. Ahora copiar (cp) el fichero ‘passwd’ dentro de ‘dir2’ con el nombre ‘listado_usuarios.txt’. Listar el directorio para ver los permisos y propietario de los ficheros (ls -l). Mostrar el contenido de ambos ficheros. Para salir de la visualización de more o less pulsa "q".
+11. Ahora copiar (cp) el fichero ‘passwd’ dentro de ‘dir2’ con el nombre ‘listado_usuarios.txt’. Listar el directorio para ver los permisos y propietario de los ficheros (ls -l). Mostrar el contenido de ambos ficheros. Para salir de la visualización de less pulsa "q".
 ```bash
 cp /etc/passwd listado_usuarios.txt #o cp /etc/passwd ./; mv passwd listado_usuarios.txt
 ls -l #o ls -l /home/alumno/Documents/practica_comandos/dir2
 less archivo_importante.txt # Pulsa q para salir
-more listado_usuarios.txt # Pulsa q para salir
 # Acuérdate que puedes limpiar la pantalla con el comando clear o pulsando ctrl + l
 ```
+¿Para qué sirve less si ya sé usar cat?
 
 12. Desde dentro del directorio ‘practica_comandos’ hacer una copia del directorio ‘dir2’ con nombre ‘copia_dir2’ (cp –r).
 
@@ -127,6 +170,7 @@ cd ..
 pwd
 rmdir practica_comandos
 ```
+¿Por qué no puedo usar rm para eliminar carpetas si en linux también son archivos?
 
 #### Nota final
 * Podéis practicar estos ejercicios en cualquier ordenador, no solo en la máquian virtual del curso.
@@ -135,6 +179,8 @@ rmdir practica_comandos
 
 * La manera más sencilla de practicarlos sin instalar nada es vía http://www.webminal.org/. En esta web puedes crearte un usuario de forma gratuita y abrir una terminal en una máquina remota, todo a través de vuestro explorador web. También contiene tutoriales complementarios que os pueden servir para afianzar lo aprendido hoy o repasar los comandos cuando tengáis necesidad de usarlos.
 
+* *NOTA:* http://www.webminal.org/ ha sufrido recientemente un incendio en sus servidores y la plataforma está off-line temporalmente. Como alternativa podéis usar http://copy.sh/v86/?profile=archlinux, aunque esta carece de tutoriales.
+
 ```
-Visita Webminal para practicar en casa: http://www.webminal.org/
+Visita Webminal o copy.sh para practicar en casa: http://www.webminal.org/ o http://copy.sh/v86/?profile=archlinux
 ```
