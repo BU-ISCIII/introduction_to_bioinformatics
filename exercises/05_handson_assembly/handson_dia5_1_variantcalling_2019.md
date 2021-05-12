@@ -15,7 +15,7 @@ Se utilizarán los datos de secuenciación de Escherichia coli O104:H4, responsa
 
 ```bash
 # Nos movemos a la carpeta de los datos
-cd cursoNGS/dia5/handson_dia5_bact
+cd ngs_course/05_handson_assembly
 ```
 
 El objetivo de este ejercicio es poner en práctica los conocimientos adquiridos en este curso sobre el preprocesamiento de datos NGS para comprobar la calidad de las lecturas sobre las que vamos a trabajar. Para ello vamos a utilizar la herramienta FastQC. Puedes obtener más información sobre la aplicación en http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
@@ -24,10 +24,10 @@ Desde la línea de comandos ejecutamos:
 
 ```bash
 # Realizamos el análisis de calidad
-fastqc -t 2 data/SRR292770_*
+fastqc -t 2 RAW/SRR292770_*
 ```
 
-Vemos todos los reports abriendo los archivos .html que están dentro de la carpeta `data/` (SRR292770_1_fastqc.html y SRR292770_2_fastqc.html)
+Vemos todos los reports abriendo los archivos .html que están dentro de la carpeta `RAW/` (SRR292770_1_fastqc.html y SRR292770_2_fastqc.html)
 
 Comprueba como las secuencias superan la mayoría de los test. El nivel de duplicación es ligeramente alto (en torno al 26 %).
 
@@ -37,7 +37,8 @@ El objetivo de este ejercicio es realizar un ensamblaje de las lecturas mediante
 
 ```bash
 #Ejecutamos unicycler
-unicycler --threads 2 -1 data/SRR292770_1.fastq.gz -2 data/SRR292770_2.fastq.gz -o unicycler_output
+cd RESULTS
+unicycler --threads 2 -1 ../RAW/SRR292770_1.fastq.gz -2 ../RAW/SRR292770_2.fastq.gz -o unicycler_output
 
 #Copiamos el fichero de contigs a nuestro directorio de trabajo
 cp unicycler_output/assembly.fasta SRR292770_assembly.fasta
@@ -49,7 +50,7 @@ Al ejecutar este comando se generaran una serie de ficheros, incluido el fichero
 
 Una vez que tenemos los contigs con las lecturas ensambladas es útil ordenarlos frente a un genoma de referencia. Una manera sencilla de conseguirlo es utilizando la opción Move Contigs de Mauve (http://asap.ahabs.wisc.edu/mauve).
 
-Utilizaremos los contigs obtenidos anteriormente y la referencia E. coli Ec55989 (NCBI accession NC 011748 ) que corresponde con una cepa muy cercana con un genoma completo disponible, localizado en la carpeta /reference.
+Utilizaremos los contigs obtenidos anteriormente y la referencia E. coli Ec55989 (NCBI accession NC 011748 ) que corresponde con una cepa muy cercana con un genoma completo disponible, localizado en la carpeta `ngs_course/05_handson_assembly/REFERENCES`.
 
 Se abre la aplicación desde la terminal:
 
@@ -64,23 +65,19 @@ Aparece una ventana de diálogo etiquetada Choose location to keep output files 
 
 Se muestra un mensaje acerca del proceso iterativo de reordenamiento de los contigs. Pulsa OK para continuar.
 
-Aparece una caja de dialogo etiquetada como Align and Reorder Contigs.  Pulsa el boton Add Se-quence... y elige el genoma de referencia frente al que quieres alinear que en este caso es NC 011748.fna.
+Aparece una caja de dialogo etiquetada como Align and Reorder Contigs.  Pulsa el boton Add Se-quence... y elige el genoma de referencia frente al que quieres alinear que en este caso es NC_011748.fna (ngs_course/05_handson_assembly/REFERENCES/NC_011748.fna).
 
 Pulsa el boton Add Sequence... nuevamente y elige el fichero con los contigs SRR292770_unordered.fasta
 
 Pulsa Start para comenzar la reordenación. Este proceso puede llevar un tiempo. La reordenación se lleva a cabo mediante una serie de iteraciones. Por cada una de ellas se genera una ventana Mauve unknown - alignmentX, donde X es el número de iteración.
 
-El conjunto final de contigs ordenado y orientado se encuentra en el fichero fasta de la última iteración. Para localizarlo mira dentro del directorio MauveOutput creado anteriormente. Por cada iteración debe haber una carpeta alignmentX. Copia el fichero SRR292779_unordered.fasta del directorio que tenga
-
-el valor de X más alto a tu directorio de trabajo; nombrándolo como SRR292770.fasta. Una vez que hayas copiado el fichero puedes eliminar los directorios alignmentX.
+El conjunto final de contigs ordenado y orientado se encuentra en el fichero fasta de la última iteración. Para localizarlo mira dentro del directorio MauveOutput creado anteriormente. Por cada iteración debe haber una carpeta alignmentX. Copia el fichero SRR292779_unordered.fasta del directorio que tenga el valor de X más alto a tu directorio de trabajo; nombrándolo como SRR292770.fasta. Una vez que hayas copiado el fichero puedes eliminar los directorios alignmentX.
 
 #### Ejercicio 4
 
 objetivo de este ejercicio es visualizar los contigs ordenados utilizando Mauve.  Generaremos un alineamiento múltiple de los contigs ordenados del genoma del brote O104:H4, la referencia Ec55989 y un ensamblaje adicional creado utilizando más lecturas que nuestro draft.
 
-El ensamblaje alternativo de la cepa TY-2482 (NCBI accession AFVR01 ) está disponible para descargar en http://www.ncbi.nlm.nih.gov/Traces/wgs/?val=AFVR01. Deber amos descargarnos dicho ensamblaje y ordenarlo a la referencia Ec55989 siguiendo el método detallado en el ejercicio anterior. Como este paso
-
-consume mucho tiempo; con los restantes ficheros de la practica encontrareis el fichero AFVR01 sorted.fasta que puede ser utilizado directamente.
+El ensamblaje alternativo de la cepa TY-2482 (NCBI accession AFVR01 ) está disponible para descargar en http://www.ncbi.nlm.nih.gov/Traces/wgs/?val=AFVR01. Deber amos descargarnos dicho ensamblaje y ordenarlo a la referencia Ec55989 siguiendo el método detallado en el ejercicio anterior. Como este paso consume mucho tiempo; con los restantes ficheros de la practica encontrareis el fichero AFVR01 sorted.fasta que puede ser utilizado directamente.
 
 * Ejecuta Mauve
 
@@ -88,7 +85,7 @@ consume mucho tiempo; con los restantes ficheros de la practica encontrareis el 
 
 * Aparece una caja de dialogo etiquetada como Sequences to align. Pulsa el boton Add Sequence... y elige el fichero de contigs SRR292770.fasta
 
-* Pulsa Add Sequence... nuevamente y elige el fichero AFVR01.1_sorted.fasta con el ensamblaje alternativo. Pulsa Add Sequence... y añade el fichero reference/NC 011749.fna con el genoma de referencia Ec55989.
+* Pulsa Add Sequence... nuevamente y elige el fichero AFVR01.1_sorted.fasta con el ensamblaje alternativo. Pulsa Add Sequence... y añade el fichero REFERENCES/NC 011749.fna con el genoma de referencia Ec55989.
 Especifica Multiple como nombre para el fichero de salida y pulsa Save.
 
 * Pulsa Align... para ejecutar el alineamiento. Este proceso puede llevar un tiempo.
@@ -107,7 +104,7 @@ El objetivo de este ejercicio es analizar la calidad de un ensamblado. Para ello
 
 ```bash
 #Ejecutamos QUAST
-quast.py data/SRR292770_unordered.fasta -o quast \
+quast.py RESULTS/SRR292770_unordered.fasta -o quast \
 -R data/help/NC_011748.fna -G data/help/NC_011748.gff \
 -m 200 -t 2
 ```
