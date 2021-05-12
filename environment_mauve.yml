@@ -17,4 +17,3 @@ dependencies:
   - mauvealigner=1.2.0=hfc679d8_0
   - openjdk=8.0.152=h7b6447c_3
   - zlib=1.2.11=h7b6447c_3
-prefix: /home/s.varona/miniconda3/envs/mauve
