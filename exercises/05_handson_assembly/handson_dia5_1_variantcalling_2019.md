@@ -24,10 +24,10 @@ Desde la línea de comandos ejecutamos:
 
 ```bash
 # Realizamos el análisis de calidad
-fastqc -t 2 RAW/SRR292770_*
+fastqc -t 2 RAW/SRR292770_* --outdir RESULTS/fastqc
 ```
 
-Vemos todos los reports abriendo los archivos .html que están dentro de la carpeta `RAW/` (SRR292770_1_fastqc.html y SRR292770_2_fastqc.html)
+Vemos todos los reports abriendo los archivos .html que están dentro de la carpeta `RESULTS/fastqc/` (SRR292770_1_fastqc.html y SRR292770_2_fastqc.html)
 
 Comprueba como las secuencias superan la mayoría de los test. El nivel de duplicación es ligeramente alto (en torno al 26 %).
 
