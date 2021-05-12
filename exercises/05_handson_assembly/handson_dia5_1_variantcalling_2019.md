@@ -24,7 +24,7 @@ Desde la línea de comandos ejecutamos:
 
 ```bash
 # Realizamos el análisis de calidad
-fastqc -t 4 data/SRR292770_*
+fastqc -t 2 data/SRR292770_*
 ```
 
 Vemos todos los reports abriendo los archivos .html que están dentro de la carpeta `data/` (SRR292770_1_fastqc.html y SRR292770_2_fastqc.html)
