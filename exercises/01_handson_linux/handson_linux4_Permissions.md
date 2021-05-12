@@ -3,13 +3,22 @@ BU-ISCIII
 
 ### Práctica 2 día 2: Manejo y gestión de ficheros
 
-17-21 Junio 2019, 7a Edición, Programa Formación Continua, ISCIII
+17-28 Mayo 2021, 8a Edición, Programa Formación Continua, ISCIII
 
 
 #### Descripción
 Al copiar o mover ficheros y/o directorios dentro del sistema o desde servidores de ficheros (FTP, samba, ...), tanto los permisos como propietario o grupo de esos ficheros, no siempre son los correctos para poder manipularlos.
 
 El objetivo de la práctica es realizar desde la línea de comandos cambios en las características de los ficheros y/o directorios para que nuestro usuario del sistema pueda procesarlos y/o visualizarlos.
+
+#### Notas importantes
+* USA EL TABULADOR PARA GUIARTE EN LA TERMINAL Y AUTOCOMPLETAR NOMBRE DE RUTAS, NOMBRE DE ARCHIVOS Y COMANDOS. (“El tabulador es tu mejor aliado”)
+
+* USA LOS CURSORES DEL TECLADO PARA MOVERTE POR EL HISTORIAL DE COMANDOS EJECUTADOS (PODRÁS VOLVER A USARLOS SIN NECESIDAD DE VOLVERLOS A ESCRIBIR).
+
+* NO ES ACONSEJABLE USAR ESPACIOS, TILDES NI CARACTERES ESPECIALES, COMO LA "Ñ", AL PONER NOMBRES A FICHERO O DIRECTORIOS.
+
+* LOS COMANDOS BÁSICOS QUE SIEMPRE DEBES RECORDAR: *pwd cd ls mkdir mv rm rmdir less nano*
 
 #### Ejercicios
 1) Acceder al directorio ‘Documents’ de nuestro Home y dentro crear un directorio que se llame ‘practica_permisos’. Dentro de ‘practica_permisos’ crear otro directorio que se llame ‘copia_etc’. Copiar todos los ficheros que empiecen por ‘ho’ y todos los que empiecen por ‘au’ desde el directorio ‘/etc/’, a el directorio ‘copia_etc’ (usad el parámetro -v para ver el proceso de copia).
@@ -80,6 +89,8 @@ ls
 
 * La manera más sencilla de practicarlos sin instalar nada es vía http://www.webminal.org/. En esta web puedes crearte un usuario de forma gratuita y abrir una terminal en una máquina remota, todo a través de vuestro explorador web. También contiene tutoriales complementarios que os pueden servir para afianzar lo aprendido hoy o repasar los comandos cuando tengáis necesidad de usarlos.
 
+* *NOTA:* http://www.webminal.org/ ha sufrido recientemente un incendio en sus servidores y la plataforma está off-line temporalmente. Como alternativa podéis usar http://copy.sh/v86/?profile=archlinux, aunque esta carece de tutoriales.
+
 ```
-Visita Webminal para practicar en casa: http://www.webminal.org/
+Visita Webminal o copy.sh para practicar en casa: http://www.webminal.org/ o http://copy.sh/v86/?profile=archlinux
 ```

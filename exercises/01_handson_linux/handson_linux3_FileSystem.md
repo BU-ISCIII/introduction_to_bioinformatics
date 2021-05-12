@@ -1,13 +1,22 @@
 ## Curso de Iniciación a la Secuenciación Masiva
 BU-ISCIII
 
-### Práctica 1 día 2: Manejo y gestión de ficheros
+### Práctica 3: Manejo y gestión de ficheros
 
-17-21 Junio 2019, 7a Edición, Programa Formación Continua, ISCIII
+17-28 Mayo 2021, 8a Edición, Programa Formación Continua, ISCIII
 
 
 #### Descripción
 Uno de los puntos fuertes de los sistemas Linux estriba en la facilidad con la que se analizan los ficheros de texto. Estos sistemas incluyen una serie de herramientas que permiten realizar una gran cantidad de manipulaciones en estos ficheros sin necesidad de instalar ninguna herramienta especializada.
+
+#### Notas importantes
+* USA EL TABULADOR PARA GUIARTE EN LA TERMINAL Y AUTOCOMPLETAR NOMBRE DE RUTAS, NOMBRE DE ARCHIVOS Y COMANDOS. (“El tabulador es tu mejor aliado”)
+
+* USA LOS CURSORES DEL TECLADO PARA MOVERTE POR EL HISTORIAL DE COMANDOS EJECUTADOS (PODRÁS VOLVER A USARLOS SIN NECESIDAD DE VOLVERLOS A ESCRIBIR).
+
+* NO ES ACONSEJABLE USAR ESPACIOS, TILDES NI CARACTERES ESPECIALES, COMO LA "Ñ", AL PONER NOMBRES A FICHERO O DIRECTORIOS.
+
+* LOS COMANDOS BÁSICOS QUE SIEMPRE DEBES RECORDAR: *pwd cd ls mkdir mv rm rmdir less nano*
 
 #### Ficheros de texto y binarios
 Antes de comenzar a analizar este tipo de ficheros hay que aclarar qué es y qué no es un fichero de texto. Un fichero de texto es un fichero dividido en líneas y cuyo contenido es texto. A pesar de lo que pudiese parecer a priori, un documento de Microsoft Office o de LibreOffice no es un fichero de texto. La información contenida en estos documentos es binaria y sólo los programas especialmente creados para abrir estos ficheros pueden acceder a ella de un modo inteligible. En un documento como en un fichero Word además de texto se guarda la información sobre el formato, imágenes, tablas, etc... Por el contrario en un fichero de texto sólo hay caracteres alfanuméricos (letras y números), retornos de carro y tabuladores.
@@ -16,7 +25,7 @@ Los ficheros de texto pueden ser abiertos e inspeccionados sin necesidad de hace
 
 Estas herramientas de manejo de ficheros de texto permiten realizar complejas manipulaciones de un modo muy sencillo y son uno de los principales atractivos de los sistemas Linux para el manejo de grandes cantidades de información.
 
-Para esta práctica se va a usar el fichero microarray_adenoma_hk69.csv (/home/alumno/cursoNGS/dia2). En este fichero están almacenados los resultados de un experimento de expresión diferencial en el que se han analizado distintos adenomas.
+Para esta práctica se va a usar el fichero microarray_adenoma_hk69.csv (/neptuno/cursoNGS/01_handson_linux). En este fichero están almacenados los resultados de un experimento de expresión diferencial en el que se han analizado distintos adenomas. *Importante:* copiad el fichero a una carpeta en vuestra máquina para trabajar con él (por ejemplo /home/alumno/Documents/).
 
 Este es un fichero tabular en el que la información se representa dividiendo los campos mediante tabuladores (formato tabla). En este caso cada fila del fichero corresponde a una sonda de microarray y cada columna a una propiedad sobre la sonda o sobre el resultado de la hibridación sobre ella.
 
@@ -44,7 +53,7 @@ Para abrir ficheros de texto inmensos sin problemas se usan los comandos more o 
 
 ```bash
 less microarray_adenoma_hk69.csv
-more microarray_adenoma_hk69.csv
+# q para salir
 ```
 
 Algunas de las tareas más habituales en el tratamiento de ficheros de texto van a ser:
@@ -100,7 +109,7 @@ head microarray_adenoma_hk69.csv | sort -k1 -r
 
 8) Contar cuantos genes relacionados con la leucemia hay en el fichero.
 
-<i>Nota: Recordad usar los comandos pwd, cd y ls para conocer vuestra localización, moveros entre directorios y listar el contenido de los directorios respectivamente. Necesitaréis ir al directorio donde se encuentra el archivo ‘microarray_adenoma_hk69.csv’ para poder trabajar con él más fácilmente (/home/alumno/curso_NGS/dia2).</i>
+<i>Nota: Recordad usar los comandos pwd, cd y ls para conocer vuestra localización, moveros entre directorios y listar el contenido de los directorios respectivamente. Necesitaréis ir al directorio donde se encuentra el archivo ‘microarray_adenoma_hk69.csv’ para poder trabajar con él más fácilmente.</i>
 
 #### Soluciones
 ```bash
@@ -128,6 +137,7 @@ grep leukemia microarray_adenoma_hk69.csv | cut -f 3,4 | sort
 #8
 grep leukemia microarray_adenoma_hk69.csv | cut -f 3,4 | sort -u | wc -l
 ```
+
 #### Nota final
 * Podéis practicar estos ejercicios en cualquier ordenador, no solo en la máquian virtual del curso.
 
@@ -135,6 +145,8 @@ grep leukemia microarray_adenoma_hk69.csv | cut -f 3,4 | sort -u | wc -l
 
 * La manera más sencilla de practicarlos sin instalar nada es vía http://www.webminal.org/. En esta web puedes crearte un usuario de forma gratuita y abrir una terminal en una máquina remota, todo a través de vuestro explorador web. También contiene tutoriales complementarios que os pueden servir para afianzar lo aprendido hoy o repasar los comandos cuando tengáis necesidad de usarlos.
 
+* *NOTA:* http://www.webminal.org/ ha sufrido recientemente un incendio en sus servidores y la plataforma está off-line temporalmente. Como alternativa podéis usar http://copy.sh/v86/?profile=archlinux, aunque esta carece de tutoriales.
+
 ```
-Visita Webminal para practicar en casa: http://www.webminal.org/
+Visita Webminal o copy.sh para practicar en casa: http://www.webminal.org/ o http://copy.sh/v86/?profile=archlinux
 ```
