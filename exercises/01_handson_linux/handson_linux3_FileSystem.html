@@ -42,7 +42,7 @@
 <p>Antes de comenzar a analizar este tipo de ficheros hay que aclarar qué es y qué no es un fichero de texto. Un fichero de texto es un fichero dividido en líneas y cuyo contenido es texto. A pesar de lo que pudiese parecer a priori, un documento de Microsoft Office o de LibreOffice no es un fichero de texto. La información contenida en estos documentos es binaria y sólo los programas especialmente creados para abrir estos ficheros pueden acceder a ella de un modo inteligible. En un documento como en un fichero Word además de texto se guarda la información sobre el formato, imágenes, tablas, etc... Por el contrario en un fichero de texto sólo hay caracteres alfanuméricos (letras y números), retornos de carro y tabuladores.</p>
 <p>Los ficheros de texto pueden ser abiertos e inspeccionados sin necesidad de hacer uso de un software especial diseñado para trabajar con ellos. Un documento Word no puede ser leído sino tenemos el Office o LibreOffice instalado pero un fichero de texto se puede ver y editar con las herramientas que vienen instaladas por defecto en el sistema operativo.</p>
 <p>Estas herramientas de manejo de ficheros de texto permiten realizar complejas manipulaciones de un modo muy sencillo y son uno de los principales atractivos de los sistemas Linux para el manejo de grandes cantidades de información.</p>
-<p>Para esta práctica se va a usar el fichero microarray_adenoma_hk69.csv (/home/alumno/cursoNGS/dia2). En este fichero están almacenados los resultados de un experimento de expresión diferencial en el que se han analizado distintos adenomas.</p>
+<p>Para esta práctica se va a usar el fichero microarray_adenoma_hk69.csv (/neptuno/cursoNGS/01_handson_linux). En este fichero están almacenados los resultados de un experimento de expresión diferencial en el que se han analizado distintos adenomas. <em>Importante:</em> copiad el fichero a una carpeta en vuestra máquina para trabajar con él (por ejemplo /home/alumno/Documents/).</p>
 <p>Este es un fichero tabular en el que la información se representa dividiendo los campos mediante tabuladores (formato tabla). En este caso cada fila del fichero corresponde a una sonda de microarray y cada columna a una propiedad sobre la sonda o sobre el resultado de la hibridación sobre ella.</p>
 <p>Lo primero que podemos hacer con un fichero de texto es abrirlo para ver sus contenidos. Existen editores de texto que funcionan en ventanas, como gedit, y editores que funcionan en la terminal, como nano. Por desgracia a veces los ficheros con los que vamos a trabajar son tan grandes que incluso los buenos editores de texto pueden tener problemas para abrirlos.</p>
 <p>Otra forma de acceder a los contenidos del fichero es visualizarlo en la terminal utilizando el comando cat:</p>
@@ -55,7 +55,7 @@ tail -n 2 microarray_adenoma_hk69.csv
 head -n 4 microarray_adenoma_hk69.csv</code></pre>
 <p>Para abrir ficheros de texto inmensos sin problemas se usan los comandos more o less. No se puede editar el fichero, pero sí navegar por su contenido. Son programas interactivos por lo que cuando se ejecute se abrirá ocupando el terminal y haciendo desaparecer el prompt. En cualquier momento se puede salir pulsando la tecla “q”.</p>
 <pre><code class="language-bash">less microarray_adenoma_hk69.csv
-more microarray_adenoma_hk69.csv</code></pre>
+# q para salir</code></pre>
 <p>Algunas de las tareas más habituales en el tratamiento de ficheros de texto van a ser:</p>
 <ul>
 <li>Seleccionar diversas líneas (comando grep)</li>
@@ -87,7 +87,7 @@ more microarray_adenoma_hk69.csv</code></pre>
 <p>6) Como el contenido del fichero está dividido en campos, seleccionar de la búsqueda anterior solo el nombre y la descripción del gen.</p>
 <p>7) Ordenar alfabéticamente los genes relacionados con la leucemia.</p>
 <p>8) Contar cuantos genes relacionados con la leucemia hay en el fichero.</p>
-<p><i>Nota: Recordad usar los comandos pwd, cd y ls para conocer vuestra localización, moveros entre directorios y listar el contenido de los directorios respectivamente. Necesitaréis ir al directorio donde se encuentra el archivo ‘microarray_adenoma_hk69.csv’ para poder trabajar con él más fácilmente (/home/alumno/curso_NGS/dia2).</i></p>
+<p><i>Nota: Recordad usar los comandos pwd, cd y ls para conocer vuestra localización, moveros entre directorios y listar el contenido de los directorios respectivamente. Necesitaréis ir al directorio donde se encuentra el archivo ‘microarray_adenoma_hk69.csv’ para poder trabajar con él más fácilmente.</i></p>
 <h4 id="soluciones">Soluciones</h4>
 <pre><code class="language-bash">#1
 grep -i leukemia microarray_adenoma_hk69.csv | less

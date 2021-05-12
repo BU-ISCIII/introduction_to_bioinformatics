@@ -25,7 +25,7 @@ Los ficheros de texto pueden ser abiertos e inspeccionados sin necesidad de hace
 
 Estas herramientas de manejo de ficheros de texto permiten realizar complejas manipulaciones de un modo muy sencillo y son uno de los principales atractivos de los sistemas Linux para el manejo de grandes cantidades de información.
 
-Para esta práctica se va a usar el fichero microarray_adenoma_hk69.csv (/home/alumno/cursoNGS/dia2). En este fichero están almacenados los resultados de un experimento de expresión diferencial en el que se han analizado distintos adenomas.
+Para esta práctica se va a usar el fichero microarray_adenoma_hk69.csv (/neptuno/cursoNGS/01_handson_linux). En este fichero están almacenados los resultados de un experimento de expresión diferencial en el que se han analizado distintos adenomas. *Importante:* copiad el fichero a una carpeta en vuestra máquina para trabajar con él (por ejemplo /home/alumno/Documents/).
 
 Este es un fichero tabular en el que la información se representa dividiendo los campos mediante tabuladores (formato tabla). En este caso cada fila del fichero corresponde a una sonda de microarray y cada columna a una propiedad sobre la sonda o sobre el resultado de la hibridación sobre ella.
 
@@ -53,7 +53,7 @@ Para abrir ficheros de texto inmensos sin problemas se usan los comandos more o 
 
 ```bash
 less microarray_adenoma_hk69.csv
-more microarray_adenoma_hk69.csv
+# q para salir
 ```
 
 Algunas de las tareas más habituales en el tratamiento de ficheros de texto van a ser:
@@ -109,7 +109,7 @@ head microarray_adenoma_hk69.csv | sort -k1 -r
 
 8) Contar cuantos genes relacionados con la leucemia hay en el fichero.
 
-<i>Nota: Recordad usar los comandos pwd, cd y ls para conocer vuestra localización, moveros entre directorios y listar el contenido de los directorios respectivamente. Necesitaréis ir al directorio donde se encuentra el archivo ‘microarray_adenoma_hk69.csv’ para poder trabajar con él más fácilmente (/home/alumno/curso_NGS/dia2).</i>
+<i>Nota: Recordad usar los comandos pwd, cd y ls para conocer vuestra localización, moveros entre directorios y listar el contenido de los directorios respectivamente. Necesitaréis ir al directorio donde se encuentra el archivo ‘microarray_adenoma_hk69.csv’ para poder trabajar con él más fácilmente.</i>
 
 #### Soluciones
 ```bash
@@ -137,6 +137,7 @@ grep leukemia microarray_adenoma_hk69.csv | cut -f 3,4 | sort
 #8
 grep leukemia microarray_adenoma_hk69.csv | cut -f 3,4 | sort -u | wc -l
 ```
+
 #### Nota final
 * Podéis practicar estos ejercicios en cualquier ordenador, no solo en la máquian virtual del curso.
 
