@@ -168,7 +168,7 @@ picard CollectWgsMetrics \
 
 Se genera un archivo en RESULTS/Alignment que se puede abrir con el excel para visualizarlo más cómodamente. Si pregunta le diremos que nos separe las columnas por tabulador. Solo redordaros que excel es parte de la suite Microsoft Office que no está disponible nativamente en sistemas linux, por lo que en las máquinas virtuales normalmente utilizaréis una de sus alternativas opensource como Libre Office calc.
 
-En este fichero encontramos mucha de la información que ya habíamos obtenido con samtools, pero además también nos calculan el número de bases que tenemos, y uno de los parámetros que más utilizamos para saber si podemos realizar nuestro siguiente análisis con fiabilidad: la cobertura. (En el fichero la columna que pone Depth)
+Se trata de un fichero muy largo del que solo nos interesan las priemras 8 líneas. En este fichero encontramos mucha de la información que ya habíamos obtenido con samtools, pero además también nos calcula uno de los parámetros que más utilizamos para saber si podemos realizar nuestro siguiente análisis con fiabilidad: la cobertura media y el porcentage de genoma a cierta profundiad. (En el fichero las columnas que pone MEAN_COVERAGE (segunda columna) y PCT_1X (columnas 14 en adelante)).
 
 **¿Qué cobertura tenemos en este experimento?**
 
