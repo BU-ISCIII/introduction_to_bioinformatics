@@ -33,17 +33,17 @@ Comprueba como las secuencias superan la mayoría de los test. El nivel de dupli
 
 #### Ejercicio 2
 
-El objetivo de este ejercicio es realizar un ensamblaje de las lecturas mediante la aplicación SPAdes.
+El objetivo de este ejercicio es realizar un ensamblaje de las lecturas mediante el programa Unicycler.
 
 ```bash
-#Ejecutamos spades
-spades.py -k 21 -t 2 --pe1-1 data/SRR292770_1.fastq.gz --pe1-2 data/SRR292770_2.fastq.gz -o spades_output
+#Ejecutamos unicycler
+unicycler --threads 2 -1 data/SRR292770_1.fastq.gz -2 data/SRR292770_2.fastq.gz -o unicycler_output
 
 #Copiamos el fichero de contigs a nuestro directorio de trabajo
-cp spades_output/contigs.fasta SRR292770_unordered.fasta
+cp unicycler_output/assembly.fasta SRR292770_assembly.fasta
 ```
 
-Al ejecutar este comando se generaran una serie de ficheros, incluido el fichero que contiene los contigs (contigs.fa). Copiamos el archivo contigs.fa y lo renombramos.
+Al ejecutar este comando se generaran una serie de ficheros, incluido el fichero que contiene los contigs (assembly.fasta). Copiamos el archivo assembly.fasta y lo renombramos.
 
 #### Ejercicio 3
 
