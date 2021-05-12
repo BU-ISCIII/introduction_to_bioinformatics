@@ -104,14 +104,14 @@ El objetivo de este ejercicio es analizar la calidad de un ensamblado. Para ello
 
 ```bash
 #Ejecutamos QUAST
-quast.py RESULTS/SRR292770_unordered.fasta -o quast \
--R data/help/NC_011748.fna -G data/help/NC_011748.gff \
+quast.py SRR292770_unordered.fasta -o quast \
+-R ../REFERENCES/NC_011748.fna -G ../REFERENCES/NC_011748.gff \
 -m 200 -t 2
 ```
 
 Especificando con el parámetro -o el directorio donde se almacenarán los resultados. Con las opciones -R y -G le especificamos un genoma de referencia muy cercano a la cepa secuenciada y el modelo de genes correspondiente. De este modo, Quast es capaz de calcular algunas métricas adicionales.
 
-Una vez Quast haya finalizado la ejecución podemos visualizar los resultados abriendo el	 fichero report.html.
+Una vez Quast haya finalizado la ejecución podemos visualizar los resultados abriendo el fichero report.html.
 
 Situándote encima de las etiquetas se muestra una breve descripción sobre la métrica correspondiente.
 
