@@ -65,19 +65,19 @@ cd ..
 bwa mem -t 4 REFERENCE/EC_K12_ST10.fasta \
 RAW/CFSAN002083-01_S1_L001_R1_001.fastq \
 RAW/CFSAN002083-01_S1_L001_R2_001.fastq \
-> RESULTS/Alignment/CFSAN00283-01_S1_L001.sam
+> RESULTS/Alignment/CFSAN002083-01_S1_L001.sam
 ```
 
-**¿Cuánto ocupa el fichero que acabamos de generar? (du -sh RESULTS/Alignment/CFSAN00283-01_S1_L001.sam)**
+**¿Cuánto ocupa el fichero que acabamos de generar? (du -sh RESULTS/Alignment/CFSAN002083-01_S1_L001.sam)**
 
 Como se ha explicado en teoría el formato sam permite almacenar información de alineamiento, pero suele ocupar mucho espacio por lo que se suele utilizar su formato binario. Para realizar esta conversión:
 
 ```bash
 # Convertimos de sam a bam
-samtools view -Sb RESULTS/Alignment/CFSAN00283-01_S1_L001.sam > RESULTS/Alignment/CFSAN00283-01_S1_L001.bam
+samtools view -Sb RESULTS/Alignment/CFSAN002083-01_S1_L001.sam > RESULTS/Alignment/CFSAN002083-01_S1_L001.bam
 ```
 
-**¿Cuánto ocupa el fichero BAM que acabamos de generar? (du -sh RESULTS/Alignment/CFSAN00283-01_S1_L001.bam)**
+**¿Cuánto ocupa el fichero BAM que acabamos de generar? (du -sh RESULTS/Alignment/CFSAN002083-01_S1_L001.bam)**
 
 **¿Cuánto hemos disminuido el tamaño?**
 
@@ -89,7 +89,7 @@ Con este comando visualizamos el fichero bam como si fuera un sam.
 
 ```bash
 # Visualizamos el fichero bam
-samtools view RESULTS/Alignment/CFSAN00283-01_S1_L001.bam | more
+samtools view RESULTS/Alignment/CFSAN002083-01_S1_L001.bam | more
 
 #Recordatorio: para salir del comando more se utiliza q o CTRL+C
 ```
@@ -102,10 +102,10 @@ Para ordenar, generar un índice del fichero bam:
 
 ```bash
 # Ordenamos las lecturas por orden cromosómico
-samtools sort RESULTS/Alignment/CFSAN00283-01_S1_L001.bam \
--o RESULTS/Alignment/CFSAN00283-01_S1_L001_sorted.bam
+samtools sort RESULTS/Alignment/CFSAN002083-01_S1_L001.bam \
+-o RESULTS/Alignment/CFSAN002083-01_S1_L001_sorted.bam
 # Indexamos el fichero bam
-samtools index RESULTS/Alignment/CFSAN00283-01_S1_L001_sorted.bam
+samtools index RESULTS/Alignment/CFSAN002083-01_S1_L001_sorted.bam
 ```
 
 Ahora si revisamos nuestra carpeta de resultados vemos que tenemos todos los ficheros que necesitamos para continuar con nuestro análisis.
@@ -115,7 +115,7 @@ Ahora si revisamos nuestra carpeta de resultados vemos que tenemos todos los fic
 cd RESULTS/Alignment
 # Listamos el contenido del directorio
 ls
-#Output: CFSAN00283-01_S1_L001.bam  CFSAN00283-01_S1_L001.sam  CFSAN00283-01_S1_L001_sorted.bam  CFSAN00283-01_S1_L001_sorted.bam.bai
+#Output: CFSAN002083-01_S1_L001.bam  CFSAN002083-01_S1_L001.sam  CFSAN002083-01_S1_L001_sorted.bam  CFSAN002083-01_S1_L001_sorted.bam.bai
 ```
 
 El fichero sam podríamos borrarlo ya que es la misma información que hay en el bam. Así como el fichero bam sin ordenar. Todo lo que hagamos será a partir del fichero ordenado.
@@ -132,7 +132,7 @@ La manera más sencilla de realizar un análisis para saber cómo ha ido el alin
 
 ```bash
 # Utilizamos flagstat para ver estadísticas del fichero bam
-samtools flagstat CFSAN00283-01_S1_L001_sorted.bam
+samtools flagstat CFSAN002083-01_S1_L001_sorted.bam
 ```
 
 Este comando nos da un resumen de lo que contiene el bam.
@@ -158,8 +158,8 @@ Primero vamos a utilizar un programa llamado picard que consta de una suite de v
 # Utilizamos Picard para ver estadísticas del fichero bam
 picard CollectWgsMetrics \
     COVERAGE_CAP=1000000 \
-    INPUT=CFSAN00283-01_S1_L001_sorted.bam \
-    OUTPUT=CFSAN00283-01_S1_L001.CollectWgsMetrics.coverage_metrics \
+    INPUT=CFSAN002083-01_S1_L001_sorted.bam \
+    OUTPUT=CFSAN002083-01_S1_L001.CollectWgsMetrics.coverage_metrics \
     REFERENCE_SEQUENCE=../../REFERENCE/EC_K12_ST10.fasta \
     COUNT_UNPAIRED=true \
     VALIDATION_STRINGENCY=LENIENT \
@@ -182,16 +182,16 @@ Para eliminar duplicados se utiliza el programa picard explicado anteriormente. 
 # Eliminamos duplicados en el fichero bam
 picard MarkDuplicates REMOVE_DUPLICATES=TRUE \
 ASSUME_SORTED=TRUE VALIDATION_STRINGENCY=LENIENT \
-INPUT=CFSAN00283-01_S1_L001_sorted.bam \
-OUTPUT=CFSAN00283-01_S1_L001_noduplicates.bam \
+INPUT=CFSAN002083-01_S1_L001_sorted.bam \
+OUTPUT=CFSAN002083-01_S1_L001_noduplicates.bam \
 METRICS_FILE=picard.metrics_file \
 TMP_DIR=../../TMP
 
 # Obtenemos estadísticas del fichero sin duplicados
 picard CollectWgsMetrics \
     COVERAGE_CAP=1000000 \
-    INPUT=CFSAN00283-01_S1_L001_noduplicates.bam \
-    OUTPUT=CFSAN00283-01_S1_L001_noduplicates.CollectWgsMetrics.coverage_metrics \
+    INPUT=CFSAN002083-01_S1_L001_noduplicates.bam \
+    OUTPUT=CFSAN002083-01_S1_L001_noduplicates.CollectWgsMetrics.coverage_metrics \
     REFERENCE_SEQUENCE=../../REFERENCE/EC_K12_ST10.fasta \
     COUNT_UNPAIRED=true \
     VALIDATION_STRINGENCY=LENIENT \
@@ -249,7 +249,7 @@ Si recordáis cuando generamos el primer bam lo ordenamos y generamos su índice
 
 ```bash
 # Muevete hasta la carpeta donde está el archivo bam si te has movido a otro directorio
-samtools index CFSAN00283-01_S1_L001_noduplicates.bam
+samtools index CFSAN002083-01_S1_L001_noduplicates.bam
 ```
 
 Volvemos a IGV y volvemos a cargar el fichero bam noduplicates. Ahora debería cargarse sin problemas aunque no visualicemos nada en el centro de la pantalla es porque necesitamos hacer zoom.
