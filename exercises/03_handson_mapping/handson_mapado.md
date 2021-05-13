@@ -49,6 +49,9 @@ El segundo paso es indexarlo, es decir generar un formato modo índice que el pr
 # Nos movemos a la carpeta REFERENCE
 cd ../REFERENCE
 
+#Inicializamos el environment de conda
+conda activate ngs_course
+
 # Indexamos la referencia
 bwa index EC_K12_ST10.fasta
 ```
