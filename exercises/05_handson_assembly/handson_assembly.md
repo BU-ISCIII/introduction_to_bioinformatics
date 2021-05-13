@@ -23,6 +23,9 @@ El objetivo de este ejercicio es poner en práctica los conocimientos adquiridos
 Desde la línea de comandos ejecutamos:
 
 ```bash
+#Inicializamos el environment de conda
+conda activate ngs_course
+
 # Realizamos el análisis de calidad
 fastqc -t 2 RAW/SRR292770_* --outdir RESULTS/fastqc
 ```
@@ -55,6 +58,9 @@ Utilizaremos los contigs obtenidos anteriormente y la referencia E. coli Ec55989
 Se abre la aplicación desde la terminal:
 
 ```bash
+#Inicializamos el environment de conda
+conda activate mauve
+
 #Ejecuta Mauve
 mauve
 ```
@@ -94,7 +100,7 @@ Especifica Multiple como nombre para el fichero de salida y pulsa Save.
 
 * Los bloques de colores indican las regiones de secuencia con homología en otros genomas. Las líneas rojas indican los bordes de los contig.
 
-* Comprueba que el orden de los contigs de nuestro ensamblaje con SPAdes y el ensamblaje alternativo es similar. Ambos ensamblajes contienen contig que no mapan al genoma de referencia.
+* Comprueba que el orden de los contigs de nuestro ensamblaje con Unicycler y el ensamblaje alternativo es similar. Ambos ensamblajes contienen contig que no mapan al genoma de referencia.
 
 * Puedes almacenar una imagen de lo que estas visualizando con Tools -> Export -> Export image...
 
@@ -103,6 +109,9 @@ Especifica Multiple como nombre para el fichero de salida y pulsa Save.
 El objetivo de este ejercicio es analizar la calidad de un ensamblado. Para ello vamos a utilizar la herramienta QUAST (http://bioinf.spbau.ru/quast).
 
 ```bash
+#Cambiamos el environment de conda
+conda deactivate
+
 #Ejecutamos QUAST
 quast.py SRR292770_unordered.fasta -o quast \
 -R ../REFERENCES/NC_011748.fna -G ../REFERENCES/NC_011748.gff \
@@ -144,6 +153,9 @@ ln -s ../data/SRR292770_2.fastq.gz
 
 #Listamos el directorio (vemos los shortcuts)
 ls -lh
+
+#Inicializamos el environment de conda
+conda activate srst2
 
 #Bajamos la BD
 getmlst.py --species "Escherichia coli#1"
