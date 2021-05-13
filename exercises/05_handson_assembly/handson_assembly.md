@@ -41,7 +41,7 @@ cd RESULTS
 unicycler --threads 2 -1 ../RAW/SRR292770_1.fastq.gz -2 ../RAW/SRR292770_2.fastq.gz -o unicycler_output
 
 #Copiamos el fichero de contigs a nuestro directorio de trabajo
-cp unicycler_output/assembly.fasta SRR292770_assembly.fasta
+cp unicycler_output/assembly.fasta SRR292770_unordered.fasta
 ```
 
 Al ejecutar este comando se generaran una serie de ficheros, incluido el fichero que contiene los contigs (assembly.fasta). Copiamos el archivo assembly.fasta y lo renombramos.
@@ -71,7 +71,7 @@ Pulsa el boton Add Sequence... nuevamente y elige el fichero con los contigs SRR
 
 Pulsa Start para comenzar la reordenación. Este proceso puede llevar un tiempo. La reordenación se lleva a cabo mediante una serie de iteraciones. Por cada una de ellas se genera una ventana Mauve unknown - alignmentX, donde X es el número de iteración.
 
-El conjunto final de contigs ordenado y orientado se encuentra en el fichero fasta de la última iteración. Para localizarlo mira dentro del directorio MauveOutput creado anteriormente. Por cada iteración debe haber una carpeta alignmentX. Copia el fichero SRR292779_unordered.fasta del directorio que tenga el valor de X más alto a tu directorio de trabajo; nombrándolo como SRR292770.fasta. Una vez que hayas copiado el fichero puedes eliminar los directorios alignmentX.
+El conjunto final de contigs ordenado y orientado se encuentra en el fichero fasta de la última iteración. Para localizarlo mira dentro del directorio MauveOutput creado anteriormente. Por cada iteración debe haber una carpeta alignmentX. Copia el fichero SRR292770_unordered.fasta del directorio que tenga el valor de X más alto a tu directorio de trabajo; nombrándolo como SRR292770.fasta. Una vez que hayas copiado el fichero puedes eliminar los directorios alignmentX.
 
 #### Ejercicio 4
 
