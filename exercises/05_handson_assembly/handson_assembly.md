@@ -157,10 +157,10 @@ getmlst.py --species "Escherichia coli#1"
 #MLST
 srst2 --input_pe ../../RAW/SRR292770_1.fastq.gz ../../RAW/SRR292770_2.fastq.gz \
 -output ./ --log --mlst_db Escherichia_coli#1.fasta \
---mlst_definitions ../../REFERENCES/ecoli.txt
+--mlst_definitions ../../REFERENCES/ecoli.txt --mlst_delimiter '_'
 
 #Visualizamos los resultados
-less ecoli_mlst__mlst__Escherichia_coli#1__results.txt
+less __mlst__Escherichia_coli#1__results.txt
 ```
 
 SRST2 ya incorpora en su instalación una BD de genes de resistencia y, por tanto, no es necesario descargarse una:
@@ -180,7 +180,7 @@ srst2 --input_pe ../../RAW/SRR292770_1.fastq.gz ../../RAW/SRR292770_2.fastq.gz \
 --output ./ --log --gene_db ../../REFERENCES/ARGannot.r1.fasta
 
 #Visualizamos los resultados
-less ecoli_resis__genes__ARGannot.r1__results.txt
+less __genes__ARGannot.r1__results.txt
 ```
 
 #### Referencias
