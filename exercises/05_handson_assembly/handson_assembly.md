@@ -135,11 +135,11 @@ El objetivo de este ejercicio es realizar tipado (typing) MLST e identificación
 Para hacer el MLST debemos descargarnos la BD correspondiente y luego cotejar las lecturas frente a esa base de datos:
 
 ```bash
-# Comprobamos que nos estamos en la carpeta handson_dia5_bact o nos movemos a ella
+# Comprobamos que nos estamos en la carpeta 05_handson_assembly o nos movemos a ella
 pwd
-# /home/alumno/cursoNGS/dia5/handson_dia5_bact
+# /home/alumno/ngs_course/05_handson_assembly
 # sino estamos ahí ejecutar:
-cd /home/alumno/cursoNGS/dia5/handson_dia5_bact
+cd /home/alumno/ngs_course/05_handson_assembly/RESULTS/
 
 # Creamos un directorio para MLST
 mkdir ecoli_mlst
