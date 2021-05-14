@@ -147,23 +147,17 @@ mkdir ecoli_mlst
 #Nos movemos a ese directorio
 cd ecoli_mlst
 
-#Creamos un enlace (shortcut) a las lectuas
-ln -s ../data/SRR292770_1.fastq.gz
-ln -s ../data/SRR292770_2.fastq.gz
-
-#Listamos el directorio (vemos los shortcuts)
-ls -lh
-
 #Inicializamos el environment de conda
 conda activate srst2
 
 #Bajamos la BD
 getmlst.py --species "Escherichia coli#1"
+#Saldrá un warning, pero no es un error, solo un aviso
 
 #MLST
-srst2 --input_pe SRR292770_1.fastq.gz SRR292770_2.fastq.gz \
---output ecoli_mlst --log --mlst_db ../data/help/MLST/Escherichia_coli#1.fasta \
---mlst_definitions ../data/help/MLST/ecoli.txt
+srst2 --input_pe ../../RAW/SRR292770_1.fastq.gz ../../RAW/SRR292770_2.fastq.gz \
+-output ./ --log --mlst_db Escherichia_coli#1.fasta \
+--mlst_definitions ../../REFERENCES/ecoli.txt
 
 #Visualizamos los resultados
 less ecoli_mlst__mlst__Escherichia_coli#1__results.txt
@@ -181,13 +175,9 @@ mkdir ecoli_resist
 #Nos movemos a ese directorio
 cd ecoli_resist
 
-#Creamos un shortcut a las lectuas
-ln -s ../data/SRR292770_1.fastq.gz
-ln -s ../data/SRR292770_2.fastq.gz
-
 #Identificacion de genes de resistencia
-srst2 --input_pe SRR292770_1.fastq.gz SRR292770_2.fastq.gz \
---output ecoli_resis --log --gene_db ../data/help/quast/ARGannot.r1.fasta
+srst2 --input_pe ../../RAW/SRR292770_1.fastq.gz ../../RAW/SRR292770_2.fastq.gz \
+--output ./ --log --gene_db ../../REFERENCES/ARGannot.r1.fasta
 
 #Visualizamos los resultados
 less ecoli_resis__genes__ARGannot.r1__results.txt
