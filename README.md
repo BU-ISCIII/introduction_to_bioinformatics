@@ -16,15 +16,17 @@ The material includes slides with theory concepts and a bunch of practical exerc
 - **Talk 1:** [Iniciación al análisis de datos procedentes de técnicas de secuenciación masiva (NGS)](slides/00_intro01_sequencing.pdf)
 
 ### Day 2
-- **Talk 2:** [Iniciación al entorno Linux.](slides/01_intro03_linux.pdf)
+- **Talk 2:** [Iniciación al entorno Linux (Primera parte).](slides/01_intro03_linux.pdf)
+- **Exercise 1:** [Comandos básicos de linux.](exercises\01_handson_linux\handson_linux1_BasicCommands.md) -- [Download pdf](exercises\01_handson_linux\handson_linux1_BasicCommands.pdf)
+- **Exercise 2:** [Conda.](exercises\01_handson_linux\handson_linux2_Conda.md) -- [Download pdf](exercises\01_handson_linux\handson_linux2_Conda.pdf)
 
 ### Day 3
 - **Talk 1:** [Secuenciación Masiva: Aplicaciones.](slides/00_intro01_application.pdf)
 
 ### Day 4
-- **Exercise 1:** [Comandos básicos de linux.](exercises/01_handson_linux/handson_dia2_linux1_2019.md) -- [Download pdf](exercises/day1/handson_dia1_linux1_2019.pdf)
-- **Exercise 2:** [Manejo y gestión de ficheros.](exercises/01_handson_linux/handson_dia2_linux2_2019.md) -- [Download pdf](exercises/day2/handson_dia2_linux1_2019.pdf)
-- **Exercise 3:** [Manejo de permisos.](exercises/day2/handson_dia2_linux2_2019.md) -- [Download pdf](exercises/01_handson_linux/handson_dia2_linux2_2019.md)
+- **Talk 1:** [Iniciación al entorno Linux (Segunda parte).](slides/01_intro03_linux.pdf)
+- **Exercise 1:** [Ficheros.](exercises\01_handson_linux\handson_linux3_FileSystem.md) -- [Download pdf](exercises\01_handson_linux\handson_linux3_FileSystem.pdf)
+- **Exercise 2:** [Permisos.](exercises\01_handson_linux\handson_linux4_Permissions.md) -- [Download pdf](exercises\01_handson_linux\handson_linux4_Permissions.pdf)
 
 ### Day 5
 - **Talk 1:** [Control de calidad y preprocesado](slides/02_steps_preprocessing_qc.pdf)
