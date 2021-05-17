@@ -13,7 +13,7 @@ The material includes slides with theory concepts and a bunch of practical exerc
 - **Install software and download dataset** [First steps](exercises/00_setup/00_SetUp.md)
 - **Data** [Download zip folder]() --> UPDATE
 ### Day 1
-- **Talk 1:** [Iniciación al análisis de datos procedentes de técnicas de secuenciación masiva (NGS)](slides/00_intro00_platforms.pdf)
+- **Talk 1:** [Iniciación al análisis de datos procedentes de técnicas de secuenciación masiva (NGS)](slides/00_intro01_sequencing.pdf)
 
 ### Day 2
 - **Talk 2:** [Iniciación al entorno Linux.](slides/01_intro03_linux.pdf)
