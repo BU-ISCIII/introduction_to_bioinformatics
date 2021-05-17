@@ -17,16 +17,16 @@ The material includes slides with theory concepts and a bunch of practical exerc
 
 ### Day 2
 - **Talk 2:** [Iniciación al entorno Linux (Primera parte).](slides/01_intro03_linux.pdf)
-- **Exercise 1:** [Comandos básicos de linux.](exercises\01_handson_linux\handson_linux1_BasicCommands.md) -- [Download pdf](exercises\01_handson_linux\handson_linux1_BasicCommands.pdf)
-- **Exercise 2:** [Conda.](exercises\01_handson_linux\handson_linux2_Conda.md) -- [Download pdf](exercises\01_handson_linux\handson_linux2_Conda.pdf)
+- **Exercise 1:** [Comandos básicos de linux.](exercises/01_handson_linux/handson_linux1_BasicCommands.md) -- [Download pdf](exercises/01_handson_linux/handson_linux1_BasicCommands.pdf)
+- **Exercise 2:** [Conda.](exercises/01_handson_linux/handson_linux2_Conda.md) -- [Download pdf](exercises/01_handson_linux/handson_linux2_Conda.pdf)
 
 ### Day 3
 - **Talk 1:** [Secuenciación Masiva: Aplicaciones.](slides/00_intro01_application.pdf)
 
 ### Day 4
 - **Talk 1:** [Iniciación al entorno Linux (Segunda parte).](slides/01_intro03_linux.pdf)
-- **Exercise 1:** [Ficheros.](exercises\01_handson_linux\handson_linux3_FileSystem.md) -- [Download pdf](exercises\01_handson_linux\handson_linux3_FileSystem.pdf)
-- **Exercise 2:** [Permisos.](exercises\01_handson_linux\handson_linux4_Permissions.md) -- [Download pdf](exercises\01_handson_linux\handson_linux4_Permissions.pdf)
+- **Exercise 1:** [Ficheros.](exercises/01_handson_linux/handson_linux3_FileSystem.md) -- [Download pdf](exercises/01_handson_linux/handson_linux3_FileSystem.pdf)
+- **Exercise 2:** [Permisos.](exercises/01_handson_linux/handson_linux4_Permissions.md) -- [Download pdf](exercises/01_handson_linux/handson_linux4_Permissions.pdf)
 
 ### Day 5
 - **Talk 1:** [Control de calidad y preprocesado](slides/02_steps_preprocessing_qc.pdf)
