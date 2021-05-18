@@ -14,10 +14,31 @@ Objetivos:
 * Visualización de formato sff de 454.
 * Conversión de sff a fastq.
 
-Los datos para esta parte se encuentran en la carpeta con nombre 01_fastq_format.
+Los datos para esta parte se encuentran en la carpeta con nombre `02_handson_preprocessing`.
 
 #### Formato fastq obtenido de HiSeq y MiSeq
-Abrimos una terminal en la carpeta donde se encuentran los datos de las prácticas, y cambiamos el directorio al que contiene los datos de esta primera parte de la práctica: 01_fastq_format
+Abrimos una terminal, vamos a crear nuestra carpeta de trabajo y a copiar los datos de la práctica que vamos a realizar hoy.
+```bash
+# Comprobamos donde estamos
+pwd
+## /home/alumno. 
+# Sino nos encontramos aquí podemos hacer directamente
+cd
+# Volvemos a comprobar donde estamos
+pwd
+
+# Creamos una carpeta donde trabajaremos todos los siguientes días del curso
+mkdir ngs_course_exercises
+# Comprobamos que se ha creado la carpeta
+ls
+
+# Entramos en la carpeta
+cd ngs_course_exercises
+
+# Copiamos la práctica de hoy
+cp /.../ngs_course/02_handson_preprocessing .
+
+```
 
 Listamos el contenido de este directorio y vamos a ver una serie de carpetas con distintos ejemplos de ficheros crudos obtenidos de experimentos de secuenciación masiva. Concretamente encontramos tres directorios con datos de HiSeq, MiSeq y 454.
 
@@ -26,7 +47,7 @@ Listamos el contenido de este directorio y vamos a ver una serie de carpetas con
 pwd
 
 # Nos movemos a la carpeta de la práctica
-cd /home/alumno/cursoNGS/dia3/handson_dia3
+cd 02_handson_preprocessing
 cd 01_fastq_format
 
 # Listamos su contenido
