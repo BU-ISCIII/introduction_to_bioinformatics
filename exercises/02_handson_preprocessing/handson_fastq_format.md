@@ -112,8 +112,8 @@ cd ..
 cd prueba_miseq
 
 # Visualizamos el fichero
-zcat prueba_miseq_R1.fastq.gz | more
-# Recordatorio para salir usamos q o Ctrl + c
+zcat prueba_miseq_R1.fastq.gz | less
+# Recordatorio para salir usamos q
 ```
 
 Vemos que ahora el nombre de la máquina es diferente y que la cabecera también varía ligeramente, aunque la información que contiene es muy similar.
@@ -199,11 +199,5 @@ ls
 ```
 
 El formato sff es un formato que está en formato binario, es decir no está en formato que pueda ser leído por un ser humano. Este formato puede ser leído directamente por determinados programas como el paquete de software de Roche.
-
-En nuestro caso vamos a aprender cómo pasarlo a fastq, formato que aceptan la mayoría de programas bioinformáticos y que nos permitirá explorar su calidad y procesarlo más fácilmente.
-
-Se generarán dos ficheros, uno con extensión fastq que serán las secuencias en este formato, y otro en formato xml que será la información extraída del sff.
-
-NOTA: Al ejecutar el script se obtendrá un warning de que muchas secuencias en el fichero comienzan con los mismos nucleótidos. Se debe a que son datos de amplicones y por ello se secuencia muchas veces el mismo fragmento de ADN que siempre empieza con los mismos nucleótidos.
 
 NOTA: El formato sff está anticuado y hoy en día todos los archivos estarán en formato fastq. Sin embargo, si os encontráis con otro formato, debéis de saber que podéis convertir entre tipos de formatos usando los programas creados específicamente para ello.
