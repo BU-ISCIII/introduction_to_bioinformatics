@@ -125,8 +125,8 @@ fastp -i RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq \
       --unqualified_percent_limit 30 \
       --cut_front --cut_tail \
       --trim_poly_x \
-      --cut_mean_quality 20 \
-      --cut_window_size 4 \
+      --cut_mean_quality 30 \
+      --cut_window_size 10 \
       --length_required 50
 
 # Realizamos análisis de calidad
