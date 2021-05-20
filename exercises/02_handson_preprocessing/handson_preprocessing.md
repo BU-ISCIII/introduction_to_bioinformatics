@@ -1,10 +1,7 @@
 ## Curso de Iniciación a la Secuenciación Masiva
 BU-ISCIII
 
-### Práctica 2 día 3: Control de Calidad y preprocesamiento de ficheros fastq
-
-17-21 Junio 2019, 7a Edición, Programa Formación Continua, ISCIII
-
+### Práctica: Control de Calidad y preprocesamiento de ficheros fastq
 
 #### Descripción
 Para esta parte de la práctica vamos a utilizar los datos que se encuentran en la carpeta 02_qc_preproc.
