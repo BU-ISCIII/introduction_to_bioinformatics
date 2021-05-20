@@ -4,23 +4,23 @@ BU-ISCIII
 ### Práctica: Control de Calidad y preprocesamiento de ficheros fastq
 
 #### Descripción
-Para esta parte de la práctica vamos a utilizar los datos que se encuentran en la carpeta 02_qc_preproc.
+Para esta parte de la práctica vamos a utilizar los datos que se encuentran en la carpeta 02_preprocessing.
 
 Cambiamos al directorio RAW y visualizamos uno de los ficheros. Se trata de datos provenientes de una secuenciación por MiSeq de 2x251, es decir, datos paired-end de 251 nt de longitud.
 
 ```bash
 # Comprobamos donde estamos situados.
 pwd
-# Output: /home/alumno/cursoNGS/dia3/handson_dia3/01_fastq_format/prueba_454
+# Output: /home/alumno/ngs_course_exercises/01_fastq_format/prueba_454
 
 # Nos movemos a la carpeta que contiene la segunda parte de la practica
 # Recordatorio: - con .. accedemos a la carpeta inmediatamente superior a la que nos encontramos.
 #               - con ../.. subiríamos dos niveles en el árbol de directorios.
-cd ../../02_qc_preproc
+cd ../../02_preprocessing
 
 # Comprobamos que estamos donde debemos estar
 pwd
-# Output: /home/alumno/curso_NGS/dia3/handson_dia3/02_qc_preproc
+# Output: /home/alumno/ngs_course_exercises/02_preprocessing
 
 # Listamos el contenido de la carpeta
 ls
@@ -31,7 +31,7 @@ cd RAW
 
 # Visualizamos el contenido del fichero fastq
 less CFSAN002083-01_S1_L001_R1_001_fixed.fastq
-# Recordatorio: para salir del comando less preseinando q
+# Recordatorio: para salir del comando less presionando q
 ```
 
 Volvemos a la carpeta del análisis. Lo primero que vamos a hacer es utilizar el programa FastQC, que nos permite hacer un control de calidad de los ficheros tal y como se ha explicado en teoría.
@@ -49,7 +49,7 @@ fastqc -t 4 RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq RAW/CFSAN002083-01_S1_
 
 Aquí estamos ejecutando el programa y diciéndole los ficheros que tiene que analizar y con el parámetro “-o” el directorio donde queremos que se guarden los resultados. El parámetro “-t” indica cuántos núcleos del procesador puede utilizar.
 
-En el explorador de ventanas vamos a visualizar los resultados. Recordad que se encuentran en donde habéis dicho al programa que los guarde es decir /home/alumno/cursoNGS/dia3/02_qc_preproc/RESULTS/QC/RAW.
+En el explorador de ventanas vamos a visualizar los resultados. Recordad que se encuentran en donde habéis dicho al programa que los guarde es decir /home/alumno/ngs_course_exercises/02_preprocessing/RESULTS/QC/RAW.
 
 Ahí hay dos ficheros fastqc_report.html, uno por cada fichero fastq analizado. Hacemos doble click sobre uno de los ficheros html y se abrirá el explorador Firefox.
 
