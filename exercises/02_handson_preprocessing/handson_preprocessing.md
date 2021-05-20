@@ -72,18 +72,23 @@ Vamos a realizar varias pruebas para ver qué aproximación de preprocesamiento 
 
 #### Filtrado por calidad
 
-Para realizar el filtrado por calidad vamos a utilizar el software NGSQCToolkit, con el script IlluQC_PRLL.pl. Este script es específico para filtrado de reads de Illumina
+Para realizar el filtrado por calidad vamos a utilizar el software [fastp](https://github.com/OpenGene/fastp).
 
 ```bash
 # Realizamos filtrado de lecturas por calidad
-IlluQC_PRLL.pl -c 4  \
--pe RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq \
-RAW/CFSAN002083-01_S1_L001_R2_001_fixed.fastq N A \
--l 70 -s 20 -o RESULTS/QC/FILTERED
+fastp -i RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq \
+      -I RAW/CFSAN002083-01_S1_L001_R2_001_fixed.fastq \
+      -o RESULTS/QC/FILTERED/CFSAN002083-01_R1_filtered.fastq \
+      -O RESULTS/QC/FILTERED/CFSAN002083-01_R2_filtered.fastq \
+      -j RESULTS/QC/FILTERED/fastp.json \
+      -h RESULTS/QC/FILTERED/fastp.html \
+      --qualified_quality_phred 20 \
+      --unqualified_percent_limit 30 \
+      --length_required 50
 
 # Realizamos el anaĺisis de calidad
-fastqc -t 4 RESULTS/QC/FILTERED/CFSAN002083-01_S1_L001_R1_001_fixed.fastq_filtered \
-RESULTS/QC/FILTERED/CFSAN002083-01_S1_L001_R2_001_fixed.fastq_filtered \
+fastqc -t 4 RESULTS/QC/FILTERED/CFSAN002083-01_R1_filtered.fastq \
+RESULTS/QC/FILTERED/CFSAN002083-01_R2_filtered.fastq \
 -o RESULTS/QC/FILTERED
 ```
 
@@ -93,66 +98,56 @@ RESULTS/QC/FILTERED/CFSAN002083-01_S1_L001_R2_001_fixed.fastq_filtered \
 ###########################################
 
 Parámetros:
--pe: indica los ficheros paired end de entrada + N (sin fichero de adaptadores para quitar) + A (detección automática de formato)
--l Porcentaje de reads que tienen que tener más calidad phred de la dada.
--s umbral de calidad phred
+--qualified_quality_phred: calidad phred mínima necesaria.
+--unqualified_percent_limit: porcentaje de las bases que está permitido que no cumplan el límte de calidad phred.
+--lenght_required: todas las lecturas menores a 50 bases se eliminan.
 ```
 
 Abrimos en el explorador de ventanas como en el caso anterior en RESULTS/QC/FILTERED
 
-Doble click sobre CFSAN002083-01_S1_L001_R1_001_fixed.fastq_filtered_fastqc.html y observamos los resultados.
+Doble click sobre CFSAN002083-01_R1_filtered.html y observamos los resultados.
 * ¿Hemos mejorado notablemente la calidad?
 * ¿Cuántas lecturas hemos perdido?
 
 #### Trimming + filtrado por calidad
 
-Ahora vamos a realizar antes del filtrado por calidad un proceso de trimming en los extremos. Utilizamos el software trimmomatic para ello. A continuación vamos a lanzar NGSQCtoolkit.
+Ahora vamos a realizar antes del filtrado por calidad un proceso de trimming en los extremos.
 
 ```bash
 # Realizamos trimming de las lecturas
-trimmomatic PE \
-RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq RAW/CFSAN002083-01_S1_L001_R2_001_fixed.fastq \
-RESULTS/QC/TRIMMING_FILTERED/CFSAN002083-01_S1_L001_R1_001_fixed.fastq_trimmed \
-RESULTS/QC/TRIMMING_FILTERED/CFSAN002083-01_S1_L001_R1_001_fixed.fastq_se_trimmed \
-RESULTS/QC/TRIMMING_FILTERED/CFSAN002083-01_S1_L001_R2_001_fixed.fastq_trimmed \
-RESULTS/QC/TRIMMING_FILTERED/CFSAN002083-01_S1_L001_R2_001_fixed.fastq_se_trimmed \
-SLIDINGWINDOW:4:20
-
-# Realizamos filtro de las lecturas
-IlluQC_PRLL.pl -c 4 \
--pe RESULTS/QC/TRIMMING_FILTERED/CFSAN002083-01_S1_L001_R1_001_fixed.fastq_trimmed \
-RESULTS/QC/TRIMMING_FILTERED/CFSAN002083-01_S1_L001_R2_001_fixed.fastq_trimmed N A \
--l 70 -s 20 -o RESULTS/QC/TRIMMING_FILTERED/
+fastp -i RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq \
+      -I RAW/CFSAN002083-01_S1_L001_R2_001_fixed.fastq \
+      -o RESULTS/QC/FILTERED_TRIMMED/CFSAN002083-01_R1_filtered_trimmed.fastq \
+      -O RESULTS/QC/FILTERED_TRIMMED/CFSAN002083-01_R2_filtered_trimmed.fastq \
+      -j RESULTS/QC/FILTERED_TRIMMED/fastp.json \
+      -h RESULTS/QC/FILTERED_TRIMMED/fastp.html \
+      --qualified_quality_phred 20 \
+      --unqualified_percent_limit 30 \
+      --cut_front --cut_tail \
+      --trim_poly_x \
+      --cut_mean_quality 20 \
+      --cut_window_size 4 \
+      --length_required 50
 
 # Realizamos análisis de calidad
-fastqc -t 4 RESULTS/QC/TRIMMING_FILTERED/CFSAN002083-01_S1_L001_R1_001_fixed.fastq_trimmed_filtered \
-RESULTS/QC/TRIMMING_FILTERED/CFSAN002083-01_S1_L001_R2_001_fixed.fastq_trimmed_filtered \
--o RESULTS/QC/TRIMMING_FILTERED/
+fastqc -t 4 RESULTS/QC/FILTERED_TRIMMED/CFSAN002083-01_R1_filtered_trimmed.fastq \
+RESULTS/QC/FILTERED_TRIMMED/CFSAN002083-01_R2_filtered_trimmed.fastq \
+-o RESULTS/QC/FILTERED_TRIMMED/
 ```
 
 ```
 ###########################################
 #     Ayuda del comando - no ejecutar     #
 ###########################################
-
-Input:
-CFSAN002083-01_S1_L001_R1_001_fixed.fastq
-CFSAN002083-01_S1_L001_R2_001_fixed.fastq
-
-Output:
-CFSAN002083-01_S1_L001_R1_001_fixed.fastq_trimmed <- paired-end R1 que han quedado en pareja.
-CFSAN002083-01_S1_L001_R1_001_fixed.fastq_se_trimmed <- paired-end R1 que han quedado sin pareja.
-CFSAN002083-01_S1_L001_R2_001_fixed.fastq_trimmed
-CFSAN002083-01_S1_L001_R2_001_fixed.fastq _se_trimmed
-
-Parámetros:
-PE: indica que la librería es paired-end
-SLIDINGWINDOW: número de bases:calidad de la base → Ej (4:20)
+--cut_front --cut_tail: cortamos por 5' y por 3'
+--trim_poly_x: cortamos extremos con polyX
+--cut_mean_quality: valor phred medio que tiene que tener la ventana de nt para cortar.
+--cut_window_size: número de nucleótidos de la ventana para ir evaluando desde los extremos de la lectura.
 ```
 
 Abrimos en el explorador de ventanas como en el caso anterior en  RESULTS/QC/TRIMMING_FILTERED
 
-Doble click sobre CFSAN002083-01_S1_L001_R1_001_fixed.fastq_trimmed_filtered_fastqc.html y observamos los resultados.
+Doble click sobre CFSAN002083-01_R2_filtered_trimmed.fastq.html y observamos los resultados.
 * ¿Hemos mejorado notablemente la calidad?
 * ¿Cuántas lecturas hemos perdido con esta aproximación?
 
