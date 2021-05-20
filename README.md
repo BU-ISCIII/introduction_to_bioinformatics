@@ -33,9 +33,9 @@ The material includes slides with theory concepts and a bunch of practical exerc
 - **Talk 2:** [Mapping y filtrado de duplicados](slides/03_steps_mapping_qc.pdf)
 
 ### Day 6
-- **Exercise 1:** [Formato fastq](exercises/day3/handson_dia3_1_fastq_2019.md) -- [Download pdf](exercises/day3/handson_dia3_1_fastq_2019.pdf)
-- **Exercise 2:** [Control de Calidad y preprocesamiento de ficheros fastq](exercises/day3/handson_dia3_2_prepro_2019.md) -- [Download pdf](exercises/day3/handson_dia3_2_prepro_2019.pdf)
-- **Exercise 3:** [Mapado y control de calidad](exercises/day3/handson_dia3_3_mapado_2019.md) -- [Download pdf](exercises/day3/handson_dia3_3_mapado_2019.pdf)
+- **Exercise 1:** [Formato fastq](exercises/02_handson_preprocessing/handson_fastq_format.md) -- [Download pdf](exercises/02_handson_preprocessing/handson_fastq_format.pdf)
+- **Exercise 2:** [Control de Calidad y preprocesamiento de ficheros fastq](exercises/02_handson_preprocessing/handson_preprocessing.md) -- [Download pdf](exercises/02_handson_preprocessing/handson_preprocessing.pdf)
+- **Exercise 3:** [Mapado y control de calidad](exercises/03_handson_mapping/handson_mapado.md) -- [Download pdf](exercises/03_handson_mapping/handson_mapado.pdf)
 
 ### Day 7
 - **Talk 1:** [Variant Calling](slides/04_steps_variant_calling.pdf)
