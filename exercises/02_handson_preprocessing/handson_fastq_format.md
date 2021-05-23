@@ -197,7 +197,7 @@ Vamos a colocarnos en la carpeta de nombre prueba_454.
 ```bash
 # Comprobamos donde nos encontramos
 pwd
-# Output: /home/alumno/curso_NGS/dia3/handson_dia3/01_fastq_format/prueba_miseq
+# Output: /home/alumno/ngs_course_exercises/02_handson_preprocessing/01_fastq_format/prueba_miseq
 
 # Nos movemos a la carpeta superior
 cd ..
