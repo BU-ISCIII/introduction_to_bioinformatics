@@ -11,7 +11,7 @@ Cambiamos al directorio RAW y visualizamos uno de los ficheros. Se trata de dato
 ```bash
 # Comprobamos donde estamos situados.
 pwd
-# Output: /home/alumno/ngs_course_exercises/01_fastq_format/prueba_454
+# Output: /home/alumno/ngs_course_exercises/02_handson_preprocessing/01_fastq_format/prueba_454
 
 # Nos movemos a la carpeta que contiene la segunda parte de la practica
 # Recordatorio: - con .. accedemos a la carpeta inmediatamente superior a la que nos encontramos.
@@ -20,7 +20,7 @@ cd ../../02_preprocessing
 
 # Comprobamos que estamos donde debemos estar
 pwd
-# Output: /home/alumno/ngs_course_exercises/02_preprocessing
+# Output: /home/alumno/ngs_course_exercises/02_handson_preprocessing/02_preprocessing
 
 # Listamos el contenido de la carpeta
 ls
@@ -49,9 +49,9 @@ fastqc -t 4 RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq RAW/CFSAN002083-01_S1_
 
 Aquí estamos ejecutando el programa y diciéndole los ficheros que tiene que analizar y con el parámetro “-o” el directorio donde queremos que se guarden los resultados. El parámetro “-t” indica cuántos núcleos del procesador puede utilizar.
 
-En el explorador de ventanas vamos a visualizar los resultados. Recordad que se encuentran en donde habéis dicho al programa que los guarde es decir /home/alumno/ngs_course_exercises/02_preprocessing/RESULTS/QC/RAW.
+En el explorador de ventanas vamos a visualizar los resultados. Recordad que se encuentran en donde habéis dicho al programa que los guarde es decir /home/alumno/ngs_course_exercises/02_handson_preprocessing/02_preprocessing/RESULTS/QC/RAW.
 
-Ahí hay dos ficheros fastqc_report.html, uno por cada fichero fastq analizado. Hacemos doble click sobre uno de los ficheros html y se abrirá el explorador Firefox.
+Ahí hay dos ficheros que acaban en fixed_fastqc.html, uno por cada fichero fastq analizado. Hacemos doble click sobre uno de los ficheros html y se abrirá el explorador Firefox.
 
 Estaremos visualizando ahora el resultado del fastQC con todas las gráficas que se han visto en teoría. Estas estadísticas nos permitirán tomar una decisión en cuanto al preprocesamiento de los datos, si tienen buena calidad, si necesitan filtrado, si necesitan trimming en los extremos, ...
 
@@ -105,7 +105,7 @@ Parámetros:
 
 Abrimos en el explorador de ventanas como en el caso anterior en RESULTS/QC/FILTERED
 
-Doble click sobre CFSAN002083-01_R1_filtered.html y observamos los resultados.
+Doble click sobre CFSAN002083-01_R1_filtered_fastqc.html y observamos los resultados.
 * ¿Hemos mejorado notablemente la calidad?
 * ¿Cuántas lecturas hemos perdido?
 
@@ -117,10 +117,10 @@ Ahora vamos a realizar antes del filtrado por calidad un proceso de trimming en 
 # Realizamos trimming de las lecturas
 fastp -i RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq \
       -I RAW/CFSAN002083-01_S1_L001_R2_001_fixed.fastq \
-      -o RESULTS/QC/FILTERED_TRIMMED/CFSAN002083-01_R1_filtered_trimmed.fastq \
-      -O RESULTS/QC/FILTERED_TRIMMED/CFSAN002083-01_R2_filtered_trimmed.fastq \
-      -j RESULTS/QC/FILTERED_TRIMMED/fastp.json \
-      -h RESULTS/QC/FILTERED_TRIMMED/fastp.html \
+      -o RESULTS/QC/TRIMMING_FILTERED/CFSAN002083-01_R1_filtered_trimmed.fastq \
+      -O RESULTS/QC/TRIMMING_FILTERED/CFSAN002083-01_R2_filtered_trimmed.fastq \
+      -j RESULTS/QC/TRIMMING_FILTERED/fastp.json \
+      -h RESULTS/QC/TRIMMING_FILTERED/fastp.html \
       --qualified_quality_phred 20 \
       --unqualified_percent_limit 30 \
       --cut_front --cut_tail \
@@ -130,9 +130,9 @@ fastp -i RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq \
       --length_required 50
 
 # Realizamos análisis de calidad
-fastqc -t 4 RESULTS/QC/FILTERED_TRIMMED/CFSAN002083-01_R1_filtered_trimmed.fastq \
-RESULTS/QC/FILTERED_TRIMMED/CFSAN002083-01_R2_filtered_trimmed.fastq \
--o RESULTS/QC/FILTERED_TRIMMED/
+fastqc -t 4 RESULTS/QC/TRIMMING_FILTERED/CFSAN002083-01_R1_filtered_trimmed.fastq \
+RESULTS/QC/TRIMMING_FILTERED/CFSAN002083-01_R2_filtered_trimmed.fastq \
+-o RESULTS/QC/TRIMMING_FILTERED/
 ```
 
 ```
@@ -147,7 +147,7 @@ RESULTS/QC/FILTERED_TRIMMED/CFSAN002083-01_R2_filtered_trimmed.fastq \
 
 Abrimos en el explorador de ventanas como en el caso anterior en  RESULTS/QC/TRIMMING_FILTERED
 
-Doble click sobre CFSAN002083-01_R2_filtered_trimmed.fastq.html y observamos los resultados.
+Doble click sobre CFSAN002083-01_R1_filtered_trimmed_fastqc.html y observamos los resultados.
 * ¿Hemos mejorado notablemente la calidad?
 * ¿Cuántas lecturas hemos perdido con esta aproximación?
 
