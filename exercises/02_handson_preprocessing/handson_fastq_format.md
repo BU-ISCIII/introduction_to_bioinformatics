@@ -105,7 +105,7 @@ Volvemos a la carpeta que se encuentra en un nivel superior dentro del árbol de
 ```bash
 # Comprobamos donde nos encontramos
 pwd
-# Output: /home/alumno/curso_NGS/dia3/handson_dia3/01_fastq_format/prueba_hiseq
+# Output: /home/alumno/ngs_course_exercises/02_handson_preprocessing/01_fastq_format/prueba_hiseq
 
 # Vamos a la carpeta superior
 cd ..
