@@ -12,10 +12,16 @@ Nos vamos a mover a un nuevo directorio que contiene los datos que vamos a utili
 ```bash
 # Comprobamos donde estamos situados
 pwd
-#Output: /home/alumno/ngs_course/02_handson_preprocessing
+#Output: /home/alumno/ngs_course_exercises/02_handson_preprocessing/02_preprocessing
 
-# Nos movemos a la carpeta que contiene la tercera parte de la practica
-cd ../03_handson_mapping/
+# Nos movemos a la carpeta que hemos creado para las prácticas
+cd ../../
+
+# Copiamos la última práctica de hoy
+cp /mnt/ngs_course_shared/03_handson_mapping/ .
+
+# Nos movemos a la carpeta de las prácticas
+cd 03_handson_mapping/
 
 # Listamos el contenido del directorio
 ls
@@ -26,7 +32,7 @@ cd RAW
 
 # Listamos el contenido del directorio
 ls
-#CFSAN002083-01_S1_L001_R1_001.fastq  CFSAN002083-01_S1_L001_R2_001.fastq  exome_test.bam
+# Output: CFSAN002083-01_S1_L001_R1_001.fastq  CFSAN002083-01_S1_L001_R2_001.fastq  exome_test.bam
 ```
 
 Vamos a utilizar el programa bwa (burrows-wheeler aligner), que es uno de los más utilizados para datos obtenidos de Illumina. Tiene dos modos uno para reads “cortas” de menos de 100 pb (bwa aln y sampe) y otro para reads más “largas”(bwa mem) , al principio más pensado para reads de 454 pero ahora ya también para reads largas de MiSeq.
@@ -35,7 +41,7 @@ Vamos a realizarlo con las mismas lecturas que hemos filtrado en el ejercicio an
 
 Para saber qué modo de bwa tenemos que utilizar tenemos que saber de qué longitud son las reads de nuestro experimento.
 
-¿Recordáis de qué longitud eran las reads del experimento analizado en 02_qc_preproc? Si no os acordáis podéis revisar los datos de QC/TRIMMED_FILTERED, y ver en el report en html la longitud de los reads.
+¿Recordáis de qué longitud eran las reads del experimento analizado en 02_preprocessing? Si no os acordáis podéis revisar los datos de QC/TRIMMING_FILTERED, y ver en el report en html la longitud de los reads.
 
 **¿Qué módulo de bwa tenemos que usar bwa aln/sampe o bwa mem?**
 
@@ -48,9 +54,6 @@ El segundo paso es indexarlo, es decir generar un formato modo índice que el pr
 ```bash
 # Nos movemos a la carpeta REFERENCE
 cd ../REFERENCE
-
-#Inicializamos el environment de conda
-conda activate ngs_course
 
 # Indexamos la referencia
 bwa index EC_K12_ST10.fasta
@@ -71,7 +74,14 @@ RAW/CFSAN002083-01_S1_L001_R2_001.fastq \
 > RESULTS/Alignment/CFSAN002083-01_S1_L001.sam
 ```
 
-**¿Cuánto ocupa el fichero que acabamos de generar? (du -sh RESULTS/Alignment/CFSAN002083-01_S1_L001.sam)**
+**¿Cuánto ocupa el fichero que acabamos de generar?**
+
+Para saber cuanto ocupa hacemos lo siguiente:
+```bash
+du -sh RESULTS/Alignment/CFSAN002083-01_S1_L001.sam
+
+# Output: 282M	RESULTS/Alignment/CFSAN002083-01_S1_L001.sam
+```
 
 Como se ha explicado en teoría el formato sam permite almacenar información de alineamiento, pero suele ocupar mucho espacio por lo que se suele utilizar su formato binario. Para realizar esta conversión:
 
@@ -80,7 +90,14 @@ Como se ha explicado en teoría el formato sam permite almacenar información de
 samtools view -Sb RESULTS/Alignment/CFSAN002083-01_S1_L001.sam > RESULTS/Alignment/CFSAN002083-01_S1_L001.bam
 ```
 
-**¿Cuánto ocupa el fichero BAM que acabamos de generar? (du -sh RESULTS/Alignment/CFSAN002083-01_S1_L001.bam)**
+**¿Cuánto ocupa el fichero BAM que acabamos de generar?**
+Igual que antes:
+
+```bash
+du -sh RESULTS/Alignment/CFSAN002083-01_S1_L001.bam
+
+# Output: 109M	RESULTS/Alignment/CFSAN002083-01_S1_L001.bam
+```
 
 **¿Cuánto hemos disminuido el tamaño?**
 
@@ -107,6 +124,7 @@ Para ordenar, generar un índice del fichero bam:
 # Ordenamos las lecturas por orden cromosómico
 samtools sort RESULTS/Alignment/CFSAN002083-01_S1_L001.bam \
 -o RESULTS/Alignment/CFSAN002083-01_S1_L001_sorted.bam
+
 # Indexamos el fichero bam
 samtools index RESULTS/Alignment/CFSAN002083-01_S1_L001_sorted.bam
 ```
@@ -116,9 +134,15 @@ Ahora si revisamos nuestra carpeta de resultados vemos que tenemos todos los fic
 ```bash
 # Nos movemos a la carpeta donde se ha generado el fichero bam que acabamos de crear
 cd RESULTS/Alignment
+
+# Comrobamos donde estamos
+pwd
+
+# Output: /home/alumno/ngs_course_exercises/03_handson_mapping/RESULTS/Alignment
+
 # Listamos el contenido del directorio
 ls
-#Output: CFSAN002083-01_S1_L001.bam  CFSAN002083-01_S1_L001.sam  CFSAN002083-01_S1_L001_sorted.bam  CFSAN002083-01_S1_L001_sorted.bam.bai
+# Output: CFSAN002083-01_S1_L001.bam  CFSAN002083-01_S1_L001.sam  CFSAN002083-01_S1_L001_sorted.bam  CFSAN002083-01_S1_L001_sorted.bam.bai
 ```
 
 El fichero sam podríamos borrarlo ya que es la misma información que hay en el bam. Así como el fichero bam sin ordenar. Todo lo que hagamos será a partir del fichero ordenado.
