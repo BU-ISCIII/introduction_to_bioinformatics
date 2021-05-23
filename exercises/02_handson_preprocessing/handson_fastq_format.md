@@ -180,6 +180,14 @@ Options: -q INT    mask bases with quality lower than INT [0]
 ```bash
 # Recordatorio con ">" redirigimos la salida del comando al fichero que nosotros queramos.
 seqtk seq -A prueba_miseq_R1.fastq.gz > prueba_miseq_R1.fasta
+
+# Listamos para comprobar que se ha creado el archivo
+ls
+# Output: prueba_miseq_R1.fasta  prueba_miseq_R1.fastq.gz  prueba_miseq_R2.fastq.gz
+# Miramos que el contenido del archivo ha cambiado a fasta
+
+less prueba_miseq_R1.fasta
+# Recordatorio para salir usamos q
 ```
 
 #### Formato sff y conversión a fastq
