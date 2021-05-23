@@ -12,7 +12,6 @@ Objetivos:
 * Contabilizar número de reads en fichero fastq.
 * Conversión de formato fastq a formato fasta.
 * Visualización de formato sff de 454.
-* Conversión de sff a fastq.
 
 Los datos para esta parte se encuentran en la carpeta con nombre `02_handson_preprocessing`.
 
@@ -190,7 +189,7 @@ less prueba_miseq_R1.fasta
 # Recordatorio para salir usamos q
 ```
 
-#### Formato sff y conversión a fastq
+#### Formato sff
 
 Vamos a colocarnos en la carpeta de nombre prueba_454.
 
