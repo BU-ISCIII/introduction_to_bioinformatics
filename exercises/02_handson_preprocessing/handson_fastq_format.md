@@ -36,8 +36,7 @@ ls
 cd ngs_course_exercises
 
 # Copiamos la práctica de hoy
-cp /.../ngs_course/02_handson_preprocessing .
-
+cp /mnt/ngs_course_shared/02_handson_preprocessing .
 ```
 
 Listamos el contenido de este directorio y vamos a ver una serie de carpetas con distintos ejemplos de ficheros crudos obtenidos de experimentos de secuenciación masiva. Concretamente encontramos tres directorios con datos de HiSeq, MiSeq y 454.
@@ -65,6 +64,9 @@ cd prueba_hiseq
 # Listamos lo que hay en el directorio
 ls
 # Output: prueba_hiseq_R1.fastq.gz prueba_hiseq_R2.fastq.gz
+
+# Activamos el environment de conda
+conda activate ngs_course
 
 # Visualizamos los ficheros fastq
 zcat prueba_hiseq_R1.fastq.gz | less
