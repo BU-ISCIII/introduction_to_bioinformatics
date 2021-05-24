@@ -35,7 +35,7 @@ ls
 cd ngs_course_exercises
 
 # Copiamos la práctica de hoy
-cp /mnt/ngs_course_shared/02_handson_preprocessing .
+cp -r /mnt/ngs_course_shared/02_handson_preprocessing .
 ```
 
 Listamos el contenido de este directorio y vamos a ver una serie de carpetas con distintos ejemplos de ficheros crudos obtenidos de experimentos de secuenciación masiva. Concretamente encontramos tres directorios con datos de HiSeq, MiSeq y 454.
