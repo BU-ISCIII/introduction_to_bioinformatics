@@ -87,7 +87,7 @@ fastp -i RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq \
       --length_required 50
 
 # Realizamos el anaĺisis de calidad
-fastqc -t 4 RESULTS/QC/FILTERED/CFSAN002083-01_R1_filtered.fastq \
+fastqc -t 2 RESULTS/QC/FILTERED/CFSAN002083-01_R1_filtered.fastq \
 RESULTS/QC/FILTERED/CFSAN002083-01_R2_filtered.fastq \
 -o RESULTS/QC/FILTERED
 ```
@@ -130,7 +130,7 @@ fastp -i RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq \
       --length_required 50
 
 # Realizamos análisis de calidad
-fastqc -t 4 RESULTS/QC/TRIMMING_FILTERED/CFSAN002083-01_R1_filtered_trimmed.fastq \
+fastqc -t 2 RESULTS/QC/TRIMMING_FILTERED/CFSAN002083-01_R1_filtered_trimmed.fastq \
 RESULTS/QC/TRIMMING_FILTERED/CFSAN002083-01_R2_filtered_trimmed.fastq \
 -o RESULTS/QC/TRIMMING_FILTERED/
 ```
