@@ -156,7 +156,9 @@ Para realizar la llamada a variantes vamos a utilizar una de las funcionalidades
 ```bash
 # Llamada a variantes con samtools
 cd ../..
-conda install -c bioconda bcftools
+conda deactivate
+conda create -c bioconda -c conda-forge -n bcftools bcftools samtools
+conda activate bcftools
 samtools mpileup -d 200000 -ugf REFERENCE/20140318_L11910.1_RB.fasta \
 RESULTS/Alignment/AJA18_sorted.bam | bcftools call -mv - \
 > RESULTS/variants/var.raw.vcf
