@@ -110,7 +110,7 @@ Y al igual que en la práctica del día 3 vamos a pasar a formato bam, ordenar e
 samtools view -Sb RESULTS/Alignment/AJA18.sam \
 > RESULTS/Alignment/AJA18.bam
 # Ordenamos el fichero bam
-samtools sort -T AJA18 -o RESULTS/Alignment/AJA18_sorted RESULTS/Alignment/AJA18.bam 
+samtools sort -T AJA18 -o RESULTS/Alignment/AJA18_sorted.bam RESULTS/Alignment/AJA18.bam 
 # Indexamos el fichero bam
 samtools index RESULTS/Alignment/AJA18_sorted.bam
 ```
