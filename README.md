@@ -41,10 +41,10 @@ The material includes slides with theory concepts and a bunch of practical exerc
 - **Talk 1:** [Variant Calling](slides/04_steps_variant_calling.pdf)
 
 ### Day 8
-- **Exercise 1:** [Variant Calling](exercises/day4/handson_dia4_1_variantcalling_2019.md) -- [Download pdf](exercises/day4/handson_dia4_1_variantcalling_2019.pdf)
+- **Exercise 1:** [Variant Calling](exercises/04_handson_variant_calling/handson_variant_calling.md) -- [Download pdf](exercises/04_handson_variant_calling.pdf)
 
 ### Day 9
 - **Talk 1:** [Ensamblado](slides/05_steps_assembly.pdf)
 
 ### Day 10
-- **Exercise 1:** [Whole genome analysis](exercises/day5/handson_dia5_1_variantcalling_2019.md) -- [Download pdf](exercises/day5/handson_dia5_1_variantcalling_2019.pdf)
+- **Exercise 1:** [Whole genome analysis](exercises/05_handson_assembly/handson_assembly.md) -- [Download pdf](exercises/05_handson_assembly/handson_assembly.pdf)
