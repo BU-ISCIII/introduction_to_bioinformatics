@@ -1,10 +1,7 @@
 ## Curso de Iniciación a la Secuenciación Masiva
 BU-ISCIII
 
-### Práctica 1 día 4: Variant Calling
-
-17-21 Junio 2019, 7a Edición, Programa Formación Continua, ISCIII
-
+### Práctica: Variant Calling
 
 #### Descripción
 En esta práctica vamos a analizar un pequeñísimo experimento de Deep sequencing dónde se ha secuenciado un único exón de un gen en una muestra de una línea celular.
@@ -22,6 +19,11 @@ Lo primero como la práctica del día 3 vamos a realizar el primer control de ca
 En la carpeta RAW, donde se encuentran los datos crudos fastq, id investigad esos ficheros fastq.
 
 ```bash
+# Copiamos la práctica de hoy a nuestro directorio de trabajo.
+cd /home/alumno/ngs_course_exercises
+cp -r /mnt/ngs_course_shared/04_handson_variantcalling/ .
+# Entramos dentro de la carpeta de la práctica
+cd 04_handson_variantcalling
 # Comprobamos que estamos localizados en el directorio con los datos para esta práctica: /home/usuario/cursoNGS/dia4/handson_dia4
 pwd
 # Nos movemos a la carpeta RAW
@@ -40,14 +42,14 @@ cd ..
 
 ```bash
 # Realizamos el análisis de calidad
-fastqc -t 4 RAW/AJA18_S162_L001_R1_PE.fastq.gz RAW/AJA18_S162_L001_R2_PE.fastq.gz -o RESULTS/QC/RAW
+fastqc -t 2 RAW/AJA18_S162_L001_R1_PE.fastq.gz RAW/AJA18_S162_L001_R2_PE.fastq.gz -o RESULTS/QC/RAW
 ```
 
 Cuando haya terminado vamos a ver los resultados, id a RESULTS/QC y dentro de la carpeta que se ha generado doble click en fastqc_report.html. Lo que vamos a ver es que fastQC nos avisa que en casi todos los apartados hay un error, hay que tener en cuenta que este programa está pensado para secuenciación de exoma o genoma completo, de manera que se espera una distribución homogénea de los reads en un espacio genómico más o menos grande. En este caso estamos analizando un único amplicón de 250 pb, de forma que la distribución de A,G,T,C por posición de la read va a ser siempre la misma y no homogénea ya que todas las reads caen en las mismas 250 pb. La misma explicación sirve para las secuencias sobrerrepresentadas o los Kmer (se secuencia un único amplicón) o incluso los porcentajes en GC.
 
 Es muy importante por tanto saber de qué partimos y de qué nos está avisando el programa para ser capaces de interpretar si nuestros datos tienen buena calidad o no.
 
-En este caso la gráfica que nos interesa es la primera donde nos dice la calidad por posición, vemos que es una calidad bastante buena exceptuando las últimas poquitas bases donde cae bastante la calidad. Vamos a realizar por tanto la aproximación que seguimos en el día 3 de prácticas y vamos a utilizar trimmomatic para cortar por extremo y luego filtraremos por calidad. Vamos a ser muy estrictos en este caso ya que tenemos muy pocas bases a muchísima cobertura por lo que no nos preocupa perder reads que nos puedan dar lugar a error más tarde.
+En este caso la gráfica que nos interesa es la primera donde nos dice la calidad por posición, vemos que es una calidad bastante buena exceptuando las últimas poquitas bases donde cae bastante la calidad. Vamos a realizar por tanto la aproximación que seguimos en la práctica de preprocesado y vamos a utilizar fastp para cortar por extremo y filtrar por calidad. Vamos a ser muy estrictos en este caso ya que tenemos muy pocas bases a muchísima cobertura por lo que no nos preocupa perder reads que nos puedan dar lugar a error más tarde.
 
 **¿De cuántas reads partimos?**
 
@@ -56,25 +58,25 @@ En este caso la gráfica que nos interesa es la primera donde nos dice la calida
 Vamos a realizar por tanto paso de trimming, paso de filtrado y otro paso de control de calidad para ver si todo ha ido correctamente y ver cuántas reads hemos perdido. Observad que en este caso vamos a poner de umbral phred 30 en vez de 20, vamos a ser más estrictos.
 
 ```bash
-# Realizamos el trimming de las lecturas
-trimmomatic PE \
-RAW/AJA18_S162_L001_R1_PE.fastq.gz RAW/AJA18_S162_L001_R2_PE.fastq.gz \
-RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R1_PE.fastq_trimmed \
-RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R1_PE.fastq_se_trimmed \
-RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R2_PE.fastq_trimmed \
-RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R2_PE.fastq_se_trimmed \
-SLIDINGWINDOW:4:30
-
-# Realizamos el filtrado de calidad
-IlluQC_PRLL.pl -c 4 -pe \
-RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R1_PE.fastq_trimmed \
-RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R2_PE.fastq_trimmed N A \
--l 70 -s 30 -o RESULTS/QC/TRIMMING_FILTERED/
+# Realizamos el preprocesamiento de las lecturas
+fastp -i RAW/AJA18_S162_L001_R1_PE.fastq.gz \
+      -I RAW/AJA18_S162_L001_R2_PE.fastq.gz \
+      -o RESULTS/QC/TRIMMING_FILTERED/AJA18_R1_trimmed.fastq \
+      -O RESULTS/QC/TRIMMING_FILTERED/AJA18_R2_trimmed.fastq \
+      -j RESULTS/QC/TRIMMING_FILTERED/fastp.json \
+      -h RESULTS/QC/TRIMMING_FILTERED/fastp.html \
+      --qualified_quality_phred 20 \
+      --unqualified_percent_limit 30 \
+      --cut_front --cut_tail \
+      --trim_poly_x \
+      --cut_mean_quality 30 \
+      --cut_window_size 10 \
+      --length_required 50
 
 # Y analizamos su calidad después del filtrado
 fastqc -t 4 \
-RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R1_PE.fastq_trimmed_filtered \
-RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R2_PE.fastq_trimmed_filtered \
+RESULTS/QC/TRIMMING_FILTERED/AJA18_R1_trimmed.fastq \
+RESULTS/QC/TRIMMING_FILTERED/AJA18_R2_trimmed.fastq \
 -o RESULTS/QC/TRIMMING_FILTERED/
 ```
 
@@ -96,32 +98,32 @@ bwa index REFERENCE/20140318_L11910.1_RB.fasta
 
 # Mapamos las lecturas contra la referencia
 bwa mem -t 4 REFERENCE/20140318_L11910.1_RB.fasta \
-RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R1_PE.fastq_trimmed_filtered \
-RESULTS/QC/TRIMMING_FILTERED/AJA18_S162_L001_R2_PE.fastq_trimmed_filtered \
-> RESULTS/Alignment/AJA18_S162_L001.sam
+RESULTS/QC/TRIMMING_FILTERED/AJA18_R1_trimmed.fastq \
+RESULTS/QC/TRIMMING_FILTERED/AJA18_R2_trimmed.fastq \
+> RESULTS/Alignment/AJA18.sam
 ```
 
 Y al igual que en la práctica del día 3 vamos a pasar a formato bam, ordenar e indexar para poder seguir trabajando con nuestros datos.
 
 ```bash
 # Convertimos de sam a bam
-samtools view -Sb RESULTS/Alignment/AJA18_S162_L001.sam \
-> RESULTS/Alignment/AJA18_S162_L001.bam
+samtools view -Sb RESULTS/Alignment/AJA18.sam \
+> RESULTS/Alignment/AJA18.bam
 # Ordenamos el fichero bam
-samtools sort RESULTS/Alignment/AJA18_S162_L001.bam \
-RESULTS/Alignment/AJA18_S162_L001_sorted
+samtools sort RESULTS/Alignment/AJA18.bam \
+RESULTS/Alignment/AJA18_sorted
 # Indexamos el fichero bam
-samtools index RESULTS/Alignment/AJA18_S162_L001_sorted.bam
+samtools index RESULTS/Alignment/AJA18_sorted.bam
 ```
 
 A continuación, vamos a sacar alguna estadística de nuestro mapeo a ver cómo ha ido, vamos a utilizar samtools y bamUtil como anteriormente.
 
 ```bash
 # Utilizamos flagstat para ver estadísticas del fichero bam
-samtools flagstat AJA18_S162_L001_sorted.bam
+samtools flagstat AJA18_sorted.bam
 
 # Utilizamos bamUtil para ver estadísticas del fichero bam
-bam stats --in AJA18_S162_L001_sorted.bam --basic --baseSum 2> AJA18_S162_L001_sorted.stats
+bam stats --in AJA18_sorted.bam --basic --baseSum 2> AJA18_sorted.stats
 ```
 
 **¿Cuál ha sido el porcentaje mapado?**
@@ -147,7 +149,7 @@ Para realizar la llamada a variantes vamos a utilizar una de las funcionalidades
 ```bash
 # Llamada a variantes con samtools
 samtools mpileup -d 200000 -ugf REFERENCE/20140318_L11910.1_RB.fasta \
-RESULTS/Alignment/AJA18_S162_L001_sorted.bam | bcftools call -mv - \
+RESULTS/Alignment/AJA18_sorted.bam | bcftools call -mv - \
 > RESULTS/variants/var.raw.vcf
 ```
 
