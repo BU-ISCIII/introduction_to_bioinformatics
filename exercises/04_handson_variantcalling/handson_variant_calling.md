@@ -74,7 +74,7 @@ fastp -i RAW/AJA18_S162_L001_R1_PE.fastq.gz \
       --length_required 50
 
 # Y analizamos su calidad después del filtrado
-fastqc -t 4 \
+fastqc -t 2 \
 RESULTS/QC/TRIMMING_FILTERED/AJA18_R1_trimmed.fastq \
 RESULTS/QC/TRIMMING_FILTERED/AJA18_R2_trimmed.fastq \
 -o RESULTS/QC/TRIMMING_FILTERED/
@@ -119,17 +119,25 @@ A continuación, vamos a sacar alguna estadística de nuestro mapeo a ver cómo 
 
 ```bash
 # Utilizamos flagstat para ver estadísticas del fichero bam
+cd RESULTS/Alignment
 samtools flagstat AJA18_sorted.bam
 
 # Utilizamos bamUtil para ver estadísticas del fichero bam
-bam stats --in AJA18_sorted.bam --basic --baseSum 2> AJA18_sorted.stats
+picard CollectWgsMetrics \
+    COVERAGE_CAP=1000000 \
+    INPUT=AJA18_sorted.bam \
+    OUTPUT=AJA18.coverage_metrics \
+    REFERENCE_SEQUENCE=../../REFERENCE/20140318_L11910.1_RB.fasta \
+    COUNT_UNPAIRED=true \
+    VALIDATION_STRINGENCY=LENIENT \
+    TMP_DIR=../../TMP
 ```
 
 **¿Cuál ha sido el porcentaje mapado?**
 
 **¿Cuántas reads tenemos en total?**
 
-**¿Cuál es la profundidad que nos indica bamUtil que tenemos?**
+**¿Cuál es la profundidad que nos indica picard que tenemos?**
 
 **¿Por qué es distinta a la estimada anteriormente?**
 
@@ -137,7 +145,7 @@ Fijaos que antes hemos calculado la profundidad según el tamaño del amplicón,
 
 Ahora abrid el IGV y cargad el genoma de 20140318_L11910.1_RB.fasta (carpeta REFERENCE) y el bam que acabamos de generar. Id a la región L11910.1:162,042-162,468, que es donde se localiza el exón secuenciado y por tanto donde se han mapeado las lecturas.
 
-Ahora si siguiésemos lo que hemos realizado en el día 3 tocaría eliminar duplicados. Sin embargo, si recordamos el significado de duplicados, son aquellas lecturas tienen su secuencia exactamente igual a otra. Si os fijáis en el mapeo en IGV os daréis cuenta que según esta definición todos son duplicados, porque estamos secuenciando un único amplicón, un único fragmento de ADN, por lo que no podemos eliminar los duplicados ya que nos quedaríamos sin datos, no podemos diferenciar los duplicados por PCR que sería los que habría que quitar de directamente es una secuencia de ADN que se secuencia muchas veces.
+Ahora si siguiésemos lo que hemos realizado en la práctica de mapping ocaría eliminar duplicados. Sin embargo, si recordamos el significado de duplicados, son aquellas lecturas tienen su secuencia exactamente igual a otra. Si os fijáis en el mapeo en IGV os daréis cuenta que según esta definición todos son duplicados, porque estamos secuenciando un único amplicón, un único fragmento de ADN, por lo que no podemos eliminar los duplicados ya que nos quedaríamos sin datos, no podemos diferenciar los duplicados por PCR que sería los que habría que quitar de directamente es una secuencia de ADN que se secuencia muchas veces.
 
 Por lo tanto en estos casos de Deep Sequencing no se suelen quitar duplicados porque se pierde demasiado dato real.
 
@@ -147,6 +155,8 @@ Para realizar la llamada a variantes vamos a utilizar una de las funcionalidades
 
 ```bash
 # Llamada a variantes con samtools
+cd ../..
+conda install -c bioconda bcftools
 samtools mpileup -d 200000 -ugf REFERENCE/20140318_L11910.1_RB.fasta \
 RESULTS/Alignment/AJA18_sorted.bam | bcftools call -mv - \
 > RESULTS/variants/var.raw.vcf
