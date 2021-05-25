@@ -212,8 +212,6 @@ Efectivamente, los números son parecidos, pero no exactamente iguales, ya que s
 
 **¿En qué frecuencia del alelo alternativo se encuentra la mutación?**
 
-Pero... dijisteis que samtools sólo detectaba frecuencias al 50%...(ver la parte opcional)
-
 #### Variant Annotation
 
 Hasta ahora hemos realizado preprocesamiento, mapeado y llamada a variantes (variant calling). Es decir, hasta el momento tenemos una lista de mutaciones en formato vcf, en este caso sólo tenemos una, lo que facilita mucho la labor, pero bueno como he dicho este es un experimento muy dirigido.
