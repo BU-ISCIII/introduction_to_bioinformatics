@@ -41,7 +41,7 @@ The material includes slides with theory concepts and a bunch of practical exerc
 - **Talk 1:** [Variant Calling](slides/04_steps_variant_calling.pdf)
 
 ### Day 8
-- **Exercise 1:** [Variant Calling](exercises/04_handson_variant_calling/handson_variant_calling.md) -- [Download pdf](exercises/04_handson_variant_calling.pdf)
+- **Exercise 1:** [Variant Calling](exercises/04_handson_variantcalling/handson_variant_calling.md) -- [Download pdf](exercises/04_handson_variantcalling.pdf)
 
 ### Day 9
 - **Talk 1:** [Ensamblado](slides/05_steps_assembly.pdf)
