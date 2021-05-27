@@ -124,7 +124,7 @@ pwd
 
 #Cambiamos el environment de conda
 conda deactivate
-
+conda activate ngs_course
 #Ejecutamos QUAST
 quast.py SRR292770_unordered.fasta -o quast \
 -R ../REFERENCES/NC_011748.fna -G ../REFERENCES/NC_011748.gff \
@@ -162,6 +162,7 @@ mkdir ecoli_mlst
 cd ecoli_mlst
 
 #Inicializamos el environment de conda
+conda deactivate
 conda activate srst2
 
 #Bajamos la BD
