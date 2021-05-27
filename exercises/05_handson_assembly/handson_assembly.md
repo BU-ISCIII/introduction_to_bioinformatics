@@ -14,8 +14,18 @@ Se utilizarán los datos de secuenciación de Escherichia coli O104:H4, responsa
 #### Ejercicio 1
 
 ```bash
-# Nos movemos a la carpeta de los datos
-cd ngs_course/05_handson_assembly
+# Primero vemos en que ruta estamos y volvemos a la carpeta del curso
+pwd
+# Output: /home/alumno/ngs_course/04_handson_variantcalling
+cd ..
+pwd
+# Output: /home/alumno/ngs_course/
+
+# Copiamos los datos de la práctica
+cp -r /mnt/ngs_course_shared/05_handson_assembly .
+
+# Cuando acabe nos movemos a la carpeta de los datos
+cd 05_handson_assembly
 ```
 
 El objetivo de este ejercicio es poner en práctica los conocimientos adquiridos en este curso sobre el preprocesamiento de datos NGS para comprobar la calidad de las lecturas sobre las que vamos a trabajar. Para ello vamos a utilizar la herramienta FastQC. Puedes obtener más información sobre la aplicación en http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
