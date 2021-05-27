@@ -171,7 +171,7 @@ getmlst.py --species "Escherichia coli#1"
 
 #MLST
 srst2 --input_pe ../../RAW/SRR292770_1.fastq.gz ../../RAW/SRR292770_2.fastq.gz \
--output ./ --log --mlst_db Escherichia_coli#1.fasta \
+--output ./ --log --mlst_db Escherichia_coli#1.fasta \
 --mlst_definitions ../../REFERENCES/ecoli.txt --mlst_delimiter '_'
 
 #Visualizamos los resultados
