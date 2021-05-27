@@ -16,7 +16,7 @@ Se utilizarán los datos de secuenciación de Escherichia coli O104:H4, responsa
 ```bash
 # Primero vemos a la home y de ahí a la carpeta del curso
 cd
-cd ngs_course_exercise/
+cd ngs_course_exercises/
 pwd
 # Output: /home/alumno/ngs_course_exercise
 
