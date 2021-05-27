@@ -136,7 +136,7 @@ Situándote encima de las etiquetas se muestra una breve descripción sobre la m
 
 Trata de comprender cada una de las métricas y gráficos generados; y como te ayudan a determinar la calidad del ensamblado.
 
-![quast_report](img/quast_report.png)
+![quast_report](img/quast_report_2.png)
 
 #### Ejercicio 6
 
