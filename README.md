@@ -21,7 +21,7 @@ The material includes slides with theory concepts and a bunch of practical exerc
 ### Day 1
 
 - **Talk 1:** [Iniciación al análisis de datos procedentes de técnicas de secuenciación masiva (NGS)](slides/00_intro01_sequencing.pdf)
-- **Talk 2:** [Iniciación al entorno Linux. Aspectos teóricos](slides/talk2_linux_intro.pdf)
+- **Talk 2:** [Iniciación al entorno Linux. Aspectos teóricos](slides/talk2_linux_intro_fix.pdf)
 
 ### Day 2
 
