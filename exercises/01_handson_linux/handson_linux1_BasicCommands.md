@@ -20,6 +20,16 @@ El objetivo es realizar desde la línea de comandos, aquellas tareas cotidianas 
 
 * LOS COMANDOS BÁSICOS QUE SIEMPRE DEBES RECORDAR: *pwd cd ls mkdir mv rm rmdir less nano*
 
+#### Cheats
+
+| Diectories | Files |
+|---|---|
+| mkdir | touch |
+| rmdir | ¿rm? |
+| cd | less |
+| | cat |
+| | nano |
+
 #### Ejercicios
 1. Input y output en la terminal. Muestra el calendario actual, el calendario del mes de diciembre y la fecha y hora actual. Borra la pantalla con el comando clear o usando la combinación de teclas ctrl + l.
 ```bash
