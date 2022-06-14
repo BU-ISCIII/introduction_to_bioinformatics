@@ -33,7 +33,7 @@ The material includes slides with theory concepts and a bunch of practical exerc
 
 ### Day 3
 
-- **Talk 1:** [Control de calidad y preprocesado](slides/02_steps_preprocessing_qc.pdf)
+- **Talk 1:** [Control de calidad y preprocesado](slides/talk4_quality_control.pdf)
 - **Talk 2:** [Mapping y filtrado de duplicados](slides/03_steps_mapping_qc.pdf)
 - **Exercise 1:** [Formato fastq](exercises/02_handson_preprocessing/handson_fastq_format.md) -- [Download pdf](exercises/02_handson_preprocessing/handson_fastq_format.pdf)
 - **Exercise 2:** [Control de Calidad y preprocesamiento de ficheros fastq](exercises/02_handson_preprocessing/handson_preprocessing.md) -- [Download pdf](exercises/02_handson_preprocessing/handson_preprocessing.pdf)
