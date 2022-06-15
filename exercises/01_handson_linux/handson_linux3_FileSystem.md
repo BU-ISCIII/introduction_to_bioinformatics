@@ -34,7 +34,11 @@ Lo primero que podemos hacer con un fichero de texto es abrirlo para ver sus con
 Otra forma de acceder a los contenidos del fichero es visualizarlo en la terminal utilizando el comando cat:
 
 ```bash
-cd /home/alumno/introduction_to_bioinformatics_handson/01_handson_linux/
+cd
+mkdir introduction_to_bioinformatics_handson
+cd introduction_to_bioinformatics_handson
+cp -r /mnt/ngs_course_shared/01_handson_linux .
+cd 01_handson_linux/
 cat microarray_adenoma_hk69.csv
 ```
 
