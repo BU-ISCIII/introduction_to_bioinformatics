@@ -86,7 +86,7 @@ wc -l microarray_adenoma_hk69.csv
 Las tablas con las que se suele trabajar en bioinformática son demasiado grandes para que Excel pueda abrirlas, por lo que hay que utilizar otras herramientas para trabajar con ellas. Una de las más comunes para su exploración es cut, que nos permite escoger determinadas columnas. En combinación con grep (u otras herramientas que seleccionan filas rápidamente) podemos extraer información útil de grandes tablas de datos. El comando cut requiere siempre de las opciones -f, que es el número de columna a extraer (pueden ser rangos o listas separadas por comas) y -d para especificar el separador de campos en el archivo de texto (el tabulador es el separado por defecto y no hace falta especificarlo).
 
 ```bash
-grep -w Experiment microarray_adenoma_hk69.csv | cut -f 2 -d’=’
+grep -w Experiment microarray_adenoma_hk69.csv | cut -f 2 -d'='
 ```
 
 * Ordenar el contenido del fichero (comando sort)
