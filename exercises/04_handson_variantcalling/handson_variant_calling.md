@@ -159,7 +159,7 @@ cd ../..
 conda deactivate
 conda create -c bioconda -c conda-forge -n bcftools bcftools samtools
 conda activate bcftools
-samtools mpileup -d 200000 -ugf REFERENCE/20140318_L11910.1_RB.fasta \
+bcftools mpileup --max-depth 0 --ignore-overlaps --count-orphans --min-BQ 20 --fasta-ref REFERENCE/20140318_L11910.1_RB.fasta \
 RESULTS/Alignment/AJA18_sorted.bam | bcftools call -mv - \
 > RESULTS/variants/var.raw.vcf
 ```
