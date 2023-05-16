@@ -190,10 +190,17 @@ ls dir2
 ls copia_dir2
 
 rm -rv d*
+ls
+
 rm -r *
+ls
+
 cd ..
 pwd
+ls
+
 rmdir practica_comandos
+ls
 ```
 ¿Por qué no puedo usar rm para eliminar carpetas si en linux también son archivos?
 
