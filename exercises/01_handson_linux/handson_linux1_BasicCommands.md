@@ -127,6 +127,7 @@ ls -r
 ```bash
 pwd
 ls /home/alumno #o ls ../../../../alumno/
+ls -l /home/alumno #o ll ../../../../alumno/
 ls -la /home/alumno #o ll -a ../../../../alumno
 ```
 ¿Para qué es interesante crear o ver los archivos ocultos?
