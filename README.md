@@ -20,31 +20,31 @@ The material includes slides with theory concepts and a bunch of practical exerc
 
 ### Day 1
 
-- **Talk 1:** [Iniciación al análisis de datos procedentes de técnicas de secuenciación masiva (NGS)](slides/00_intro01_sequencing.pdf)
+- **Talk 1:** [Secuenciación masiva. Platafomras de secuenciación](slides/00_intro01_sequencing.pdf)
 - **Talk 2:** [Iniciación al entorno Linux. Aspectos teóricos](slides/talk2_linux_intro_fix.pdf)
+- **Exercise 1:** [Comandos básicos de linux.](exercises/01_handson_linux/handson_linux1_BasicCommands.md) -- [Download pdf](exercises/01_handson_linux/handson_linux1_BasicCommands.pdf)
 
 ### Day 2
 
-- **Talk 1:** [Secuenciación Masiva: Aplicaciones.](slides/00_intro01_application.pdf)
-- **Exercise 1:** [Comandos básicos de linux.](exercises/01_handson_linux/handson_linux1_BasicCommands.md) -- [Download pdf](exercises/01_handson_linux/handson_linux1_BasicCommands.pdf)
+- **Talk 3:** [Aplicaciones de las técnicas de secuenciación masiva (NGS)](slides/00_intro01_application.pdf)
 - **Exercise 2:** [Conda.](exercises/01_handson_linux/handson_linux2_Conda.md) -- [Download pdf](exercises/01_handson_linux/handson_linux2_Conda.pdf)
 - **Exercise 3:** [Ficheros.](exercises/01_handson_linux/handson_linux3_FileSystem.md) -- [Download pdf](exercises/01_handson_linux/handson_linux3_FileSystem.pdf)
 - **Exercise 4:** [Permisos.](exercises/01_handson_linux/handson_linux4_Permissions.md) -- [Download pdf](exercises/01_handson_linux/handson_linux4_Permissions.pdf)
 
 ### Day 3
 
-- **Talk 1:** [Control de calidad y preprocesado](slides/talk4_quality_control.pdf)
-- **Talk 2:** [Mapping y filtrado de duplicados](slides/03_steps_mapping_qc.pdf)
-- **Exercise 1:** [Formato fastq](exercises/02_handson_preprocessing/handson_fastq_format.md) -- [Download pdf](exercises/02_handson_preprocessing/handson_fastq_format.pdf)
-- **Exercise 2:** [Control de Calidad y preprocesamiento de ficheros fastq](exercises/02_handson_preprocessing/handson_preprocessing.md) -- [Download pdf](exercises/02_handson_preprocessing/handson_preprocessing.pdf)
-- **Exercise 3:** [Mapado y control de calidad](exercises/03_handson_mapping/handson_mapado.md) -- [Download pdf](exercises/03_handson_mapping/handson_mapado.pdf)
+- **Talk 4:** [Control de calidad y preprocesado](slides/talk4_quality_control.pdf)
+- **Talk 5:** [Mapping y filtrado de duplicados](slides/03_steps_mapping_qc.pdf)
+- **Exercise 5:** [Formato fastq](exercises/02_handson_preprocessing/handson_fastq_format.md) -- [Download pdf](exercises/02_handson_preprocessing/handson_fastq_format.pdf)
+- **Exercise 6:** [Control de Calidad y preprocesamiento de ficheros fastq](exercises/02_handson_preprocessing/handson_preprocessing.md) -- [Download pdf](exercises/02_handson_preprocessing/handson_preprocessing.pdf)
+- **Exercise 7:** [Mapado y control de calidad](exercises/03_handson_mapping/handson_mapado.md) -- [Download pdf](exercises/03_handson_mapping/handson_mapado.pdf)
 
 ### Day 4
 
-- **Talk 1:** [Variant Calling](slides/04_steps_variant_calling.pdf)
-- **Exercise 1:** [Variant Calling](exercises/04_handson_variantcalling/handson_variant_calling.md) -- [Download pdf](exercises/04_handson_variantcalling.pdf)
+- **Talk 6:** [Variant Calling](slides/04_steps_variant_calling.pdf)
+- **Exercise 8:** [Variant Calling](exercises/04_handson_variantcalling/handson_variant_calling.md) -- [Download pdf](exercises/04_handson_variantcalling.pdf)
 
 ### Day 5
 
-- **Talk 1:** [Ensamblado](slides/05_steps_assembly.pdf)
-- **Exercise 1:** [Whole genome analysis](exercises/05_handson_assembly/handson_assembly.md) -- [Download pdf](exercises/05_handson_assembly/handson_assembly.pdf)
+- **Talk 7:** [Ensamblado, anotación y tipificación](slides/05_steps_assembly.pdf)
+- **Exercise 9:** [Ensamblado, anotación y tipificación](exercises/05_handson_assembly/handson_assembly.md) -- [Download pdf](exercises/05_handson_assembly/handson_assembly.pdf)
