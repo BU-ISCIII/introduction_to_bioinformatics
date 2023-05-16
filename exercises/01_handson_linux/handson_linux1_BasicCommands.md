@@ -154,6 +154,9 @@ cd /home/alumno/Documentos/practica_comandos/dir2
 mv ../dir1/* ./ #o mv /home/alumno/Documentos/practica_comandos/dir1/* /home/alumno/Documentos/practica_comandos/dir2/
 # Recuerda que el punto “.” se usa para indicar el directorio actual y el asterisco * es un carácter especial que indica cualquier cadena de caracteres y en este caso indica todo el contenido de dir1.
 # OJO! si no pones el * o indicas el fichero, SE MOVERA EL DIRECTORIO ENTERO.
+ls .
+ls ../dir1/
+
 mv archivo1.txt archivo_importante.txt
 cat /etc/passwd > archivo_importante.txt
 less archivo_importante.txt
