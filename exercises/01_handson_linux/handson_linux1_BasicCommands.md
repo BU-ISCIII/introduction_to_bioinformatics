@@ -168,7 +168,7 @@ less archivo_importante.txt
 ```bash
 cp /etc/passwd listado_usuarios.txt #o cp /etc/passwd ./; mv passwd listado_usuarios.txt
 ls -l #o ls -l /home/alumno/Documentos/practica_comandos/dir2
-less archivo_importante.txt # Pulsa q para salir
+less listado_usuarios.txt # Pulsa q para salir
 # Acuérdate que puedes limpiar la pantalla con el comando clear o pulsando ctrl + l
 ```
 ¿Para qué sirve less si ya sé usar cat?
