@@ -70,14 +70,14 @@ ls -la
 ```
 ¿Dónde estás? ¿Qué ficheros ves? ¿Y qué carpetas? ¿Qué hace el -a?
 
-5. Desde tu home acceder (cd) al directorio ‘Documents’ y dentro crear (mkdir) un directorio que se llame ‘practica_comandos’. Acceder dentro del directorio ‘practica_comandos’ y crear 2 directorios, uno se llamara ‘dir1’ y el otro ‘dir2’. Acceder dentro del directorio ‘dir1’ y crear un fichero de ‘texto’ vacio (touch o >) llamado ‘archivo1.txt’. Volver al directorio de inicio (/home/alumno).
+5. Desde tu home acceder (cd) al directorio ‘Documentos’ y dentro crear (mkdir) un directorio que se llame ‘practica_comandos’. Acceder dentro del directorio ‘practica_comandos’ y crear 2 directorios, uno se llamara ‘dir1’ y el otro ‘dir2’. Acceder dentro del directorio ‘dir1’ y crear un fichero de ‘texto’ vacio (touch o >) llamado ‘archivo1.txt’. Volver al directorio de inicio (/home/alumno).
 ```bash
-cd Documents
+cd Documentos
 pwd
 mkdir practica_comandos
 cd practica_comandos
 mkdir dir1 dir2
-cd dir1 #o cd /home/alumno/Documents/practica_comandos/dir1
+cd dir1 #o cd /home/alumno/Documentos/practica_comandos/dir1
 > archivo1.txt #o touch archivo1.txt
 cd #o cd /home/alumno/
 ```
@@ -93,7 +93,7 @@ cd #o cd /home/alumno/
 
   Por último, usar cat para guardar el contenido de los 2 ficheros en uno nuevo y llámalo ‘juntar_ficheros.txt’. Visualizar en pantalla. Limpiar pantalla (clear).
 ```bash
-cd Documents/practica_comandos/dir1
+cd Documentos/practica_comandos/dir1
 nano practica_cat.txt
 # (ctrl + o) para guardar cambios
 # (ctrl + x) para salir
@@ -143,8 +143,8 @@ ls
 
 10. Acceder al directorio ‘dir2’ (anteriormente creado) y mueve el contenido de ‘dir1’ a ‘dir2’ (mv). Listar ambos directorios por separado para comprobar que se han movido los ficheros. Cambiar el nombre al fichero ‘archivo1.txt’ por ‘archivo_importante.txt’ (mv). Visualiza con cat el fichero ‘passwd’ que se encuentra en la carpeta del sistema /etc y redireccionar la salida del fichero a otro fichero que se llame ‘archivo_importante.txt’ (cat /etc/passwd > archivo_importante.txt) (El fichero ‘passwd’ contiene información de los usuarios del sistema). Visualizar el contenido usando cat y less (recuerda que less paginan el contenido y que para salir se usa la tecla q [quit]).
 ```bash
-cd /home/alumno/Documents/practica_comandos/dir2
-mv ../dir1/* ./ #o mv /home/alumno/Documents/practica_comandos/dir1/* /home/alumno/Documents/practica_comandos/dir2/
+cd /home/alumno/Documentos/practica_comandos/dir2
+mv ../dir1/* ./ #o mv /home/alumno/Documentos/practica_comandos/dir1/* /home/alumno/Documentos/practica_comandos/dir2/
 # Recuerda que el punto “.” se usa para indicar el directorio actual y el asterisco * es un carácter especial que indica cualquier cadena de caracteres y en este caso indica todo el contenido de dir1.
 # OJO! si no pones el * o indicas el fichero, SE MOVERA EL DIRECTORIO ENTERO.
 mv archivo1.txt archivo_importante.txt
@@ -157,7 +157,7 @@ less archivo_importante.txt
 11. Ahora copiar (cp) el fichero ‘passwd’ dentro de ‘dir2’ con el nombre ‘listado_usuarios.txt’. Listar el directorio para ver los permisos y propietario de los ficheros (ls -l). Mostrar el contenido de ambos ficheros. Para salir de la visualización de less pulsa "q".
 ```bash
 cp /etc/passwd listado_usuarios.txt #o cp /etc/passwd ./; mv passwd listado_usuarios.txt
-ls -l #o ls -l /home/alumno/Documents/practica_comandos/dir2
+ls -l #o ls -l /home/alumno/Documentos/practica_comandos/dir2
 less archivo_importante.txt # Pulsa q para salir
 # Acuérdate que puedes limpiar la pantalla con el comando clear o pulsando ctrl + l
 ```
