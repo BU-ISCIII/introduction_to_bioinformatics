@@ -21,7 +21,6 @@ En esta práctica vamos a aprender a manejar environments de conda y a comprobar
 
 #### Ejercicios
 
-
 1. Ejecuta Conda por primera vez:
 ```bash
 cd
@@ -37,18 +36,18 @@ conda info --envs # o conda env list, es lo mismo
 ```
 ¿Estamos ahora mismo trabajando en algún env?
 
-3. Cambiar de env:
+3. Vamos a crear un env nuevo:
 ```bash
-conda activate ngs_course
+conda create --prefix /opt/miniconda3/envs/git
+#  Proceed > y + Intro
+```
+
+4. Cambiar de env:
+```bash
+conda activate git
 conda env list
 ```
-¿Cómo podemos saber que hemos cambiado de env?
-
-4. Vamos a crear un env nuevo:
-```bash
-conda create --name git
-```
-¿En qué env estamos ahora?
+¿Cómo podemos saber que hemos cambiado de env? ¿En qué env estamos ahora?
 
 5. Veamos qué programas tenemos instalados en el env:
 ```bash
@@ -58,6 +57,8 @@ conda list
 6. Instalemos un programa en nuestro nuevo env:
 ```bash
 conda install -c anaconda git
+# Proceed > y + Intro
+conda list
 ```
 ¿Cómo podemos ver que el nuevo programa ha sido instalado en el env?
 
@@ -75,5 +76,12 @@ man git
 8. Usemos git para descargarnos los materials del curso:
 ```bash
 git clone https://github.com/BU-ISCIII/introduction_to_bioinformatics.git
+ls
 ```
-¿Cómo saldríais del env?
+
+9. Salir del environment:
+```bash
+conda deactivate
+which git
+git --version
+```
