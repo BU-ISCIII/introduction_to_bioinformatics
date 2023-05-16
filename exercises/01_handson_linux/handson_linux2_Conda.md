@@ -24,6 +24,7 @@ En esta práctica vamos a aprender a manejar environments de conda y a comprobar
 
 1. Ejecuta Conda por primera vez:
 ```bash
+cd
 conda
 conda --version
 which conda
