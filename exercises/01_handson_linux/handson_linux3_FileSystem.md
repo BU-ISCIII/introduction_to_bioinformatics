@@ -37,7 +37,7 @@ Otra forma de acceder a los contenidos del fichero es visualizarlo en la termina
 cd
 mkdir introduction_to_bioinformatics_handson
 cd introduction_to_bioinformatics_handson
-cp -r /mnt/ngs_course_shared/01_handson_linux .
+cp -r mkdir introduction_to_bioinformatics_handson/01_handson_linux .
 cd 01_handson_linux/
 cat microarray_adenoma_hk69.csv
 ```
