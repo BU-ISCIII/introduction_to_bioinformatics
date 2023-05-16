@@ -33,13 +33,14 @@ which conda
 
 2. Investiguemos qué envs tenemos disponibles:
 ```bash
-conda info --envs
+conda info --envs # o conda env list, es lo mismo
 ```
 ¿Estamos ahora mismo trabajando en algún env?
 
 3. Cambiar de env:
 ```bash
 conda activate ngs_course
+conda env list
 ```
 ¿Cómo podemos saber que hemos cambiado de env?
 
