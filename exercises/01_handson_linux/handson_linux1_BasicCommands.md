@@ -135,10 +135,15 @@ ls -la /home/alumno #o ll -a ../../../../alumno
 9. Prueba a moverte (cd) y listar (ls) otros directorios del árbol de ficheros de Linux. Recuerda que para saber en qué directorio te encuentras se usa el comando pwd y que con el comando cd (sin parámetros) vuelves a tu directorio personal (/home/alumno).
 ```bash
 cd /
+pwd
 ls
+
 cd etc
+pwd
 ls
+
 cd
+pwd
 ls
 ```
 ¿Cómo puedes ver todas las opciones para cambiar de destino?
