@@ -87,9 +87,7 @@ cd #o cd /home/alumno/
 
   Acceder (cd) al directorio ‘dir1’, crea un fichero ‘practica_cat.txt’ usando el editor nano (nano practica_cat.txt), añadir texto y guardar (pulsar ctrl + o), y sal del editor (ctrl + x). Listar (ls) el contenido de ‘dir1’ para comprobar que se ha creado. Visualizar en pantalla el contenido de ‘practica_cat.txt’ (cat practica_cat.txt).
 
-  Hacer una copia (cp) de ‘practica_cat.txt’ dentro del directorio ‘dir1’ y cambia el nombre por ‘concatenar.txt’. Edita ‘concatenar.txt’ con nano y cambia algo su contenido.
-
-  Listar el contenido de ‘dir1’ para comprobar que se ha creado. Visualizar en pantalla el contenido de concatenar.txt’. Ahora, visualizar en pantalla el contenido de ‘practica_cat.txt’ y ‘concatenar.txt’ con una sola instrucción.
+  Hacer una copia (cp) de ‘practica_cat.txt’ dentro del directorio ‘dir1’ y cambia el nombre por ‘concatenar.txt’. Edita ‘concatenar.txt’ con nano y cambia algo su contenido. Listar el contenido de ‘dir1’ para comprobar que se ha creado. Visualizar en pantalla el contenido de concatenar.txt’. Ahora, visualizar en pantalla el contenido de ‘practica_cat.txt’ y ‘concatenar.txt’ con una sola instrucción.
 
   Por último, usar cat para guardar el contenido de los 2 ficheros en uno nuevo y llámalo ‘juntar_ficheros.txt’. Visualizar en pantalla. Limpiar pantalla (clear).
 ```bash
@@ -98,12 +96,15 @@ nano practica_cat.txt
 # (ctrl + o) para guardar cambios
 # (ctrl + x) para salir
 ls
+cat practica_cat.txt
+
 cp practica_cat.txt concatenar.txt
 nano concatenar.txt
 # (ctrl + o) para guardar cambios
 # (ctrl + x) para salir
 ls
 cat concatenar.txt
+
 cat practica_cat.txt concatenar.txt #o cat *
 cat practica_cat.txt concatenar.txt > juntar_ficheros.txt
 cat -n juntar_ficheros.txt #(-n permite ver el número de líneas)
