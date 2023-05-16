@@ -21,24 +21,25 @@ El objetivo de la práctica es realizar desde la línea de comandos cambios en l
 * LOS COMANDOS BÁSICOS QUE SIEMPRE DEBES RECORDAR: *pwd cd ls mkdir mv rm rmdir less nano*
 
 #### Ejercicios
-1) Acceder al directorio ‘Documents’ de nuestro Home y dentro crear un directorio que se llame ‘practica_permisos’. Dentro de ‘practica_permisos’ crear otro directorio que se llame ‘copia_etc’. Copiar todos los ficheros que empiecen por ‘ho’ y todos los que empiecen por ‘au’ desde el directorio ‘/etc/’, a el directorio ‘copia_etc’ (usad el parámetro -v para ver el proceso de copia).
+1) Acceder al directorio ‘Documentos’ de nuestro Home y dentro crear un directorio que se llame ‘practica_permisos’. Dentro de ‘practica_permisos’ crear otro directorio que se llame ‘copia_etc’. Copiar todos los ficheros que empiecen por ‘ho’ y todos los que empiecen por ‘au’ desde el directorio ‘/etc/’, a el directorio ‘copia_etc’ (usad el parámetro -v para ver el proceso de copia).
 
 ```bash
-cd Documents
+cd
+cd Documentos
 pwd
 mkdir practica_permisos
 cd practica_permisos
 mkdir copia_etc
 cd copia_etc
 cp -v /etc/ho* ./ # (El punto “.” Indica que se copie en el directorio en el que te encuentras ubicado.)
-cp -v /etc/au* /home/alumno/Documents/practica_permisos/copia_etc
+cp -v /etc/au* /home/alumno/Documentos/practica_permisos/copia_etc
 ```
 
 2) Listar el contenido y visualizar los permisos del directorio ‘copia_etc’.
 
 ```bash
 pwd
-ll #o ls -l /home/alumno/Documents/practica_permisos/copia_etc
+ll #o ls -l /home/alumno/Documentos/practica_permisos/copia_etc
 ```
 
 3) Añadir permisos de escritura al grupo y resto de usuarios, en los ficheros que empiecen por ‘ho’. Listar el contenido y visualizar los permisos para ver los cambios.
@@ -46,7 +47,7 @@ ll #o ls -l /home/alumno/Documents/practica_permisos/copia_etc
 ```bash
 pwd
 chmod go+w ho* #o chmod 666 ho*
-ll #o ls -l /home/alumno/Documents/practica_permisos/copia_etc
+ll #o ls -l /home/alumno/Documentos/practica_permisos/copia_etc
 ```
 
 4) Cambiar el grupo de los ficheros que empiece por ‘au’ a ‘bioinfo’ (recuerda usar el comando ‘sudo’ para poder efectuar los cambios). Listar el contenido y visualizar para ver los cambios.
@@ -54,7 +55,7 @@ ll #o ls -l /home/alumno/Documents/practica_permisos/copia_etc
 ```bash
 pwd
 sudo chgrp bioinfo au*
-ll #o ls -l /home/alumno/Documents/practica_permisos/copia_etc
+ll #o ls -l /home/alumno/Documentos/practica_permisos/copia_etc
 ```
 
 5) Cambiar el propietario de los ficheros que empiece por ‘ho’ a ‘root’ (recuerda usar el comando ‘sudo’ para poder efectuar los cambios). Listar el contenido y visualizar para ver los cambios.
@@ -62,7 +63,7 @@ ll #o ls -l /home/alumno/Documents/practica_permisos/copia_etc
 ```bash
 pwd
 sudo chown root ho*
-ll #o ls -l /home/alumno/Documents/practica_permisos/copia_etc
+ll #o ls -l /home/alumno/Documentos/practica_permisos/copia_etc
 ```
 
 6) Quitar todos los permisos al ‘resto de usuarios’ (tercer bloque de permisos), de todos los ficheros dentro de ‘copia_etc’. Listar el contenido y visualizar los permisos para ver los cambios.
@@ -77,7 +78,7 @@ ll #o ls -l /home/Documentos/practica_permisos/copia_etc
 
 ```bash
 pwd
-cd ../../ #o cd ; cd Documents
+cd ../../ #o cd ; cd Documentos
 rm -rf practica_permisos
 ls
 ```
