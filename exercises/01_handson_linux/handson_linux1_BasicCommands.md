@@ -202,7 +202,6 @@ ls
 rmdir practica_comandos
 ls
 ```
-¿Por qué no puedo usar rm para eliminar carpetas si en linux también son archivos?
 
 #### Nota final
 * Podéis practicar estos ejercicios en cualquier ordenador, no solo en la máquian virtual del curso.
