@@ -8,7 +8,7 @@ The material includes slides with theory concepts and a bunch of practical exerc
 
 ### Programm
 
-- **Course Programm** [Download pdf](slides/programa_NGS-ISCIII2022.pdf)
+- **Course Programm** [Download pdf](slides/programa_NGS-ISCIII2023.pdf)
 
 ### Set up
 
