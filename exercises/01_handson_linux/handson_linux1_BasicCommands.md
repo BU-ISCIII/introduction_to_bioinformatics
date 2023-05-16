@@ -183,7 +183,12 @@ less listado_usuarios.txt # Pulsa q para salir
 ```bash
 cd ..
 pwd #o si no estás en el directorio practica_comandos ir a él (cd)
+ls
 cp -r dir2 copia_dir2
+ls
+ls dir2
+ls copia_dir2
+
 rm -rv d*
 rm -r *
 cd ..
