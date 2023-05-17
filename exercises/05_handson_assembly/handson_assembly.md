@@ -18,7 +18,7 @@ Se utilizarán los datos de secuenciación de Escherichia coli O104:H4, responsa
 cd
 cd introduction_to_bioinformatics_handson/
 pwd
-# Output: /home/alumno/ngs_course_exercise
+# Output: /home/alumno/introduction_to_bioinformatics_handson
 
 # Copiamos los datos de la práctica
 cp -r /mnt/ngs_course_shared/introduction_to_bioinformatics_handson/05_handson_assembly/ .
@@ -62,7 +62,7 @@ Al ejecutar este comando se generaran una serie de ficheros, incluido el fichero
 
 Una vez que tenemos los contigs con las lecturas ensambladas es útil ordenarlos frente a un genoma de referencia. Una manera sencilla de conseguirlo es utilizando la opción Move Contigs de Mauve (http://asap.ahabs.wisc.edu/mauve).
 
-Utilizaremos los contigs obtenidos anteriormente y la referencia E. coli Ec55989 (NCBI accession NC 011748 ) que corresponde con una cepa muy cercana con un genoma completo disponible, localizado en la carpeta `/home/alumno/ngs_course_exercise/05_handson_assembly/REFERENCES`.
+Utilizaremos los contigs obtenidos anteriormente y la referencia E. coli Ec55989 (NCBI accession NC 011748 ) que corresponde con una cepa muy cercana con un genoma completo disponible, localizado en la carpeta `/home/alumno/introduction_to_bioinformatics_handson/05_handson_assembly/REFERENCES`.
 
 Se abre la aplicación desde la terminal:
 
@@ -80,7 +80,7 @@ Aparece una ventana de diálogo etiquetada Choose location to keep output files 
 
 Se muestra un mensaje acerca del proceso iterativo de reordenamiento de los contigs. Pulsa OK para continuar.
 
-Aparece una caja de dialogo etiquetada como Align and Reorder Contigs.  Pulsa el boton Add Se-quence... y elige el genoma de referencia frente al que quieres alinear que en este caso es NC_011748.fna `(/home/alumno/ngs_course_exercise/05_handson_assembly/REFERENCES/NC_011748.fna)`.
+Aparece una caja de dialogo etiquetada como Align and Reorder Contigs.  Pulsa el boton Add Se-quence... y elige el genoma de referencia frente al que quieres alinear que en este caso es NC_011748.fna `(/home/alumno/introduction_to_bioinformatics_handson/05_handson_assembly/REFERENCES/NC_011748.fna)`.
 
 Pulsa el boton Add Sequence... nuevamente y elige el fichero con los contigs SRR292770_unordered.fasta
 
@@ -100,7 +100,7 @@ El ensamblaje alternativo de la cepa TY-2482 (NCBI accession AFVR01 ) está disp
 
 * Aparece una caja de dialogo etiquetada como Sequences to align. Pulsa el boton Add Sequence... y elige el fichero de contigs SRR292770.fasta
 
-* Pulsa Add Sequence... nuevamente y elige el fichero AFVR01.1_sorted.fasta con el ensamblaje alternativo. Pulsa Add Sequence... y añade el fichero NC_011748.fna `(/home/alumno/ngs_course_exercise/05_handson_assembly/REFERENCES/NC_011748.fna)` con el genoma de referencia Ec55989.
+* Pulsa Add Sequence... nuevamente y elige el fichero AFVR01.1_sorted.fasta con el ensamblaje alternativo. Pulsa Add Sequence... y añade el fichero NC_011748.fna `(/home/alumno/introduction_to_bioinformatics_handson/05_handson_assembly/REFERENCES/NC_011748.fna)` con el genoma de referencia Ec55989.
 Especifica Multiple como nombre para el fichero de salida y pulsa Save.
 
 * Pulsa Align... para ejecutar el alineamiento. Este proceso puede llevar un tiempo.
@@ -120,7 +120,7 @@ El objetivo de este ejercicio es analizar la calidad de un ensamblado. Para ello
 ```bash
 # Comprobamos donde estamos
 pwd
-# Output: /home/alumno/ngs_course_exercise/
+# Output: /home/alumno/introduction_to_bioinformatics_handson/
 
 #Cambiamos el environment de conda
 conda deactivate
@@ -150,10 +150,10 @@ Para hacer el MLST debemos descargarnos la BD correspondiente y luego cotejar la
 ```bash
 # Comprobamos que nos estamos en la carpeta RESULTS de 05_handson_assembly o nos movemos a ella
 pwd
-# /home/alumno/ngs_course/05_handson_assembly/RESULTS/
+# /home/alumno/introduction_to_bioinformatics_handson/05_handson_assembly/RESULTS/
 
 # sino estamos ahí ejecutar:
-cd /home/alumno/ngs_course/05_handson_assembly/RESULTS/
+cd /home/alumno/introduction_to_bioinformatics_handson/05_handson_assembly/RESULTS/
 
 # Creamos un directorio para MLST
 mkdir ecoli_mlst
