@@ -1,17 +1,19 @@
 ## Curso de Iniciación a la Secuenciación Masiva
+
 BU-ISCIII
 
 ### Práctica 2 día 2: Manejo y gestión de ficheros
 
 17-28 Mayo 2021, 8a Edición, Programa Formación Continua, ISCIII
 
-
 #### Descripción
+
 Al copiar o mover ficheros y/o directorios dentro del sistema o desde servidores de ficheros (FTP, samba, ...), tanto los permisos como propietario o grupo de esos ficheros, no siempre son los correctos para poder manipularlos.
 
 El objetivo de la práctica es realizar desde la línea de comandos cambios en las características de los ficheros y/o directorios para que nuestro usuario del sistema pueda procesarlos y/o visualizarlos.
 
 #### Notas importantes
+
 * USA EL TABULADOR PARA GUIARTE EN LA TERMINAL Y AUTOCOMPLETAR NOMBRE DE RUTAS, NOMBRE DE ARCHIVOS Y COMANDOS. (“El tabulador es tu mejor aliado”)
 
 * USA LOS CURSORES DEL TECLADO PARA MOVERTE POR EL HISTORIAL DE COMANDOS EJECUTADOS (PODRÁS VOLVER A USARLOS SIN NECESIDAD DE VOLVERLOS A ESCRIBIR).
@@ -21,6 +23,7 @@ El objetivo de la práctica es realizar desde la línea de comandos cambios en l
 * LOS COMANDOS BÁSICOS QUE SIEMPRE DEBES RECORDAR: *pwd cd ls mkdir mv rm rmdir less nano*
 
 #### Ejercicios
+
 1) Acceder al directorio ‘Documentos’ de nuestro Home y dentro crear un directorio que se llame ‘practica_permisos’. Dentro de ‘practica_permisos’ crear otro directorio que se llame ‘copia_etc’. Copiar todos los ficheros que empiecen por ‘ho’ desde el directorio ‘/etc/’, a el directorio ‘copia_etc’ (usad el parámetro -v para ver el proceso de copia).
 
 ```bash
@@ -85,13 +88,14 @@ ls
 ```
 
 #### Nota final
+
 * Podéis practicar estos ejercicios en cualquier ordenador, no solo en la máquian virtual del curso.
 
 * Estos comandos son universales y funcionan en toda máquina que corra linux y similares, incluyendo macs y WSL.
 
-* La manera más sencilla de practicarlos sin instalar nada es vía http://www.webminal.org/. En esta web puedes crearte un usuario de forma gratuita y abrir una terminal en una máquina remota, todo a través de vuestro explorador web. También contiene tutoriales complementarios que os pueden servir para afianzar lo aprendido hoy o repasar los comandos cuando tengáis necesidad de usarlos.
+* La manera más sencilla de practicarlos sin instalar nada es vía <http://www.webminal.org/>. En esta web puedes crearte un usuario de forma gratuita y abrir una terminal en una máquina remota, todo a través de vuestro explorador web. También contiene tutoriales complementarios que os pueden servir para afianzar lo aprendido hoy o repasar los comandos cuando tengáis necesidad de usarlos.
 
-* *NOTA:* http://www.webminal.org/ ha sufrido recientemente un incendio en sus servidores y la plataforma está off-line temporalmente. Como alternativa podéis usar http://copy.sh/v86/?profile=archlinux, aunque esta carece de tutoriales.
+* *NOTA:* <http://www.webminal.org/> ha sufrido recientemente un incendio en sus servidores y la plataforma está off-line temporalmente. Como alternativa podéis usar <http://copy.sh/v86/?profile=archlinux>, aunque esta carece de tutoriales.
 
 ```
 Visita Webminal o copy.sh para practicar en casa: http://www.webminal.org/ o http://copy.sh/v86/?profile=archlinux

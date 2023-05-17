@@ -1,15 +1,17 @@
 ## Curso de Iniciación a la Secuenciación Masiva
+
 BU-ISCIII
 
 ### Práctica 3: Manejo y gestión de ficheros
 
 17-28 Mayo 2021, 8a Edición, Programa Formación Continua, ISCIII
 
-
 #### Descripción
+
 Uno de los puntos fuertes de los sistemas Linux estriba en la facilidad con la que se analizan los ficheros de texto. Estos sistemas incluyen una serie de herramientas que permiten realizar una gran cantidad de manipulaciones en estos ficheros sin necesidad de instalar ninguna herramienta especializada.
 
 #### Notas importantes
+
 * USA EL TABULADOR PARA GUIARTE EN LA TERMINAL Y AUTOCOMPLETAR NOMBRE DE RUTAS, NOMBRE DE ARCHIVOS Y COMANDOS. (“El tabulador es tu mejor aliado”)
 
 * USA LOS CURSORES DEL TECLADO PARA MOVERTE POR EL HISTORIAL DE COMANDOS EJECUTADOS (PODRÁS VOLVER A USARLOS SIN NECESIDAD DE VOLVERLOS A ESCRIBIR).
@@ -19,6 +21,7 @@ Uno de los puntos fuertes de los sistemas Linux estriba en la facilidad con la q
 * LOS COMANDOS BÁSICOS QUE SIEMPRE DEBES RECORDAR: *pwd cd ls mkdir mv rm rmdir less nano*
 
 #### Ficheros de texto y binarios
+
 Antes de comenzar a analizar este tipo de ficheros hay que aclarar qué es y qué no es un fichero de texto. Un fichero de texto es un fichero dividido en líneas y cuyo contenido es texto. A pesar de lo que pudiese parecer a priori, un documento de Microsoft Office o de LibreOffice no es un fichero de texto. La información contenida en estos documentos es binaria y sólo los programas especialmente creados para abrir estos ficheros pueden acceder a ella de un modo inteligible. En un documento como en un fichero Word además de texto se guarda la información sobre el formato, imágenes, tablas, etc... Por el contrario en un fichero de texto sólo hay caracteres alfanuméricos (letras y números), retornos de carro y tabuladores.
 
 Los ficheros de texto pueden ser abiertos e inspeccionados sin necesidad de hacer uso de un software especial diseñado para trabajar con ellos. Un documento Word no puede ser leído sino tenemos el Office o LibreOffice instalado pero un fichero de texto se puede ver y editar con las herramientas que vienen instaladas por defecto en el sistema operativo.
@@ -98,6 +101,7 @@ head microarray_adenoma_hk69.csv | sort -k1 -r
 ```
 
 #### Ejercicios
+
 1) Saber cuál es la expresión de los genes relacionados con la leucemia en el fichero del microarray. Para ello buscaremos en el archivo las líneas que contienen leukemia ignorando diferencias entre mayúsculas y minúsculas. Si las líneas que coinciden con el patrón son muchas, usar una tubería ( | ) y pasar la salida del comando grep como entrada al comando less o more.
 
 2) Buscar la palabra leukemia en todos los ficheros presentes el directorio home (/home/usuario).
@@ -117,6 +121,7 @@ head microarray_adenoma_hk69.csv | sort -k1 -r
 <i>Nota: Recordad usar los comandos pwd, cd y ls para conocer vuestra localización, moveros entre directorios y listar el contenido de los directorios respectivamente. Necesitaréis ir al directorio donde se encuentra el archivo ‘microarray_adenoma_hk69.csv’ para poder trabajar con él más fácilmente.</i>
 
 #### Soluciones
+
 ```bash
 #1
 grep -i leukemia microarray_adenoma_hk69.csv | less
@@ -144,13 +149,14 @@ grep leukemia microarray_adenoma_hk69.csv | cut -f 3,4 | sort -u | wc -l
 ```
 
 #### Nota final
+
 * Podéis practicar estos ejercicios en cualquier ordenador, no solo en la máquian virtual del curso.
 
 * Estos comandos son universales y funcionan en toda máquina que corra linux y similares, incluyendo macs y WSL.
 
-* La manera más sencilla de practicarlos sin instalar nada es vía http://www.webminal.org/. En esta web puedes crearte un usuario de forma gratuita y abrir una terminal en una máquina remota, todo a través de vuestro explorador web. También contiene tutoriales complementarios que os pueden servir para afianzar lo aprendido hoy o repasar los comandos cuando tengáis necesidad de usarlos.
+* La manera más sencilla de practicarlos sin instalar nada es vía <http://www.webminal.org/>. En esta web puedes crearte un usuario de forma gratuita y abrir una terminal en una máquina remota, todo a través de vuestro explorador web. También contiene tutoriales complementarios que os pueden servir para afianzar lo aprendido hoy o repasar los comandos cuando tengáis necesidad de usarlos.
 
-* *NOTA:* http://www.webminal.org/ ha sufrido recientemente un incendio en sus servidores y la plataforma está off-line temporalmente. Como alternativa podéis usar http://copy.sh/v86/?profile=archlinux, aunque esta carece de tutoriales.
+* *NOTA:* <http://www.webminal.org/> ha sufrido recientemente un incendio en sus servidores y la plataforma está off-line temporalmente. Como alternativa podéis usar <http://copy.sh/v86/?profile=archlinux>, aunque esta carece de tutoriales.
 
 ```
 Visita Webminal o copy.sh para practicar en casa: http://www.webminal.org/ o http://copy.sh/v86/?profile=archlinux

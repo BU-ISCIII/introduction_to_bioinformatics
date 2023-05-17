@@ -1,9 +1,11 @@
 ## Curso de Iniciación a la Secuenciación Masiva
+
 BU-ISCIII
 
 ### Práctica: Variant Calling
 
 #### Descripción
+
 En esta práctica vamos a analizar un pequeñísimo experimento de Deep sequencing dónde se ha secuenciado un único exón de un gen en una muestra de una línea celular.
 
 Vamos a realizar todos los pasos necesarios para analizar estos datos con el objetivo de determinar qué variantes respecto a referencia podemos encontrar en nuestros datos. Vamos a realizar el control de calidad, el preprocesamiento, vamos a mapear directamente contra el gen secuenciado y vamos a utilizar samtools para obtener el conteo de bases en todas las posiciones del amplicón.
@@ -237,6 +239,7 @@ vep -i RESULTS/variants/var.raw.vcf --format vcf --output_file RESULTS/variants/
 ```
 
 A este programa le pasamos:
+
 * i : fichero de input
 * format: formato en el que está el input
 * output_file: fichero de salida

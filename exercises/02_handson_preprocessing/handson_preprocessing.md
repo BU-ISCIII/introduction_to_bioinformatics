@@ -1,9 +1,11 @@
 ## Curso de Iniciación a la Secuenciación Masiva
+
 BU-ISCIII
 
 ### Práctica: Control de Calidad y preprocesamiento de ficheros fastq
 
 #### Descripción
+
 Para esta parte de la práctica vamos a utilizar los datos que se encuentran en la carpeta 02_preprocessing.
 
 Cambiamos al directorio RAW y visualizamos uno de los ficheros. Se trata de datos provenientes de una secuenciación por MiSeq de 2x251, es decir, datos paired-end de 251 nt de longitud.
@@ -129,6 +131,7 @@ Parámetros:
 Abrimos en el explorador de ventanas como en el caso anterior en RESULTS/QC/FILTERED
 
 Doble click sobre CFSAN002083-01_R1_filtered_fastqc.html y observamos los resultados.
+
 * ¿Hemos mejorado notablemente la calidad?
 * ¿Cuántas lecturas hemos perdido?
 
@@ -175,12 +178,13 @@ Estos son los parámetros que estamos modificando del comando de fastp para este
 Abrimos en el explorador de ventanas como en el caso anterior en  RESULTS/QC/TRIMMING_FILTERED
 
 Doble click sobre CFSAN002083-01_R1_filtered_trimmed_fastqc.html y observamos los resultados.
+
 * ¿Hemos mejorado notablemente la calidad?
 * ¿Cuántas lecturas hemos perdido con esta aproximación?
 
 ![Calidad después de trimar y filtrar](img/quality_postprocessing.png)
 
-#### Resolución:
+#### Resolución
 
 Se observa con este ejemplo la importancia del análisis de la calidad y del pre-procesamiento de los datos.
 

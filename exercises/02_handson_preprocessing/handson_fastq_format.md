@@ -1,9 +1,11 @@
 ## Curso de Iniciación a la Secuenciación Masiva
+
 BU-ISCIII
 
 ### Práctica : Formato fastq
 
 #### Descripción
+
 En esta parte de la práctica vamos a abrir ficheros fastq de prueba, uno obtenido con HiSeq, otro con MiSeq y un fichero de formato sff de 454.
 
 Objetivos:
@@ -16,7 +18,9 @@ Objetivos:
 Los datos para esta parte se encuentran en la carpeta con nombre `02_handson_preprocessing`.
 
 #### Formato fastq obtenido de HiSeq y MiSeq
+
 Abrimos una terminal, vamos a crear nuestra carpeta de trabajo y a copiar los datos de la práctica que vamos a realizar hoy.
+
 ```bash
 # Comprobamos donde estamos
 pwd
@@ -78,16 +82,14 @@ En pantalla observaremos algo como muestra la imagen. Este es el formato de un f
 
 1) Cabecera: comienza siempre por @
 
-
 2) Secuencia de la lectura o read. En este caso de 76 nt de longitud
 
-
 3) Símbolo + o repetición de la cabecera
-
 
 4) Secuencia de calidades
 
 #### Ejercicio
+
 ¿Cuál es el modelo del secuenciador?
 
 ¿Cuál es la lane?
