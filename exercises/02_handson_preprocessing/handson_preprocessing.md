@@ -50,9 +50,8 @@ pwd
 ls
 
 #Comprobamos que la carpeta donde vamos a generar los resultados está vacía
-```bash
 ls RESULTS/QC/RAW/
-```
+
 #También podemos abrir la carpeta en el explorador de archivos y ver que también está vacía
 
 # Realizamos el análisis de calidad con fastqc
