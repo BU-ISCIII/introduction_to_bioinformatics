@@ -16,12 +16,12 @@ Se utilizarán los datos de secuenciación de Escherichia coli O104:H4, responsa
 ```bash
 # Primero vemos a la home y de ahí a la carpeta del curso
 cd
-cd ngs_course_exercises/
+cd introduction_to_bioinformatics_handson/
 pwd
 # Output: /home/alumno/ngs_course_exercise
 
 # Copiamos los datos de la práctica
-cp -r /mnt/ngs_course_shared/05_handson_assembly .
+cp -r /mnt/ngs_course_shared/introduction_to_bioinformatics_handson/05_handson_assembly/ .
 
 # Cuando acabe nos movemos a la carpeta de los datos
 cd 05_handson_assembly
