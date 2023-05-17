@@ -19,9 +19,11 @@ Lo primero como la práctica del día 3 vamos a realizar el primer control de ca
 En la carpeta RAW, donde se encuentran los datos crudos fastq, id investigad esos ficheros fastq.
 
 ```bash
+# Recordad activar el env de conda si no está activado.
+conda activate ngs_course
 # Copiamos la práctica de hoy a nuestro directorio de trabajo.
-cd /home/alumno/ngs_course_exercises
-cp -r /mnt/ngs_course_shared/04_handson_variantcalling/ .
+cd /home/alumno/introduction_to_bioinformatics_handson
+cp -r /mnt/ngs_course_shared/introduction_to_bioinformatics_handson/04_handson_variantcalling/ .
 # Entramos dentro de la carpeta de la práctica
 cd 04_handson_variantcalling
 # Comprobamos que estamos localizados en el directorio con los datos para esta práctica: /home/usuario/cursoNGS/dia4/handson_dia4
@@ -157,7 +159,6 @@ Para realizar la llamada a variantes vamos a utilizar una de las funcionalidades
 # Llamada a variantes con samtools
 cd ../..
 conda deactivate
-conda create -c bioconda -c conda-forge -n bcftools bcftools samtools
 conda activate bcftools
 bcftools mpileup --max-depth 0 --ignore-overlaps --count-orphans --min-BQ 20 --fasta-ref REFERENCE/20140318_L11910.1_RB.fasta \
 RESULTS/Alignment/AJA18_sorted.bam | bcftools call -mv - \
@@ -170,7 +171,7 @@ En cuanto a los parámetros –mvO v indican que el output esté en vcf (-O v), 
 
 El formato .vcf se puede leer, y lo estamos redirigiendo a un fichero con extensión vcf que podremos abrir con excell para su exploración en detalle.
 
-Vamos a hacer eso, abrid el explorador de archivos y navegad por las carpetas hasta /home/alumno/ngs_course_exercises/04_handson_variant_calling/RESULTS/variants. Ahí pulsad con el botón derecho del ratón sobre el fichero var.raw.vcf  y pulsad en abrir con LibreOffice Calc. Cuando se abra saldrá una pantalla para preguntaros que carácter de separación de columnas queréis, dejáis sólo con un tick tabulador, y dais a aceptar.
+Vamos a hacer eso, abrid el explorador de archivos y navegad por las carpetas hasta /home/alumno/introduction_to_bioinformatics_handson/04_handson_variant_calling/RESULTS/variants. Ahí pulsad con el botón derecho del ratón sobre el fichero var.raw.vcf  y pulsad en abrir con LibreOffice Calc. Cuando se abra saldrá una pantalla para preguntaros que carácter de separación de columnas queréis, dejáis sólo con un tick tabulador, y dais a aceptar.
 
 Una vez abierto, explorad el formato, como se dio en teoría la cabecera empieza por “#” y ahí se explica de manera resumida qué significan cada uno de los campos de información del fichero. Se dividen en dos tipos de campos INFO y FORMAT que aparecerán en sendas columnas del fichero.
 
@@ -188,7 +189,7 @@ igv
 
 En el desplegable del genoma de referencia hay que seleccionar la referencia del gen RB1. Si en la práctica del día 3 lo cargasteis debería aparecer ya en el desplegable. Si no lo llegasteis a hacer hay que ir a Genomes > Load Genome from file... e ir a la carpeta /home/alumno/cursoNGS/dia4/handson_dia4/REFERENCE y seleccionar el fichero 20140318_L11910.1_RB.fasta.
 
-Una vez tenemos el genoma de referencia cargamos el fichero bam, recordad en File > Load From File… y seleccionamos en /home/alumno/ngs_course_exercises/04_handson_variant_calling/RESULTS/Alignment/ el fichero AJA18_S162_L001_sorted.bam.
+Una vez tenemos el genoma de referencia cargamos el fichero bam, recordad en File > Load From File… y seleccionamos en /home/alumno/introduction_to_bioinformatics_handson/04_handson_variant_calling/RESULTS/Alignment/ el fichero AJA18_S162_L001_sorted.bam.
 
 Bien, ya tenemos cargado el bam en IGV, volvemos al excell donde tenemos abierto el vcf y copiamos la posición de la variante en la columna POS. Vamos a IGV y en el recuadro de las posiciones escribimos: L11910.1:162237
 
@@ -232,7 +233,7 @@ NOTA: Si estás ejecutando este curso desde una máquina distinta a la máquina 
 # Anotamos las variantes que hemos obtenido
 conda deactivate
 conda activate ngs_course
-vep -i RESULTS/variants/var.raw.vcf --format vcf --output_file RESULTS/variants/var.raw.vcf_effect.txt --everything  -cache  -dir /mnt/ngs_course_shared/vep --offline --fasta REFERENCE/20140318_L11910.1_RB.fasta --force --use_given_ref
+vep -i RESULTS/variants/var.raw.vcf --format vcf --output_file RESULTS/variants/var.raw.vcf_effect.txt --everything  -cache  -dir /mnt/ngs_course_shared/introduction_to_bioinformatics_handson/vep --offline --fasta REFERENCE/20140318_L11910.1_RB.fasta --force --use_given_ref
 ```
 
 A este programa le pasamos:
