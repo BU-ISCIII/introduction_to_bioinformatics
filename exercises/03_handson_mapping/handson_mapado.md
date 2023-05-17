@@ -15,13 +15,21 @@ pwd
 #Output: /home/alumno/ngs_course_exercises/02_handson_preprocessing/02_preprocessing
 
 # Nos movemos a la carpeta que hemos creado para las prácticas
-cd ../../
+cd ../../ 
+# cd /home/alumno/ngs_course_exercises
+pwd
+ls
+
+# Comprobamos que tenemos cargado el environment de conda y si no lo cargamos
+conda activate ngs_course
 
 # Copiamos la última práctica de hoy
-cp -r /mnt/ngs_course_shared/03_handson_mapping/ .
+cp -r /mnt/ngs_course_shared/introduction_to_bioinformatics_handson/03_handson_mapping/ .
+ls
 
 # Nos movemos a la carpeta de las prácticas
 cd 03_handson_mapping/
+pwd
 
 # Listamos el contenido del directorio
 ls
@@ -29,6 +37,7 @@ ls
 
 # Nos movemos a la carpeta RAW
 cd RAW
+pwd 
 
 # Listamos el contenido del directorio
 ls
@@ -54,9 +63,12 @@ El segundo paso es indexarlo, es decir generar un formato modo índice que el pr
 ```bash
 # Nos movemos a la carpeta REFERENCE
 cd ../REFERENCE
+pwd
+ls
 
 # Indexamos la referencia
 bwa index EC_K12_ST10.fasta
+ls
 ```
 
 Si el programa ha funcionado sin ningún error tendremos nuestro genoma de referencia indexado, y en nuestra carpeta REFERENCES habrán aparecido una serie de ficheros con extensión .ann, .bwt, etc.
@@ -66,12 +78,21 @@ A continuación, vamos a realizar el mapeo para generar nuestros ficheros en for
 Como habréis comprobado en este caso estamos tratando con datos de lecturas largas, por lo que tendremos que utilizar el módulo bwa mem para mapear nuestros datos. Como ya tenemos indexado nuestro genoma pondremos por la línea de comandos:
 
 ```bash
+#Vamos al directorio de analisis
+cd .. #output: /home/alumno/ngs_course_exercises/03_handson_mapping
+pwd
+ls
+
+# Comprobamos que la carpeta de resultados está vacía
+ls RESULTS/Alignment/
+
 # Mapamos las lecturas contra la referencia
-cd ..
 bwa mem -t 2 REFERENCE/EC_K12_ST10.fasta \
 RAW/CFSAN002083-01_S1_L001_R1_001.fastq \
 RAW/CFSAN002083-01_S1_L001_R2_001.fastq \
 > RESULTS/Alignment/CFSAN002083-01_S1_L001.sam
+
+ls RESULTS/Alignment/
 ```
 
 **¿Cuánto ocupa el fichero que acabamos de generar?**
@@ -88,6 +109,8 @@ Como se ha explicado en teoría el formato sam permite almacenar información de
 ```bash
 # Convertimos de sam a bam
 samtools view -Sb RESULTS/Alignment/CFSAN002083-01_S1_L001.sam > RESULTS/Alignment/CFSAN002083-01_S1_L001.bam
+
+ls RESULTS/Alignment/
 ```
 
 **¿Cuánto ocupa el fichero BAM que acabamos de generar?**
@@ -127,6 +150,8 @@ samtools sort RESULTS/Alignment/CFSAN002083-01_S1_L001.bam \
 
 # Indexamos el fichero bam
 samtools index RESULTS/Alignment/CFSAN002083-01_S1_L001_sorted.bam
+
+ls RESULTS/Alignment/
 ```
 
 Ahora si revisamos nuestra carpeta de resultados vemos que tenemos todos los ficheros que necesitamos para continuar con nuestro análisis.
@@ -184,7 +209,7 @@ Primero vamos a utilizar un programa llamado picard que consta de una suite de v
 ```bash
 # Utilizamos Picard para ver estadísticas del fichero bam
 picard CollectWgsMetrics \
-    COVERAGE_CAP=1000000 \
+    COVERAGE_CAP=1000 \
     INPUT=CFSAN002083-01_S1_L001_sorted.bam \
     OUTPUT=CFSAN002083-01_S1_L001.CollectWgsMetrics.coverage_metrics \
     REFERENCE_SEQUENCE=../../REFERENCE/EC_K12_ST10.fasta \
@@ -216,7 +241,7 @@ TMP_DIR=../../TMP
 
 # Obtenemos estadísticas del fichero sin duplicados
 picard CollectWgsMetrics \
-    COVERAGE_CAP=1000000 \
+    COVERAGE_CAP=1000 \
     INPUT=CFSAN002083-01_S1_L001_noduplicates.bam \
     OUTPUT=CFSAN002083-01_S1_L001_noduplicates.CollectWgsMetrics.coverage_metrics \
     REFERENCE_SEQUENCE=../../REFERENCE/EC_K12_ST10.fasta \
@@ -243,9 +268,12 @@ Realizaremos:
 * Cómo cargar un genoma ya preindexado en la aplicación.
 * Visualización de datos de exoma, amplicones y RNASeq, investigando algunas de las funcionalidades de IGV.
 
-Lo primero abrimos IGV. Para ello, si no tenemos icono desde el escritorio ni aparece como programa detectado, tenemos que saber dónde se ha instalado IGV y ejecutarlo desde la terminal. Los programas con interfaz gráfica se pueden lanzar y usar desde línea de comando, ofreciendo a veces mayores funcionalidades que quedan ocultas en el modo gráfico:
+Lo primero abrimos IGV. Para ello, si no tenemos icono desde el escritorio ni aparece como programa detectado, tenemos que saber dónde se ha instalado IGV y ejecutarlo desde la terminal. Los programas con interfaz gráfica se pueden lanzar y usar desde línea de comando, ofreciendo a veces mayores funcionalidades que quedan ocultas en el modo gráfico.
+
+Abrimos una nueva terminal y lanzamos:
 
 ```bash
+conda activate ngs_course
 igv
 ```
 
