@@ -26,13 +26,8 @@ cd
 # Volvemos a comprobar donde estamos
 pwd
 
-# Creamos una carpeta donde trabajaremos todos los siguientes días del curso
-mkdir ngs_course_exercises
-# Comprobamos que se ha creado la carpeta
-ls
-
-# Entramos en la carpeta
-cd ngs_course_exercises
+# Entramos en la carpeta de trabajo
+cd introduction_to_bioinformatics_handson
 
 # Copiamos la práctica de hoy
 cp -r /mnt/ngs_course_shared/introduction_to_bioinformatics_handson/02_handson_preprocessing .
@@ -110,7 +105,7 @@ Volvemos a la carpeta que se encuentra en un nivel superior dentro del árbol de
 ```bash
 # Comprobamos donde nos encontramos
 pwd
-# Output: /home/alumno/ngs_course_exercises/02_handson_preprocessing/01_fastq_format/prueba_hiseq
+# Output: /home/alumno/introduction_to_bioinformatics_handson/02_handson_preprocessing/01_fastq_format/prueba_hiseq
 
 # Vamos a la carpeta superior
 cd ..
@@ -204,7 +199,7 @@ Vamos a colocarnos en la carpeta de nombre prueba_454.
 ```bash
 # Comprobamos donde nos encontramos
 pwd
-# Output: /home/alumno/ngs_course_exercises/02_handson_preprocessing/01_fastq_format/prueba_miseq
+# Output: /home/alumno/introduction_to_bioinformatics_handson/02_handson_preprocessing/01_fastq_format/prueba_miseq
 
 # Nos movemos a la carpeta superior
 cd ..
