@@ -11,7 +11,7 @@ Cambiamos al directorio RAW y visualizamos uno de los ficheros. Se trata de dato
 ```bash
 # Comprobamos donde estamos situados.
 pwd
-# Output: /home/alumno/ngs_course_exercises/02_handson_preprocessing/01_fastq_format/prueba_454
+# Output: /home/alumno/introduction_to_bioinformatics_handson/02_handson_preprocessing/01_fastq_format/prueba_454
 
 #Comprobamos que tenemos activado el environment de conda de las prácticas y si no lo activamos
 conda activate ngs_course
@@ -19,11 +19,11 @@ conda activate ngs_course
 # Nos movemos a la carpeta que contiene la segunda parte de la practica
 # Recordatorio: - con .. accedemos a la carpeta inmediatamente superior a la que nos encontramos.
 #               - con ../.. subiríamos dos niveles en el árbol de directorios.
-cd /home/alumno/ngs_course_exercises/02_handson_preprocessing/02_preprocessing
+cd /home/alumno/introduction_to_bioinformatics_handson/02_handson_preprocessing/02_preprocessing
 
 # Comprobamos que estamos donde debemos estar
 pwd
-# Output: /home/alumno/ngs_course_exercises/02_handson_preprocessing/02_preprocessing
+# Output: /home/alumno/introduction_to_bioinformatics_handson/02_handson_preprocessing/02_preprocessing
 
 # Listamos el contenido de la carpeta
 ls
@@ -60,7 +60,7 @@ fastqc -t 4 RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq RAW/CFSAN002083-01_S1_
 
 Aquí estamos ejecutando el programa y diciéndole los ficheros que tiene que analizar y con el parámetro “-o” el directorio donde queremos que se guarden los resultados. El parámetro “-t” indica cuántos núcleos del procesador puede utilizar.
 
-En el explorador de ventanas vamos a visualizar los resultados. Recordad que se encuentran en donde habéis dicho al programa que los guarde es decir /home/alumno/ngs_course_exercises/02_handson_preprocessing/02_preprocessing/RESULTS/QC/RAW.
+En el explorador de ventanas vamos a visualizar los resultados. Recordad que se encuentran en donde habéis dicho al programa que los guarde es decir /home/alumno/introduction_to_bioinformatics_handson/02_handson_preprocessing/02_preprocessing/RESULTS/QC/RAW.
 
 ```bash
 ls RESULTS/QC/RAW/
