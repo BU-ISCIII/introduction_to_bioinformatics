@@ -352,9 +352,9 @@ Por ejemplo vemos en la figura con el nuevo bam también el gen CRELD2. Observam
 
 Vamos a visualizar un experimento de secuenciación de amplicones donde se secuencia un exón del gen RB1. La secuenciación se ha hecho de tal manera que el tamaño del fragmento sea de 250 pb y el tamaño de la lectura también sea de 250 pb. De esta manera los paired-end se solaparán completamente y tendremos cada fragmento secuenciado dos veces, en forward y en reverse.
 
-Lo primero que tenemos que hacer es cargar en igv la referencia en formato fasta del gen RB1 tal y como hemos visto anteriormente en este tutorial. La referencia se encuentra en la carpeta TEST de donde estamos sacando todos los bam de prueba.
+Lo primero que tenemos que hacer es cargar en igv la referencia en formato fasta del gen RB1 tal y como hemos visto anteriormente en este tutorial. La referencia se encuentra en la carpeta `/home/alumno/introduction_to_bioinformatics_handson/03_handson_mapping/REFERENCE/20140318_L11910.1_RB.fasta`
 
-A continuación seleccionáis la nueva referencia y cargáis el bam que se llama amplicon_test.bam.
+A continuación cargáis el bam que se llama amplicon_test.bam de la carpeta `/home/alumno/introduction_to_bioinformatics_handson/03_handson_mapping/RAW/amplicon_test.bam`.
 >**Nota:** El amplicón está en la zona 70.000pb de la referencia.
 
 ![IGV_amplicones](img/IGV_amplicones.png)
