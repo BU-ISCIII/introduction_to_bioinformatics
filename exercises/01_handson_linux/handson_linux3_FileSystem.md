@@ -4,8 +4,6 @@ BU-ISCIII
 
 ### Práctica 3: Manejo y gestión de ficheros
 
-17-28 Mayo 2021, 8a Edición, Programa Formación Continua, ISCIII
-
 #### Descripción
 
 Uno de los puntos fuertes de los sistemas Linux estriba en la facilidad con la que se analizan los ficheros de texto. Estos sistemas incluyen una serie de herramientas que permiten realizar una gran cantidad de manipulaciones en estos ficheros sin necesidad de instalar ninguna herramienta especializada.

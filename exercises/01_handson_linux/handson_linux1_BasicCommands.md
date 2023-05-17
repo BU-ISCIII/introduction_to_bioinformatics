@@ -4,8 +4,6 @@ BU-ISCIII
 
 ### Práctica 1: Comandos básicos de linux
 
-17-28 Mayo 2021, 8a Edición, Programa Formación Continua, ISCIII
-
 #### Descripción
 
 En esta práctica, se usaran los comandos más básicos para poder trabajar desde la terminal.

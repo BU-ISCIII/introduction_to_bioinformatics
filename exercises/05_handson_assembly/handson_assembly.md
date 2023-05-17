@@ -1,12 +1,11 @@
 ## Curso de Iniciación a la Secuenciación Masiva
+
 BU-ISCIII
 
 ### Práctica 1 día 9: Ensamblado, anotación, tipificación e identificación de genes de resistencia
 
-17-28 Mayo 2021, 8a Edición, Programa Formación Continua, ISCIII
-
-
 #### Descripción
+
 Este tutorial está parcialmente basado en el material suplementario al artículo [1]. Primero crearemos un ensamblaje del genoma E. coli O14:H4, comprobaremos su calidad. Adicionalmente haremos un MLST e identificaremos los genes de resistencia.
 
 Se utilizarán los datos de secuenciación de Escherichia coli O104:H4, responsable del brote letal del síndrome urémico hemolítico (HUS) en Alemania en 2011 [2, 3]. La cepa que ocasión el brote pertenece al linaje E. coli enteroagregativa (EAEC), que ha adquirido una toxina Shiga [4], normalmente asociada con E. coli enterohemorragica (EHEC) y con múltiples genes de resistencia.
@@ -27,7 +26,7 @@ cp -r /mnt/ngs_course_shared/introduction_to_bioinformatics_handson/05_handson_a
 cd 05_handson_assembly
 ```
 
-El objetivo de este ejercicio es poner en práctica los conocimientos adquiridos en este curso sobre el preprocesamiento de datos NGS para comprobar la calidad de las lecturas sobre las que vamos a trabajar. Para ello vamos a utilizar la herramienta FastQC. Puedes obtener más información sobre la aplicación en http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
+El objetivo de este ejercicio es poner en práctica los conocimientos adquiridos en este curso sobre el preprocesamiento de datos NGS para comprobar la calidad de las lecturas sobre las que vamos a trabajar. Para ello vamos a utilizar la herramienta FastQC. Puedes obtener más información sobre la aplicación en <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/>
 
 Desde la línea de comandos ejecutamos:
 
@@ -60,7 +59,7 @@ Al ejecutar este comando se generaran una serie de ficheros, incluido el fichero
 
 #### Ejercicio 3
 
-Una vez que tenemos los contigs con las lecturas ensambladas es útil ordenarlos frente a un genoma de referencia. Una manera sencilla de conseguirlo es utilizando la opción Move Contigs de Mauve (http://asap.ahabs.wisc.edu/mauve).
+Una vez que tenemos los contigs con las lecturas ensambladas es útil ordenarlos frente a un genoma de referencia. Una manera sencilla de conseguirlo es utilizando la opción Move Contigs de Mauve (<http://asap.ahabs.wisc.edu/mauve>).
 
 Utilizaremos los contigs obtenidos anteriormente y la referencia E. coli Ec55989 (NCBI accession NC 011748 ) que corresponde con una cepa muy cercana con un genoma completo disponible, localizado en la carpeta `/home/alumno/introduction_to_bioinformatics_handson/05_handson_assembly/REFERENCES`.
 
@@ -92,7 +91,7 @@ El conjunto final de contigs ordenado y orientado se encuentra en el fichero fas
 
 objetivo de este ejercicio es visualizar los contigs ordenados utilizando Mauve.  Generaremos un alineamiento múltiple de los contigs ordenados del genoma del brote O104:H4, la referencia Ec55989 y un ensamblaje adicional creado utilizando más lecturas que nuestro draft.
 
-El ensamblaje alternativo de la cepa TY-2482 (NCBI accession AFVR01 ) está disponible para descargar en http://www.ncbi.nlm.nih.gov/Traces/wgs/?val=AFVR01. Deberíamos descargarnos dicho ensamblaje y ordenarlo a la referencia Ec55989 siguiendo el método detallado en el ejercicio anterior. Como este paso consume mucho tiempo; con los restantes ficheros de la practica encontrareis el fichero AFVR01.1_sorted.fasta que puede ser utilizado directamente `(/home/alumno/ngs_course_exercise/05_handson_assembly/RAW/AFVR01.1_sorted.fasta)`.
+El ensamblaje alternativo de la cepa TY-2482 (NCBI accession AFVR01 ) está disponible para descargar en <http://www.ncbi.nlm.nih.gov/Traces/wgs/?val=AFVR01>. Deberíamos descargarnos dicho ensamblaje y ordenarlo a la referencia Ec55989 siguiendo el método detallado en el ejercicio anterior. Como este paso consume mucho tiempo; con los restantes ficheros de la practica encontrareis el fichero AFVR01.1_sorted.fasta que puede ser utilizado directamente `(/home/alumno/ngs_course_exercise/05_handson_assembly/RAW/AFVR01.1_sorted.fasta)`.
 
 * Ejecuta Mauve
 
@@ -115,7 +114,7 @@ Especifica Multiple como nombre para el fichero de salida y pulsa Save.
 
 #### Ejercicio 5
 
-El objetivo de este ejercicio es analizar la calidad de un ensamblado. Para ello vamos a utilizar la herramienta QUAST (http://bioinf.spbau.ru/quast).
+El objetivo de este ejercicio es analizar la calidad de un ensamblado. Para ello vamos a utilizar la herramienta QUAST (<http://bioinf.spbau.ru/quast>).
 
 ```bash
 # Comprobamos donde estamos
@@ -143,7 +142,7 @@ Trata de comprender cada una de las métricas y gráficos generados; y como te a
 
 #### Ejercicio 6
 
-El objetivo de este ejercicio es realizar tipado (typing) MLST e identificación de genes de resistencia utilizando datos de secuenciación masiva. Para ello se utiliza la herramienta SRST2 (http://katholt.github.io/srst2 ).
+El objetivo de este ejercicio es realizar tipado (typing) MLST e identificación de genes de resistencia utilizando datos de secuenciación masiva. Para ello se utiliza la herramienta SRST2 (<http://katholt.github.io/srst2> ).
 
 Para hacer el MLST debemos descargarnos la BD correspondiente y luego cotejar las lecturas frente a esa base de datos:
 

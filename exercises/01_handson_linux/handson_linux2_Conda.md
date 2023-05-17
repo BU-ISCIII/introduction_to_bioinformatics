@@ -4,8 +4,6 @@ BU-ISCIII
 
 ### Práctica 2: Software, Nextflow y Singularity
 
-17-28 Mayo 2021, 8a Edición, Programa Formación Continua, ISCIII
-
 #### Descripción
 
 En esta práctica vamos a aprender a manejar environments de conda y a comprobar la versión de software que utilizamos para asegurarnos de que nuestro análsis es reproducible. También como instalar un programa en el env y finalmente vamos a descagar los materiales del curso usando git.

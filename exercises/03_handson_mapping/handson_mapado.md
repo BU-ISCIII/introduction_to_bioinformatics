@@ -1,12 +1,11 @@
 ## Curso de Iniciación a la Secuenciación Masiva
+
 BU-ISCIII
 
 ### Práctica 2 día 6: Mapado y control de calidad
 
-17-28 Mayo 2021, 8a Edición, Programa Formación Continua, ISCIII
-
-
 #### Descripción
+
 Nos vamos a mover a un nuevo directorio que contiene los datos que vamos a utilizar en esta parte de la práctica. Hacemos como siempre, accedemos con la interfaz gráfica a la carpeta 03_mapping_qc. Y comprobamos como sigue la estructura de directorios, vemos que hay una carpeta RAW, una carpeta de RESULTS donde vais a ir guardando vuestros resultados, una carpeta RESULTS_CORRECTED donde están los resultados ya pre-computados y, por último, una carpeta REFERENCES con el genoma de referencia una cepa de E. coli que es la que vamos a utilizar para este ejercicio. También veréis una carpte TMP, cuya finalidad es almacenar archivos temporales durante la ejecución de los programas.
 
 ```bash
@@ -98,10 +97,11 @@ ls RESULTS/Alignment/
 **¿Cuánto ocupa el fichero que acabamos de generar?**
 
 Para saber cuanto ocupa hacemos lo siguiente:
+
 ```bash
 du -sh RESULTS/Alignment/CFSAN002083-01_S1_L001.sam
 
-# Output: 282M	RESULTS/Alignment/CFSAN002083-01_S1_L001.sam
+# Output: 282M RESULTS/Alignment/CFSAN002083-01_S1_L001.sam
 ```
 
 Como se ha explicado en teoría el formato sam permite almacenar información de alineamiento, pero suele ocupar mucho espacio por lo que se suele utilizar su formato binario. Para realizar esta conversión:
@@ -119,7 +119,7 @@ Igual que antes:
 ```bash
 du -sh RESULTS/Alignment/CFSAN002083-01_S1_L001.bam
 
-# Output: 109M	RESULTS/Alignment/CFSAN002083-01_S1_L001.bam
+# Output: 109M RESULTS/Alignment/CFSAN002083-01_S1_L001.bam
 ```
 
 **¿Cuánto hemos disminuido el tamaño?**
@@ -188,6 +188,7 @@ samtools flagstat CFSAN002083-01_S1_L001_sorted.bam
 ```
 
 Este comando nos da un resumen de lo que contiene el bam.
+
 * Número de reads + número de reads que han fallado QC
 * Número de duplicados + “ ”
 * Número de reads mapados correctamente + “ “
@@ -258,11 +259,12 @@ En este caso el número de reads con los que nos quedamos no varía demasiado ya
 
 En otros experimentos con otro tipo de librerías u otro tipo de manipulación de la muestra el número de duplicados puede llegar hasta el 30 o el 40% de los reads, siendo muy importante eliminarlos ya que pueden tener mucha transcendencia en análisis posteriores como puede ser la llamada a variantes.
 
-#### Visualización en IGV de experimentos reales de exoma, amplicones  y RNA-Seq.
+#### Visualización en IGV de experimentos reales de exoma, amplicones  y RNA-Seq
 
 En esta parte de la práctica vamos a realizar un pequeño tutorial de manejo básico del visor IGV. Este programa nos permite visualizar ficheros bam en el contexto genómico, además de permitirnos añadir diversos tracks personalizados como modelo de genes, datos de chips de metilación, etc.
 
 Realizaremos:
+
 * Visión general de la aplicación.
 * Cómo cargar un genoma personalizado para visualizar el experimento que hemos mapeado en la parte anterior.
 * Cómo cargar un genoma ya preindexado en la aplicación.
@@ -286,6 +288,7 @@ igv
 Esto es muy útil sobre todo cuando se trabaja con microorganismos ya que por defecto la aplicación sólo permite los más comunes.
 
 Si pulsamos en Genomes en el menú principal, vamos a observar diferentes maneras de cargar un genoma, bien desde un fichero, desde una url o desde el servidor.
+
 * Desde fichero: aceptará un genoma en formato fasta.
 * Desde url: si tenemos el genoma subido en algún servidor
 * Desde servidor: igv accede al servidor de Broad Institute y tiene una serie de genomas que te puedes descargar directamente.
@@ -315,7 +318,7 @@ A tener en cuenta:
 
 * Los reads en gris son reads que han mapeado correctamente. Pasando el ratón por encima de un read da la información de los flags recogidos en el bam: el nombre del read, el cigar, dónde empieza el alineamiento, la base que tiene en esa posición la secuencia, el score de alineamiento, etc.
 
-* También nos podemos encontrar reads de otros colores como blanco (cuando la calidad de mapeo es 0), estos reads están ahí mapeados como podrían estar en otro sitio son reads que o bien no tienen un sitio único de mapeo o que no han podido mapearse. Otros colores identificativos de IGV es el rojo o el azul, que se corresponde con irregularidades en el tamaño del inserto del fragmento (la distancia entre el forward y el reverse), etc. Para más información sobre esto ver el tutorial del igv (http://www.broadinstitute.org/software/igv/).
+* También nos podemos encontrar reads de otros colores como blanco (cuando la calidad de mapeo es 0), estos reads están ahí mapeados como podrían estar en otro sitio son reads que o bien no tienen un sitio único de mapeo o que no han podido mapearse. Otros colores identificativos de IGV es el rojo o el azul, que se corresponde con irregularidades en el tamaño del inserto del fragmento (la distancia entre el forward y el reverse), etc. Para más información sobre esto ver el tutorial del igv (<http://www.broadinstitute.org/software/igv/>).
 
 * Si pasamos con el ratón por encima del track de histograma de la profundidad vemos un desglose de lo que nos encontramos en esa posición. El número de reads que caen en esa posición, y qué nucleótido presenta su secuencia en esa posición. P.e en la figura se observa la información con una posición que contiene un snp, en esa posición hay una profundidad de 20 reads, todos los reads para esa posición presentan una A. Además, se da información de cuántos de esos reads son forward y cuantos reverse (14 forward y 6 reverse).
 

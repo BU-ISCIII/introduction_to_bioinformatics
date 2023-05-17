@@ -4,8 +4,6 @@ BU-ISCIII
 
 ### Práctica 2 día 2: Manejo y gestión de ficheros
 
-17-28 Mayo 2021, 8a Edición, Programa Formación Continua, ISCIII
-
 #### Descripción
 
 Al copiar o mover ficheros y/o directorios dentro del sistema o desde servidores de ficheros (FTP, samba, ...), tanto los permisos como propietario o grupo de esos ficheros, no siempre son los correctos para poder manipularlos.

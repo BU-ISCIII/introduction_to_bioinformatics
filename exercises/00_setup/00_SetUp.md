@@ -4,8 +4,6 @@ BU-ISCIII
 
 ### Práctica 0 día 0: Instalar el curso
 
-17-21 Junio 2019, 7a Edición, Programa Formación Continua, ISCIII
-
 #### Descripción
 
 En este documento vamos a cubrir lo necesario para poder ejecutar las prácticas del curso en tu ordenador. Este curso puede ejecutarse en cualquier máquina linux, donde deberás descargar los datos para las prácticas e instalar los programas necesarios.
