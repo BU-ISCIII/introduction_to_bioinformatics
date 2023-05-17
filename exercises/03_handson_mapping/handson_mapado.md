@@ -12,11 +12,11 @@ Nos vamos a mover a un nuevo directorio que contiene los datos que vamos a utili
 ```bash
 # Comprobamos donde estamos situados
 pwd
-#Output: /home/alumno/ngs_course_exercises/02_handson_preprocessing/02_preprocessing
+#Output: /home/alumno/introduction_to_bioinformatics_handson/02_handson_preprocessing/02_preprocessing
 
 # Nos movemos a la carpeta que hemos creado para las prácticas
 cd ../../ 
-# cd /home/alumno/ngs_course_exercises
+# cd /home/alumno/introduction_to_bioinformatics_handson
 pwd
 ls
 
@@ -79,7 +79,7 @@ Como habréis comprobado en este caso estamos tratando con datos de lecturas lar
 
 ```bash
 #Vamos al directorio de analisis
-cd .. #output: /home/alumno/ngs_course_exercises/03_handson_mapping
+cd .. #output: /home/alumno/introduction_to_bioinformatics_handson/03_handson_mapping
 pwd
 ls
 
@@ -163,7 +163,7 @@ cd RESULTS/Alignment
 # Comrobamos donde estamos
 pwd
 
-# Output: /home/alumno/ngs_course_exercises/03_handson_mapping/RESULTS/Alignment
+# Output: /home/alumno/introduction_to_bioinformatics_handson/03_handson_mapping/RESULTS/Alignment
 
 # Listamos el contenido del directorio
 ls
@@ -300,7 +300,7 @@ Para visualizar el mapeo que realizamos en el paso anterior y ver que todo funci
 
 **¿Obtenéis algún error? ¿Qué falta?**
 
-Si recordáis cuando generamos el primer bam lo ordenamos y generamos su índice que es un fichero en .bai que permite acelerar la computación sobre este tipo de ficheros. Pero cuando quitamos los duplicados no lo volvimos a generar para este fichero. Hagámoslo ahora. Id desde el apartado gráfico (o por terminal si os veis capaces) y buscad donde tenemos guardado este fichero bam en RESULTS/Alignment/ en el handson_dia3. Abrimos una terminal en esa ubicación y hacemos como antes.
+Si recordáis cuando generamos el primer bam lo ordenamos y generamos su índice que es un fichero en .bai que permite acelerar la computación sobre este tipo de ficheros. Pero cuando quitamos los duplicados no lo volvimos a generar para este fichero. Hagámoslo ahora. Id desde el apartado gráfico (o por terminal si os veis capaces) y buscad donde tenemos guardado este fichero bam en `/home/alumno/introduction_to_bioinformatics_handson/03_handson_mapping/RESULTS/Alignment/` . Abrimos una terminal en esa ubicación y hacemos como antes.
 
 ```bash
 # Muevete hasta la carpeta donde está el archivo bam si te has movido a otro directorio
@@ -327,7 +327,7 @@ A tener en cuenta:
 
 **Visualización de bam de exoma**
 
-Los datos de prueba para esta parte de la práctica se encuentran en `/home/alumno/ngs_course/03_handson_mapping/RAW/`.
+Los datos de prueba para esta parte de la práctica se encuentran en `/home/alumno/introduction_to_bioinformatics_handson/03_handson_mapping/RAW`.
 
 Seleccionamos el genoma de referencia human(b37) y cargamos el bam que se llama `exome_test.bam`.
 
