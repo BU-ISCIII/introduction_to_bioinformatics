@@ -43,10 +43,15 @@ Listamos el contenido de este directorio y vamos a ver una serie de carpetas con
 ```bash
 # Comprobamos donde estamos
 pwd
+ls
 
 # Nos movemos a la carpeta de la práctica
 cd 02_handson_preprocessing
+pwd
+ls
+
 cd 01_fastq_format
+pwd
 
 # Listamos su contenido
 ls
@@ -59,6 +64,7 @@ los reads en reverse.
 ```bash
 # Nos movemos a la carpeta prueba_hiseq
 cd prueba_hiseq
+pwd
 
 # Listamos lo que hay en el directorio
 ls
@@ -111,6 +117,8 @@ cd ..
 
 # Nos movemos a la carpeta prueba_miseq
 cd prueba_miseq
+pwd
+ls
 
 # Visualizamos el fichero
 zcat prueba_miseq_R1.fastq.gz | less
@@ -200,8 +208,13 @@ pwd
 
 # Nos movemos a la carpeta superior
 cd ..
+pwd
+ls 
+
 # Nos movemos a la carpeta prueba_454
 cd prueba_454
+pwd
+
 # Listamos el contenido de este directorio
 ls
 # Output:prueba.sff
