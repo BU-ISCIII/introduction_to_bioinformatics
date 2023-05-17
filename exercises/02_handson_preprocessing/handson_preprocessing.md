@@ -13,10 +13,13 @@ Cambiamos al directorio RAW y visualizamos uno de los ficheros. Se trata de dato
 pwd
 # Output: /home/alumno/ngs_course_exercises/02_handson_preprocessing/01_fastq_format/prueba_454
 
+#Comprobamos que tenemos activado el environment de conda de las prácticas y si no lo activamos
+conda activate ngs_course
+
 # Nos movemos a la carpeta que contiene la segunda parte de la practica
 # Recordatorio: - con .. accedemos a la carpeta inmediatamente superior a la que nos encontramos.
 #               - con ../.. subiríamos dos niveles en el árbol de directorios.
-cd ../../02_preprocessing
+cd /home/alumno/ngs_course_exercises/02_handson_preprocessing/02_preprocessing
 
 # Comprobamos que estamos donde debemos estar
 pwd
@@ -28,6 +31,8 @@ ls
 
 # Nos movemos a la carpeta RAW
 cd RAW
+pwd
+ls
 
 # Visualizamos el contenido del fichero fastq
 less CFSAN002083-01_S1_L001_R1_001_fixed.fastq
@@ -42,6 +47,13 @@ cd ..
 
 # Comprobamos donde estamos situados
 pwd
+ls
+
+#Comprobamos que la carpeta donde vamos a generar los resultados está vacía
+```bash
+ls RESULTS/QC/RAW/
+```
+#También podemos abrir la carpeta en el explorador de archivos y ver que también está vacía
 
 # Realizamos el análisis de calidad con fastqc
 fastqc -t 4 RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq RAW/CFSAN002083-01_S1_L001_R2_001_fixed.fastq -o RESULTS/QC/RAW
@@ -50,6 +62,10 @@ fastqc -t 4 RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq RAW/CFSAN002083-01_S1_
 Aquí estamos ejecutando el programa y diciéndole los ficheros que tiene que analizar y con el parámetro “-o” el directorio donde queremos que se guarden los resultados. El parámetro “-t” indica cuántos núcleos del procesador puede utilizar.
 
 En el explorador de ventanas vamos a visualizar los resultados. Recordad que se encuentran en donde habéis dicho al programa que los guarde es decir /home/alumno/ngs_course_exercises/02_handson_preprocessing/02_preprocessing/RESULTS/QC/RAW.
+
+```bash
+ls RESULTS/QC/RAW/
+```
 
 Ahí hay dos ficheros que acaban en fixed_fastqc.html, uno por cada fichero fastq analizado. Hacemos doble click sobre uno de los ficheros html y se abrirá el explorador Firefox.
 
@@ -75,6 +91,9 @@ Vamos a realizar varias pruebas para ver qué aproximación de preprocesamiento 
 Para realizar el filtrado por calidad vamos a utilizar el software [fastp](https://github.com/OpenGene/fastp).
 
 ```bash
+#Comprobamos que la carpeta donde se van a generar las lecturas está vacía
+ls RESULTS/QC/FILTERED/
+
 # Realizamos filtrado de lecturas por calidad
 fastp -i RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq \
       -I RAW/CFSAN002083-01_S1_L001_R2_001_fixed.fastq \
@@ -90,7 +109,12 @@ fastp -i RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq \
 fastqc -t 2 RESULTS/QC/FILTERED/CFSAN002083-01_R1_filtered.fastq \
 RESULTS/QC/FILTERED/CFSAN002083-01_R2_filtered.fastq \
 -o RESULTS/QC/FILTERED
+
+#Comprobamos que se han generado los resultados
+ls RESULTS/QC/FILTERED/
 ```
+
+Estos son los parámetros que estamos modificando del comando de fastp para este análisis en concreto. ¡No hay que lanzarlo!
 
 ```
 ###########################################
@@ -133,7 +157,11 @@ fastp -i RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq \
 fastqc -t 2 RESULTS/QC/TRIMMING_FILTERED/CFSAN002083-01_R1_filtered_trimmed.fastq \
 RESULTS/QC/TRIMMING_FILTERED/CFSAN002083-01_R2_filtered_trimmed.fastq \
 -o RESULTS/QC/TRIMMING_FILTERED/
+
+ls RESULTS/QC/TRIMMING_FILTERED/
 ```
+
+Estos son los parámetros que estamos modificando del comando de fastp para este análisis en concreto. ¡No hay que lanzarlo!
 
 ```
 ###########################################
