@@ -20,7 +20,7 @@ The material includes slides with theory concepts and a bunch of practical exerc
 
 ### Day 1
 
-- **Talk 1:** [Secuenciación masiva. Platafomras de secuenciación](slides/00_intro01_sequencing.pdf)
+- **Talk 1:** [Secuenciación masiva. Plataformas de secuenciación](slides/00_intro01_sequencing.pdf)
 - **Talk 2:** [Iniciación al entorno Linux. Aspectos teóricos](slides/talk2_linux_intro_fix.pdf)
 - **Exercise 1:** [Comandos básicos de linux.](exercises/01_handson_linux/handson_linux1_BasicCommands.md) -- [Download pdf](exercises/01_handson_linux/handson_linux1_BasicCommands.pdf)
 
