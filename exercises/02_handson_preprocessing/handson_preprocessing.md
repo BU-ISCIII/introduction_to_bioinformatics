@@ -50,6 +50,9 @@ cd ..
 # Comprobamos donde estamos situados
 pwd
 ls
+# /home/alumno/introduction_to_ngs_handson/02-handson_preprocessing/02-preprocessing
+# sino estás en esta ruta ejecuta:
+cd /home/alumno/introduction_to_bioinformatics_handson/02_handson_preprocessing/02_preprocessing
 
 #Comprobamos que la carpeta donde vamos a generar los resultados está vacía
 ls RESULTS/QC/RAW/
@@ -92,6 +95,13 @@ Vamos a realizar varias pruebas para ver qué aproximación de preprocesamiento 
 Para realizar el filtrado por calidad vamos a utilizar el software [fastp](https://github.com/OpenGene/fastp).
 
 ```bash
+# Comprobamos donde estamos situados
+pwd
+ls
+# /home/alumno/introduction_to_ngs_handson/02-handson_preprocessing/02-preprocessing
+# sino estás en esta ruta ejecuta:
+cd /home/alumno/introduction_to_bioinformatics_handson/02_handson_preprocessing/02_preprocessing
+
 #Comprobamos que la carpeta donde se van a generar las lecturas está vacía
 ls RESULTS/QC/FILTERED/
 
@@ -140,6 +150,13 @@ Doble click sobre CFSAN002083-01_R1_filtered_fastqc.html y observamos los result
 Ahora vamos a realizar antes del filtrado por calidad un proceso de trimming en los extremos.
 
 ```bash
+# Comprobamos donde estamos situados
+pwd
+ls
+# /home/alumno/introduction_to_ngs_handson/02-handson_preprocessing/02-preprocessing
+# sino estás en esta ruta ejecuta:
+cd /home/alumno/introduction_to_bioinformatics_handson/02_handson_preprocessing/02_preprocessing
+
 # Realizamos trimming de las lecturas
 fastp -i RAW/CFSAN002083-01_S1_L001_R1_001_fixed.fastq \
       -I RAW/CFSAN002083-01_S1_L001_R2_001_fixed.fastq \
