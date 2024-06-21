@@ -16,7 +16,7 @@ Todos los materiales del curso están subidos a [nuestro repositorio de github](
 
 #### Descarga de datos
 
-Hemos creado un comprimido con los datos necesarios para ejecutar las prácticas [aquí](https://mega.nz/#!fjgCgYbA!NQhluOZcXydYVJ75ayhADEf25ehJAqClCNPYL3L48t4). Si tu usuario se llama de forma distinta a "alumno" o si descargas los datos en un lugar diferente a /home, tendrás que editar los comandos de las prácticas para asegurarte que las PATHs son correctas.
+Hemos creado un comprimido con los datos necesarios para ejecutar las prácticas. Si tu usuario se llama de forma distinta a "alumno" o si descargas los datos en un lugar diferente a /home, tendrás que editar los comandos de las prácticas para asegurarte que las PATHs son correctas.
 
 #### Instalación del software
 
