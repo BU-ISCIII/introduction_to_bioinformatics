@@ -12,11 +12,8 @@ The material includes slides with theory concepts and a bunch of practical exerc
 
 ### Set up
 
-- **VM Access** [Download pdf](slides/tutorial_access_VirtualMachine.pdf)
+- **VM Access** [Open file](exercises/virtual_machine_manual.md)
 - **Install software and download dataset** [First steps](exercises/00_setup/00_SetUp.md)
-<!---
-- **Data** [Download zip folder]() -> UPDATE
--->
 
 ### Day 1
 
