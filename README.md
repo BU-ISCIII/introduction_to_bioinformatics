@@ -23,7 +23,7 @@ The material includes slides with theory concepts and a bunch of practical exerc
 
 ### Day 2
 
-- **Talk 3:** [Aplicaciones de las técnicas de secuenciación masiva (NGS)](slides/00_intro01_application.pdf)
+- **Talk 3:** [Aplicaciones de las técnicas de secuenciación masiva (NGS)](slides/NGS_ISCIII_2025_dia2_IC_20250610.pdf)
 - **Exercise 2:** [Conda.](exercises/01_handson_linux/handson_linux2_Conda.md) -- [Download pdf](exercises/01_handson_linux/handson_linux2_Conda.pdf)
 - **Exercise 3:** [Ficheros.](exercises/01_handson_linux/handson_linux3_FileSystem.md) -- [Download pdf](exercises/01_handson_linux/handson_linux3_FileSystem.pdf)
 - **Exercise 4:** [Permisos.](exercises/01_handson_linux/handson_linux4_Permissions.md) -- [Download pdf](exercises/01_handson_linux/handson_linux4_Permissions.pdf)
