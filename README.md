@@ -43,5 +43,5 @@ The material includes slides with theory concepts and a bunch of practical exerc
 
 ### Day 5
 
-- **Talk 7:** [Ensamblado, anotación y tipificación](slides/05_steps_assembly.pdf)
+- **Talk 7:** [Ensamblado, anotación y tipificación](slides/NGS_ISCIII_2024_dia-5_IC_20250613.pdf)
 - **Exercise 9:** [Ensamblado, anotación y tipificación](exercises/05_handson_assembly/handson_assembly.md) -- [Download pdf](exercises/05_handson_assembly/handson_assembly.pdf)
